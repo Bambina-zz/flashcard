@@ -25,6 +25,6 @@ test:
 
 production:
   adapter: postgresql
-  database: production_flashcard
+  database: flashcard-
   pool: 5
   timeout: 5000
