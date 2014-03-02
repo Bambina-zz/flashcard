@@ -15,6 +15,13 @@
   <%= @word.user_id %>
 </p>
 
+<p>
+  <b>Sentence:</b>
+  <% @word.sentences.each do |sentence| %>
+	  <p><%= sentence.content %></p><br />
+  <% end %>
+</p>
+
 
 <%= link_to 'Edit', edit_word_path(@word) %> |
 <%= link_to 'Back', words_path %>

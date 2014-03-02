@@ -23,6 +23,14 @@
     <%= f.label :user_id %><br />
     <%= f.number_field :user_id %>
   </div>
+
+  <%= f.fields_for :sentences do |sentence_form| %>
+    <div class="field">
+      <%= sentence_form.label :content %><br />
+      <%= sentence_form.text_field :content %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

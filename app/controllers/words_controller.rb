@@ -25,6 +25,7 @@ class WordsController < ApplicationController
   # GET /words/new.json
   def new
     @word = Word.new
+    @word.sentences.build
 
     respond_to do |format|
       format.html # new.html.erb
