@@ -8,7 +8,7 @@ development:
   database: flashcard
   pool: 5
   timeout: 5000
-  username: hironomayuko
+  username: flashcard
   password:
 
 
@@ -20,7 +20,7 @@ test:
   database: test_flashcard
   pool: 5
   timeout: 5000
-  username: hironomayuko
+  username: flashcard
   password:
 
 production:
