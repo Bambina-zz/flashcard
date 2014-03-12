@@ -3,7 +3,8 @@ source 'https://rails-assets.org'
 
 gem 'rails', '3.2.14'
 gem 'pg', '0.12.2'
-gem "bower-rails", "~> 0.7.1"
+gem 'bower-rails', '~> 0.7.1'
+gem 'sorcery'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'

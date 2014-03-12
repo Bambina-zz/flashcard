@@ -1,4 +1,5 @@
 class WordsController < ApplicationController
+before_filter :require_login
   # GET /words
   # GET /words.json
   def index

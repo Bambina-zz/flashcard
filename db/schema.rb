@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140302011616) do
+ActiveRecord::Schema.define(:version => 20140312132527) do
 
   create_table "sentences", :force => true do |t|
     t.string   "content"
@@ -22,11 +22,17 @@ ActiveRecord::Schema.define(:version => 20140302011616) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name",                         :null => false
+    t.string   "email",                        :null => false
+    t.string   "crypted_password",             :null => false
+    t.string   "salt",                         :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.string   "remember_me_token"
+    t.datetime "remember_me_token_expires_at"
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
   create_table "words", :force => true do |t|
     t.string   "name"
