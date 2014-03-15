@@ -8,6 +8,7 @@ gem 'sorcery'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
+  gem 'factory_girl_rails', '~> 4.2.1'
 end
 
 group :assets do
@@ -21,5 +22,10 @@ end
 gem 'jquery-rails', '2.0.2'
 
 group :test do
-  gem 'capybara', '1.1.2'
+  gem 'faker', '~> 1.1.2'
+  gem 'capybara', '~> 2.1.0'
+  gem 'database_cleaner', '~> 1.0.1'
+  gem 'launchy', '~> 2.3.0'
+  gem 'selenium-webdriver', '~> 2.39.0'
 end
+
