@@ -14,8 +14,8 @@ before_filter :require_login
   # GET /words/1
   # GET /words/1.json
   def show
-    @word = Word.find(params[:id])
-
+    word_array = Word.where( user_id: current_user.id, id: params[:id] )
+    @word = word_array.any? ? word_array.last : nil
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @word }

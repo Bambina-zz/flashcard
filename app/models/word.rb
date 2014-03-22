@@ -5,7 +5,6 @@ class Word < ActiveRecord::Base
 	validates :name, uniqueness: {scope: :user_id}
 
   belongs_to :user
-
   has_many :sentences
   accepts_nested_attributes_for :sentences
 end
