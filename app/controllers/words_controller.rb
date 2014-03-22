@@ -3,7 +3,7 @@ before_filter :require_login
   # GET /words
   # GET /words.json
   def index
-    @words = Word.all
+    @words = Word.where( user_id: current_user.id )
 
     respond_to do |format|
       format.html # index.html.erb

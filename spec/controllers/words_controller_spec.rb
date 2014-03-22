@@ -6,6 +6,21 @@ describe WordsController do
 		login_user(@user)
 	end
 
+	describe 'GET #index' do
+		it 'populates an array of words having login_user_id' do
+			word1 = create(:word, user_id: @user.id)
+			word2 = create(:word, user_id: @user.id, name: 'walk')
+			word3 = create(:word)
+			get :index
+			expect( assigns(:words) ).to match_array([word1,word2])
+		end
+
+		it 'renders the :inedx template' do
+			get :index
+			expect( response ).to render_template :index
+		end
+	end
+
 	describe 'GET #show' do
 		it 'assigns the requested word to @word' do
 			word = create(:word, user_id: @user.id)
