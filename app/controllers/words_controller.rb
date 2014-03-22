@@ -36,7 +36,8 @@ before_filter :require_login
 
   # GET /words/1/edit
   def edit
-    @word = Word.find(params[:id])
+    word_array = Word.where( user_id: current_user.id, id: params[:id] )
+    @word = word_array.any? ? word_array.last : nil
   end
 
   # POST /words

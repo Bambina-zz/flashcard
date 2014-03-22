@@ -34,7 +34,7 @@ describe WordsController do
 			expect( assigns(:word).user_id ).to eq @user.id
 		end
 
-		it 'does not assign @word which made by an another user' do
+		it 'does not assign @word which was made by an another user' do
 			word = create(:word)
 			get :show, id: word
 			expect( assigns(:word) ).to eq nil
@@ -44,6 +44,44 @@ describe WordsController do
 			word = create(:word, user_id: @user.id)
 			get :show, id: word
 			expect( response ).to render_template :show
+		end
+	end
+
+	describe 'GET #new' do
+		it 'assigns a new Word to @word' do
+			get :new
+			expect( assigns(:word) ).to be_a_new(Word)
+		end
+
+		it 'renders the :new template' do
+			get :new
+			expect( response ).to render_template :new
+		end
+	end
+
+	describe 'GET #edit' do
+		it 'assigns the requested word to @word' do
+			word = create(:word, user_id: @user.id)
+			get :edit, id: word
+			expect( assigns(:word) ).to eq word
+		end
+
+		it 'assigns @word having login_user_id' do
+			word = create(:word, user_id: @user.id)
+			get :edit, id: word
+			expect( assigns(:word).user_id ).to eq @user.id
+		end
+
+		it 'does not assign @word which was made by an another user' do
+			word = create(:word)
+			get :edit, id: word
+			expect( assigns(:word) ).to eq nil
+		end
+
+		it 'renders the :edit template' do
+			word = create(:word, user_id: @user.id)
+			get :edit, id: word
+			expect( response ).to render_template :edit
 		end
 	end
 end
