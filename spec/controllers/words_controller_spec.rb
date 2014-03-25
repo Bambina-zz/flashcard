@@ -84,4 +84,21 @@ describe WordsController do
 			expect( response ).to render_template :edit
 		end
 	end
+
+	describe 'POST #create' do
+		before :each do
+			@sentences = [
+				attributes_for(:sentence),
+				attributes_for(:sentence, content: 'I must work up my science for the test.')]
+		end
+
+		context 'with valid attribute' do
+			it 'saves a new word in the database' do
+				expect{
+					post :create,
+					word: attributes_for(:word, user_id: @user.id, sentences_attributes: @sentences)
+					}.to change(Word, :count).by(1)
+			end
+		end
+	end
 end

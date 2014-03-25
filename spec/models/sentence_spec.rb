@@ -9,9 +9,4 @@ describe Sentence do
 		sentence = build(:sentence, content: nil)
 		expect( sentence ).to have(1).errors_on(:content)
 	end
-
-	it 'is invalid without a word_id' do
-		sentence = build(:sentence, word_id: nil)
-		expect( sentence ).to have(1).errors_on(:word_id)
-	end
 end
