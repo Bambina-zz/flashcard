@@ -6,20 +6,20 @@ FactoryGirl.define do
 		email    { Faker::Internet.email }
 		password 'password1234'
 		password_confirmation 'password1234'
-	end
 
-	factory :invalid_user do
-		name nil
+		factory :invalid_user do
+			name nil
+		end
 	end
 
 	factory :word do
 		user
 		name      'work'
 		word_type 'noun'
-	end
 
-	factory :invalid_word do
-		name nil
+		factory :invalid_word do
+			name nil
+		end
 	end
 
 	factory :sentence do

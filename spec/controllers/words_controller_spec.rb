@@ -99,6 +99,27 @@ describe WordsController do
 					word: attributes_for(:word, user_id: @user.id, sentences_attributes: @sentences)
 					}.to change(Word, :count).by(1)
 			end
+
+			it 'redireccts to words#show' do
+				post :create,
+				word: attributes_for(:word, user_id: @user.id, sentences_attributes: @sentences)
+				expect( response ).to redirect_to word_path(assigns[:word])
+			end
+		end
+
+		context 'with invalid attibutes' do
+			it 'does not save the new word in the database' do
+				expect{
+					post :create,
+					word: attributes_for(:invalid_word)
+				}.to_not change(Word, :count)
+			end
+
+			it 'renders the new template if the new word is not saved' do
+				post :create,
+				word: attributes_for(:invalid_word)
+				expect( response ).to render_template :new
+			end
 		end
 	end
 end
