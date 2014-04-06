@@ -7,6 +7,10 @@ FactoryGirl.define do
 		password 'password1234'
 		password_confirmation 'password1234'
 
+		# factory :admin do
+		# 	admin true
+		# end
+
 		factory :invalid_user do
 			name nil
 		end
