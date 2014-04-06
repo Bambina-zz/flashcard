@@ -107,7 +107,7 @@ describe WordsController do
 			end
 		end
 
-		context 'with invalid attibutes' do
+		context 'with invalid attributes' do
 			it 'does not save the new word in the database' do
 				expect{
 					post :create,
@@ -119,6 +119,80 @@ describe WordsController do
 				post :create,
 				word: attributes_for(:invalid_word)
 				expect( response ).to render_template :new
+			end
+		end
+	end
+
+	describe 'PUT #update' do
+		before :each do
+			@word = create(
+				:word,
+				user_id: @user.id)
+		end
+		context 'with valid attributes' do
+			it 'locates requested @word' do
+				put :update,
+				id: @word,
+				word: attributes_for(:word)
+				expect(assigns(:word)).to eq @word
+			end
+
+			it "changes @word's attributes" do
+				new_name = 'well'
+				new_word_type = 'adverb'
+				put :update,
+				id: @word,
+				word: attributes_for(:word, name: new_name, word_type: new_word_type)
+				@word.reload
+				expect(@word.name).to eq new_name
+				expect(@word.word_type).to eq new_word_type
+			end
+
+			it 'redirects to the updated word' do
+				put :update, id: @word, word: attributes_for(:word)
+				expect(response).to redirect_to @word
+			end
+		end
+
+		context 'with invalid attributes'  do
+			it 'does not change the attributes' do
+				put :update,
+				id: @word,
+				word: attributes_for(:word, name: 'well', word_type: nil)
+				@word.reload
+				expect(@word.name).to_not eq 'well'
+				expect(@word.word_type).to eq 'noun'
+			end
+
+			it 're-renders the edit template' do
+				put :update,
+				id: @word,
+				word: attributes_for(:invalid_word)
+				expect(response).to render_template :edit
+			end
+		end
+	end
+
+	describe 'DELETE #destroy' do
+		before :each do
+			@word = create(
+				:word,
+				user_id: @user.id)
+		end
+
+		context 'with valid attributes' do
+			it 'deletes the word' do
+				expect{
+					delete :destroy,
+					id: @word
+				}.to change(Word, :count).by -1
+			end
+
+			it 'redirects contacts index' do
+				delete :destroy,
+				id: @word
+				p words_url
+				expect(response).to redirect_to words_url
 			end
 		end
 	end
