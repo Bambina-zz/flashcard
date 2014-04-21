@@ -10,14 +10,14 @@ describe WordsController do
 		describe 'GET #new' do
 			it 'requires login' do
 				get :new
-				expect(response).to redirect_to login_url
+				expect(response).to require_login
 			end
 		end
 
 		describe 'GET #edit' do
 			it 'requires login' do
 				get :edit, id: @word
-				expect(response).to redirect_to login_url
+				expect(response).to require_login
 			end
 		end
 
@@ -26,7 +26,7 @@ describe WordsController do
 				post :create,
 				id: @word,
 				word: attributes_for(:word)
-				expect(response).to redirect_to login_url
+				expect(response).to require_login
 			end
 		end
 
@@ -35,7 +35,7 @@ describe WordsController do
 				put :update,
 				id: @word,
 				word: attributes_for(:word)
-				expect(response).to redirect_to login_url
+				expect(response).to require_login
 			end
 		end
 
@@ -43,7 +43,7 @@ describe WordsController do
 			it 'requires login' do
 				delete :destroy,
 				id: @word
-				expect(response).to redirect_to login_url
+				expect(response).to require_login
 			end
 		end
 	end
