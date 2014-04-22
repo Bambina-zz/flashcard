@@ -28,6 +28,6 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  database: flashcard-
+  database: flashcar-d
   pool: 5
   timeout: 5000
