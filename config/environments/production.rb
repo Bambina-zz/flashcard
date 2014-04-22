@@ -64,15 +64,14 @@ FirstApp::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-
-  ActionMailer::Base.smtp_settings = {
+  config.action_mailer.default_url_options = { :host => 'flashcard-.herokuapp.com' }
+  config.action_mailer.smtp_settings = {
     :port =>           '587',
     :address =>        'smtp.mandrillapp.com',
     :user_name =>      ENV['MANDRILL_USERNAME'],
     :password =>       ENV['MANDRILL_APIKEY'],
-    :domain =>         'flashcard-.herokuapp.com',
     :authentication => :plain
   }
 
-  ActionMailer::Base.delivery_method = :smtp
+  config.action_mailer.delivery_method = :smtp
 end
