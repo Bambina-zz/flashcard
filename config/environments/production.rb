@@ -70,7 +70,7 @@ FirstApp::Application.configure do
     :address =>        'smtp.mandrillapp.com',
     :user_name =>      ENV['MANDRILL_USERNAME'],
     :password =>       ENV['MANDRILL_APIKEY'],
-    :domain =>         'heroku.com',
+    :domain =>         'flashcard-.herokuapp.com',
     :authentication => :plain
   }
 
