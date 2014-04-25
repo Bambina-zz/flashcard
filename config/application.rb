@@ -58,6 +58,9 @@ module FirstApp
     # Enable the asset pipeline
     config.assets.enabled = true
 
+    # add app/assets/fonts to the asset path
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
     # For Heroku
     config.assets.initialize_on_precompile = false
 

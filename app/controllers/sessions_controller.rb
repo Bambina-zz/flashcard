@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
+  layout 'session'
   def new
+    @user = User.new
   end
 
   def create
@@ -11,7 +13,7 @@ class SessionsController < ApplicationController
       render :new
     end
   end
-  
+
   def destroy
     logout
     redirect_to root_url, :notice => "Logged out!"
