@@ -1,0 +1,14 @@
+.breadcrumb {
+	.border-radius(@breadcrumb-border-radius);
+	background-color: @breadcrumb-bg;
+	> li {
+		&+li:before {
+			font-family: "FontAwesome";
+			content: "\f105";
+			color: @breadcrumb-color;
+		}
+	}
+	> .active {
+		color: @breadcrumb-active-color;
+	}
+}

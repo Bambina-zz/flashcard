@@ -1,0 +1,33 @@
+.chart {
+  &, & svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+.morris-hover {
+  position: absolute;
+  z-index: 1000;
+}
+
+.morris-hover.morris-default-style {
+  .border-radius(@base-border-radius);
+  padding: 1em;
+  color: #fff;
+  background: fade(#000, 80%);
+  border: 0;
+  font-family:sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.morris-hover.morris-default-style .morris-hover-row-label {
+  font-weight: bold;
+  margin: 0.25em 0;
+}
+
+.morris-hover.morris-default-style .morris-hover-point {
+  white-space: nowrap;
+  margin: 0.1em 0;
+}

@@ -1,0 +1,129 @@
+
+// Sidebar
+body.is-admin {
+  overflow-x: hidden;
+  background-color: @body-bg;
+}
+
+.admin-wrapper {
+  position: relative;
+  .transition(all .5s);
+}
+
+.admin-sidebar {
+  position: absolute;
+  width: @sidebar-width;
+  min-height: 100%;
+  margin-left: -@sidebar-width;
+  overflow: visible;
+  z-index: 1000;
+  background-color: @sidebar-bg;
+}
+.sidebar-header {
+  .padding-sm;
+  text-align: center;
+  background-color: @brand-primary;
+  a {
+    color: #fff;
+    &:hover,
+    &:focus,
+    &:active {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  .sidebar-logo {
+    width: 35px;
+    height: 35px;
+  }
+}
+.sidebar-subheader {
+  padding: 1em;
+  color: #fff;
+  text-align: center;
+}
+.sidebar-nav {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 30px;
+  >li {
+    &.active >a {
+      position: relative;
+      background-color: lighten(@sidebar-bg, 5%);
+      &:before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background-color: @brand-primary;
+      }
+    }
+    &.header {
+      padding: 20px 15px;
+      color: fade(#fff, 20%);
+      text-transform: uppercase;
+      font-size: 85%;
+    }
+    a {
+      display: block;
+      padding: 10px 15px;
+      color: #fff;
+      text-decoration: none;
+      &:hover,
+      &:focus,
+      &:active {
+        color: #fff;
+        background: rgba(255,255,255,0.1);
+        text-decoration: none;
+      }
+      [class^="icon-"]:first-child {
+        margin-right: 6px;
+      }
+    }
+  }
+  .sidebar-sub-nav {
+    padding-left: 0;
+    list-style: none;
+    li {
+      &.active >a {
+        color: @brand-primary;
+      }
+      background-color: darken(@sidebar-bg, 5%);
+      >a {
+        padding-left: 1.5em;
+      }
+    }
+  }
+}
+// sidebar toggle
+// -------------------------
+@media screen and (max-width: 767px) {
+  .admin-wrapper {
+    left: 0;
+    padding-left: 0;
+  }
+  .admin-wrapper.sidebar-toggle {
+    left: @sidebar-width;
+    padding-left: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .admin-wrapper {
+    left: 0;
+    padding-left: @sidebar-width;
+  }
+  .admin-wrapper.sidebar-toggle {
+    left: 0;
+    padding-left: 0;
+  }
+}
+.admin-content {
+  [class^=container] {
+    width: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    max-width: 1250px;
+  }
+}

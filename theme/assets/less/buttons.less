@@ -1,0 +1,110 @@
+
+.btn {
+	font-weight: bold;
+	.border-radius(@btn-radius);
+}
+
+.btn-link {
+	color: @link-color;
+	&:hover,
+	&:focus,
+	&:active,
+	&.active {
+		color: @link-color-hover;
+		text-decoration: none;
+	}
+	&[disabled],
+	fieldset[disabled] & {
+		&:hover,
+		&:focus {
+			color: @link-color;
+		}
+	}
+}
+
+// Buttons variants
+// -------------------------
+// .button-variant(@text-color, @background-color, @border-color);
+
+.btn-white {
+	.button-variant(@gray, #fff, #fff);
+}
+.btn-default {
+	.button-variant(#fff, @gray, @gray);
+}
+.btn-inverse {
+	.button-variant(#fff, @btn-default-bg, @btn-default-bg);
+}
+.btn-primary {
+	.button-variant(#fff, @btn-primary-bg, @btn-primary-bg);
+}
+.btn-success {
+	.button-variant(#fff, @btn-success-bg, @btn-success-bg);
+}
+.btn-info {
+	.button-variant(#fff, @btn-info-bg, @btn-info-bg);
+}
+.btn-warning {
+	.button-variant(#fff, @btn-warning-bg, @btn-warning-bg);
+}
+.btn-danger {
+	.button-variant(#fff, @btn-danger-bg, @btn-danger-bg);
+}
+.btn-circle {
+	// can only contain icons because of fixed width and height
+	width: 35px;
+	height: 35px;
+	padding: 0;
+	.border-radius(50%);
+	background-clip: border-box;
+}
+
+// Social media buttons
+// Create even more buttons using .button-variant() mixin and the 20 social media variables from [variables.less]
+.btn-facebook {
+	.button-variant(#fff, @brand-facebook, @brand-facebook);
+}
+.btn-twitter {
+	.button-variant(#fff, @brand-twitter, @brand-twitter);
+}
+.btn-google-plus {
+	.button-variant(#fff, @brand-google-plus, @brand-google-plus);
+}
+.btn-pinterest {
+	.button-variant(#fff, @brand-pinterest, @brand-pinterest);
+}
+.btn-linkedin {
+	.button-variant(#fff, @brand-linkedin, @brand-linkedin);
+}
+.btn-youtube {
+	.button-variant(#fff, @brand-youtube, @brand-youtube);
+}
+.btn-vimeo {
+	.button-variant(#fff, @brand-vimeo, @brand-vimeo);
+}
+.btn-tumblr {
+	.button-variant(#fff, @brand-tumblr, @brand-tumblr);
+}
+.btn-instagram {
+	.button-variant(#fff, @brand-instagram, @brand-instagram);
+}
+.btn-flickr {
+	.button-variant(#fff, @brand-flickr, @brand-flickr);
+}
+.btn-dribbble {
+	.button-variant(#fff, @brand-dribbble, @brand-dribbble);
+}
+.btn-foursquare {
+	.button-variant(#fff, @brand-foursquare, @brand-foursquare);
+}
+.btn-vk {
+	.button-variant(#fff, @brand-vk, @brand-vk);
+}
+
+// Fix - Bootstrap issue 
+// first button of a vertical group not sticking to btn-radius
+.btn-group-vertical > .btn {
+	&:first-child:not(:last-child) {
+		border-top-right-radius: @btn-radius;
+	}
+}

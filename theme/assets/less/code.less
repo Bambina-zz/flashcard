@@ -1,0 +1,146 @@
+//
+// Code (inline and block)
+// --------------------------------------------------
+
+
+// Inline and block code styles
+code,
+kbd,
+pre,
+samp {
+	font-family: @font-family-monospace;
+}
+
+// Inline code
+code {
+	padding: 2px 4px;
+	font-size: 90%;
+	color: @code-color;
+	border: 1px solid darken(@code-bg, 15%);
+	background-color: @code-bg;
+	white-space: nowrap;
+	.border-radius(@base-border-radius);
+}
+
+// User input typically entered via keyboard
+kbd {
+	padding: 2px 4px;
+	font-size: 90%;
+	color: @kbd-color;
+	background-color: @kbd-bg;
+	.border-radius(@base-border-radius);
+	.box-shadow(inset 0 -1px 0 rgba(0,0,0,.25));
+}
+
+// Blocks of code
+pre {
+	display: block;
+	padding: ((@line-height-computed - 1) / 2);
+	margin: 0 0 (@line-height-computed / 2);
+	font-size: (@font-size-base - 1); // 14px to 13px
+	line-height: @line-height-base;
+	word-break: break-all;
+	word-wrap: break-word;
+	overflow-x: scroll;
+	color: @pre-color;
+	background-color: @pre-bg;
+	border: 1px solid @pre-border-color;
+	.border-radius(@pre-border-radius);
+
+	// Account for some code outputs that place code tags in pre tags
+	code {
+		padding: 0;
+		font-size: inherit;
+		color: inherit;
+		border: 0;
+		white-space: pre-wrap;
+		background-color: transparent;
+		.border-radius(0);
+	}
+}
+
+// Prism add-on
+pre[class*="language-"] {
+	// code block
+	position: relative;
+	overflow: visible !important;
+	margin-top: 2em !important;
+	.border-radius(0 @pre-border-radius @pre-border-radius @pre-border-radius);
+	// label
+	&::before {
+		display: block;
+		position: absolute;
+		top: -1.95em;
+		left: -1px;
+		padding: 0.25em 0.5em;
+		background-color: @pre-border-color;
+		color: #fff;
+		font-size: 12px;
+		z-index: 1000;
+		.border-radius(3px 3px 0 0);
+		.text-shadow(none);
+	}
+	// default label if `language-none` is declared
+	&.language-none::before {
+		content: "Code"
+	}
+	// reassign label if `language-*` is declared
+	&.language-markup::before {
+		content: "Markup";
+	}
+	&.language-css::before {
+		content: "CSS";
+	}
+	&.language-clike::before {
+		content: "C-Like";
+	}
+	&.language-javascript::before {
+		content: "JavaScript";
+	}
+	&.language-java::before {
+		content: "Java";
+	}
+	&.language-php::before {
+		content: "PHP";
+	}
+	&.language-coffescript::before {
+		content: "CoffeScript";
+	}
+	&.language-scss::before {
+		content: "SCSS";
+	}
+	&.language-bash::before {
+		content: "Bash";
+	}
+	&.language-c::before {
+		content: "C";
+	}
+	&.language-cpp::before {
+		content: "C++";
+	}
+	&.language-python::before {
+		content: "Python";
+	}
+	&.language-sql::before {
+		content: "SQL";
+	}
+	&.language-groovy::before {
+		content: "Groovy";
+	}
+	&.language-http::before {
+		content: "HTTP";
+	}
+	&.language-ruby::before {
+		content: "Ruby";
+	}
+	&.language-gherkin::before {
+		content: "Gherkin";
+	}
+	&.language-csharp::before {
+		content: "C#";
+	}
+	&.language-go::before {
+		content: "Go";
+	}
+}
+

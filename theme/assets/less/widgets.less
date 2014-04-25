@@ -1,0 +1,86 @@
+// Widgets (similar to Bootstrap wells but reusable and extensible)
+// -------------------------------
+
+.widget {
+  margin-bottom: 2em;
+  overflow: hidden;
+  .clearfix();
+  .border-radius(@base-border-radius);
+}
+
+// meta data boxes
+// -------------------------
+.meta-wrapper {
+  // use this wrapper when .meta-cells need specific width like .col-*
+  display: table;
+  width: 100%;
+}
+.meta-row {
+  padding: 10px @thumbnail-caption-padding;
+  border-top: 1px solid rgba(0,0,0,0.2);
+}
+.meta-cell {
+  // position
+  float: none;
+  position: relative;
+  display: table-cell;
+  &:not([class*="col-"]) {
+    width: 1%;
+  }
+  padding: 1em;
+  font-size: 85%;
+  // other
+  & + & {
+    border-left: 1px solid rgba(0,0,0,0.2);
+  }
+}
+.v-align-middle {
+  vertical-align: middle;
+}
+.v-align-top {
+  vertical-align: top;
+}
+.v-align-bottom {
+  vertical-align: bottom;
+}
+
+.point-up,
+.point-right,
+.point-down,
+.point-left {
+  position: relative;
+  &:before {
+    content: " ";
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background-color: inherit;
+    .transform(rotate(45deg));
+  }
+}
+.point-up {
+  &:before {
+    left: 2em;
+    top: -0.3em;
+  }
+}
+.point-right {
+  &:before {
+    top: 1.2em;
+    right: 0;
+    margin-right: -0.3em;
+  }
+}
+.point-down {
+  &:before {
+    left: 2em;
+    bottom: -0.3em;
+  }
+}
+.point-left {
+  &:before {
+    top: 1.2em;
+    left: 0;
+    margin-left: -0.3em;
+  }
+}

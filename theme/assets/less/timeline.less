@@ -1,0 +1,104 @@
+.timeline-comment-wrapper {
+  @aside-width: 100px;
+  @aside-line-width: 2px;
+  .clearfix;
+  .timeline-comment-aside {
+    position: relative;
+    width: @aside-width;
+    float: left;
+    text-align: center;
+  }
+  .timeline-comment-main {
+    margin-left: @aside-width;
+    padding-bottom: 1em;
+  }
+  .timeline-comment-container {
+    margin-bottom: 1em;
+    border: 1px solid @base-border-color;
+    .border-radius(@base-border-radius+1);
+    background-color: #fff;
+    & {
+      // vertical line
+      position: relative;
+      &:before {
+        display: block;
+        content: " ";
+        position: absolute;
+        top: 20px;
+        left: -(@aside-width/2)-@aside-line-width;
+        bottom: 0;
+        width: @aside-line-width;
+        background-color: @base-border-color;
+        z-index: -1;
+      }
+      &:after {
+        display: block;
+        content: " ";
+        position: absolute;
+        left: -((@aside-width/2)+5px);
+        bottom: 0;
+        width: 8px;
+        height: 8px;
+        .border-radius(50%);
+        background-color: @base-border-color;
+        z-index: -1;
+      }
+    }
+    .comment-heading {
+      padding: 8px 15px;
+      margin: 0;
+      border-bottom: 1px solid @base-border-color;
+      background-color: @brand-highlight;
+      .border-radius((@base-border-radius+1) (@base-border-radius+1) 0 0);
+      // pointer decoration
+      position: relative;
+      &:before {
+        position: absolute;
+        top: 11px;
+        left: -16px;
+        right: 100%;
+        width: 0;
+        height: 0;
+        display: block;
+        content: " ";
+        border-color: transparent;
+        border-style: solid solid outset;
+        pointer-events: none;
+      }
+      &:before {
+        border-right-color: @base-border-color;
+        border-width: 8px;
+      }
+    }
+    .comment-content {
+      padding: 15px;
+    }
+  }
+}
+
+.comment-meta-author {
+  font-weight: bold;
+  a {
+    color: inherit;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      color: @link-color;
+      text-decoration: none;
+    }
+  }
+}
+.comment-meta-time {
+  float: right;
+  a {
+    color: inherit;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      color: @link-color;
+      text-decoration: none;
+    }
+  }
+}

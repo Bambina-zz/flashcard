@@ -1,0 +1,60 @@
+.notif-count {
+  position: absolute !important;
+  top: -5px !important;
+  right: -5px;
+}
+
+.dropdown-notif {
+  width: 300px;
+  padding: 0;
+  border: 0 !important;
+  color: @text-color;
+  overflow: hidden;
+  .box-shadow(0 0 5px 2px rgba(50,50,50,.2)) !important;
+  .notif-row {
+    position: relative;
+    padding: 8px;
+    &.notif-header,
+    &.notif-footer {
+      color: #fff;
+      background-color: @gray-darker;
+    }
+    &.notif-header,
+    &.notif-footer,
+    &.notif-excerpt {
+      a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: transparent;
+        }
+      }
+    }
+    &.notif-excerpt {
+      border-bottom: 1px solid lighten(@base-border-color, 15%);
+      &:hover {
+        background-color: @brand-highlight;
+      }
+      h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+        color: @headings-font-color;
+      }
+      .notif-preview {
+        float: left;
+        margin-right: 8px;
+      }
+    }
+  }
+  .notif-tray {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+}

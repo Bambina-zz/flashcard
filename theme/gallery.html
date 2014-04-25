@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title></title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+
+  <link rel="shortcut icon" href="assets/ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/favicon-152.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="assets/ico/favicon-144.png">
+
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/simple-lines/simple-line-icons.css">
+  <link rel="stylesheet" href="assets/bootstrap-select/bootstrap-select.min.css">
+  <link rel="stylesheet" href="assets/icheck/skins/flat/flat.css">
+  <link rel="stylesheet" href="assets/prism/prism.css">
+  <link rel="stylesheet" href="assets/summernote/summernote.css">
+  <link rel="stylesheet" href="assets/css/theme.min.css">
+  <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/selectivizr.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="is-admin">
+  <div class="admin-wrapper">
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <a href="#link">
+          <img class="sidebar-logo" src="assets/img/logo-white.png" alt="lgo" width="35" height="35"> Admin Panel
+        </a>
+      </div>
+      <div class="sidebar-subheader">
+        <img class="img-circle" src="assets/img/user-male-2.jpg" width="100" height="100" alt="img">
+        <p class="no-margin"><strong>Cooper Black</strong></p>
+        <p><small><i class="fa fa-globe"></i> Paris, France</small></p>
+        <p><a href="#link" class="btn btn-outline btn-primary">Edit Profile</a></p>
+      </div><!-- /.sidebar-subheader -->
+      <ul class="sidebar-nav">
+        <li class="active">
+          <a href="index.html">
+            <i class="icon-home"></i>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="widgets.html">
+            <i class="icon-grid"></i>
+            Widgets
+          </a>
+        </li>
+        <li>
+          <a href="tables.html">
+            <i class="icon-layers"></i>
+            Data
+          </a>
+        </li>
+        <li class="header"><i class="fa fa-circle-o text-info"></i> Pubishing</li>
+        <li>
+          <a href="publishing.html">
+            <i class="icon-note"></i>
+            Publishing
+          </a>
+        </li>
+        <li>
+          <a href="gallery.html">
+            <i class="icon-picture"></i>
+            Media
+          </a>
+        </li>
+        <li>
+          <a href="dashboard.html">
+            <i class="icon-pie-chart"></i>
+            Stats
+          </a>
+        </li>
+        <li>
+          <a href="edit-profile.html">
+            <i class="icon-user"></i>
+            Edit Profile
+          </a>
+        </li>
+        <li class="header"><i class="fa fa-circle-o text-success"></i> Settings</li>
+        <li>
+          <a href="#link" data-toggle="collapse" data-target="#submenu-1">
+            <i class="icon-folder"></i>
+            Dropdown
+          </a>
+          <ul class="sidebar-sub-nav collapse" id="submenu-1">
+            <li class="active"><a href="#link"><i class="fa fa-fw fa-angle-right"></i> Submenu</a></li>
+            <li><a href="#link"><i class="fa fa-fw fa-angle-right"></i> Submenu</a></li>
+            <li><a href="#link"><i class="fa fa-fw fa-angle-right"></i> Submenu</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="billing.html">
+            <i class="icon-credit-card"></i>
+            Billing
+          </a>
+        </li>
+        <li>
+          <a href="settings.html">
+            <i class="icon-settings"></i>
+            Settings
+          </a>
+        </li>
+        <li>
+          <a href="login.html">
+            <i class="icon-logout"></i>
+            Logout
+          </a>
+        </li>
+      </ul><!-- /.sidebar-nav -->
+      <div class="padding-sm">
+        <div class="padding-sm bg-secondary-light">
+          <strong>Upgrade:</strong>
+          <p><small>Upgrade to get rid of all banner ads.</small></p>
+          <a href="#link" class="btn btn-white btn-outline btn-block">Upgrade Now!</a>
+        </div>
+      </div>
+    </aside><!-- /.sidebar -->
+
+    <!-- Page content -->
+    <main class="admin-content">
+      <section class="wrapper-xs bg-secondary">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-4 col-md-6">
+              <button type="button" class="btn btn-link" data-toggle="admin-sidebar">
+                <span class="text-white"><i class="fa fa-fw fa-align-justify"></i> Menu</span>
+              </button>
+            </div><!-- /.col -->
+            <div class="col-xs-8 col-md-6">
+              <form class="form-horizontal">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <label for="navbar-search" class="control-label">Omnisearch:</label>
+                  </div>
+                  <div class="col-xs-9">
+                    <input type="text" class="form-control" id="navbar-search" placeholder="Search by keyword"/>
+                  </div>
+                </div>
+              </form>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </section><!-- /.wrapper -->
+      <section class="wrapper-xs bg-white border-default">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <ol class="breadcrumb no-margin">
+                <li><strong>My Admin</strong></li>
+                <li><a href="#link">Main</a></li>
+                <li><a href="#link">Section</a></li>
+                <li class="active"><a href="#link">Current</a></li>
+              </ol>
+            </div><!-- /.col -->
+            <div class="col-md-6">
+              <div class="pull-right">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                    <span class="text-muted"><i class="fa fa-fw fa-bell"></i></span>
+                    <span class="label label-danger notif-count">1</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-notif pull-right" role="menu">
+                    <li class="notif-row notif-header">
+                      <strong>New Comments</strong>
+                    </li>
+                    <div class="notif-tray">
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <img class="notif-preview" src="assets/img/user-female-2.jpg" width="64" height="64" alt="64x64">
+                        <h5><i class="fa fa-dot-circle-o text-success"></i> Lucida Sans</h5>
+                        You have a new maessage from a friend in Dubai
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <img class="notif-preview" src="assets/img/user-female-2.jpg" width="64" height="64" alt="64x64">
+                        <h5><i class="fa fa-dot-circle-o text-success"></i> Lucida Sans</h5>
+                        You have a new maessage from a friend in Dubai
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <img class="notif-preview" src="assets/img/user-female-2.jpg" width="64" height="64" alt="64x64">
+                        <h5><i class="fa fa-dot-circle-o text-success"></i> Lucida Sans</h5>
+                        You have a new maessage from a friend in Dubai
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <img class="notif-preview" src="assets/img/user-female-2.jpg" width="64" height="64" alt="64x64">
+                        <h5><i class="fa fa-dot-circle-o text-success"></i> Lucida Sans</h5>
+                        You have a new maessage from a friend in Dubai
+                      </li>
+                    </div><!-- /.notif-tray -->
+                    <li class="notif-row notif-footer">
+                      <i class="fa fa-fw fa-plus"></i> View all notifications »
+                      <a href="#link"></a>
+                    </li>
+                  </ul><!-- /.dropdown-menu.dropdown-notif -->
+                </div><!-- /.btn-group -->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                    <span class="text-muted"><i class="fa fa-fw fa-cloud-download"></i></span>
+                    <span class="label label-danger notif-count">2</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-notif pull-right" role="menu">
+                    <li class="notif-row notif-header">
+                      <strong>Software Updates</strong>
+                    </li>
+                    <div class="notif-tray">
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <h5><span class="text-danger">New</span> Framework Update</h5>
+                        <span class="text-muted">20:32</span> Installation is now complete
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <h5><span class="text-danger">New</span> Framework Update</h5>
+                        <span class="text-muted">20:32</span> Installation is now complete
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <h5><span class="text-danger">New</span> Framework Update</h5>
+                        <span class="text-muted">20:32</span> Installation is now complete
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <h5><span class="text-danger">New</span> Framework Update</h5>
+                        <span class="text-muted">20:32</span> Installation is now complete
+                      </li>
+                    </div>
+                    <li class="notif-row notif-footer">
+                      <a href="#link"></a>
+                      <i class="fa fa-fw fa-plus"></i> View all notifications »
+                    </li>
+                  </ul><!-- /.dropdown-notif -->
+                </div><!-- /.btn-group -->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                    <span class="text-muted"><i class="fa fa-fw fa-globe"></i></span>
+                    <span class="label label-danger notif-count">3</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-notif pull-right" role="menu">
+                    <li class="notif-row notif-header">
+                      <strong>Repository Activity</strong>
+                    </li>
+                    <div class="notif-tray">
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <div class="notif-preview">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                            <i class="fa fa-code-fork fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </div>
+                        <h5>Cooper Black</h5>
+                        <span class="text-muted">20:32</span> Merge pull request <span class="text-primary">#1116</span>
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <div class="notif-preview">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-success"></i>
+                            <i class="fa fa-comments fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </div>
+                        <h5>Cooper Black</h5>
+                        <span class="text-muted">20:32</span> Merge pull request <span class="text-primary">#1116</span>
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <div class="notif-preview">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-info"></i>
+                            <i class="fa fa-star fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </div>
+                        <h5>Cooper Black</h5>
+                        <span class="text-muted">20:32</span> Merge pull request <span class="text-primary">#1116</span>
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <div class="notif-preview">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-warning"></i>
+                            <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </div>
+                        <h5>Cooper Black</h5>
+                        <span class="text-muted">20:32</span> Merge pull request <span class="text-primary">#1116</span>
+                      </li>
+                    </div><!-- /.notif-tray -->
+                    <li class="notif-row notif-footer">
+                      <i class="fa fa-fw fa-plus"></i> View all notifications »
+                      <a href="#link"></a>
+                    </li>
+                  </ul><!-- /.dropdown-notif -->
+                </div><!-- /.btn-group -->
+              </div><!-- /.pull-right -->
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </section><!-- /.wrapper -->
+      <section class="wrapper-sm">
+        <div class="container-fluid">
+          <h2 class="headline">Media Gallery</h2>
+          <div class="row">
+            <div class="col-sm-12">
+              <!-- filters -->
+              <ul id="filters" class="tags">
+                <li class="active"><a class="btn btn-outline btn-primary" href="#link" data-filter="*">Show All</a></li>
+                <li><a class="btn btn-outline btn-primary" href="#link" data-filter=".apples">Apples</a></li>
+                <li><a class="btn btn-outline btn-primary" href="#link" data-filter=".kiwis">Kiwis</a></li>
+                <li><a class="btn btn-outline btn-primary" href="#link" data-filter=".oranges">Oranges</a></li>
+              </ul>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+          <br class="spacer-md">
+          <!-- items -->
+          <div class="row">
+            <div class="isotope-container">
+              <div class="col-sm-12 col-md-3 isotope-item apples">
+                <div class="widget">
+                  <div class="thumbnail">
+                    <div class="overlay-container">
+                      <img src="assets/img/img-400x400.jpg" alt="img">
+                      <div class="overlay-content is-animated">
+                        <h3>Design</h3>
+                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
+                      </div><!-- /.overlay-content -->
+                    </div><!-- /.overlay-container -->
+                  </div><!-- /.thumbnail -->
+                  <h5 class="no-margin">Project Iteration</h5>
+                  <small>Item Preview</small>
+                </div><!-- /.widget -->
+              </div><!-- /.col -->
+              <div class="col-sm-12 col-md-3 isotope-item kiwis">
+                <div class="widget">
+                  <div class="thumbnail">
+                    <div class="overlay-container">
+                      <img src="assets/img/img-400x400.jpg" alt="img">
+                      <div class="overlay-content is-animated">
+                        <h3>Design</h3>
+                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
+                      </div><!-- /.overlay-content -->
+                    </div><!-- /.overlay-container -->
+                  </div><!-- /.thumbnail -->
+                  <h5 class="no-margin">Project Iteration</h5>
+                  <small>Item Preview</small>
+                </div><!-- /.widget -->
+              </div><!-- /.col -->
+              <div class="col-sm-12 col-md-3 isotope-item oranges">
+                <div class="widget">
+                  <div class="thumbnail">
+                    <div class="overlay-container">
+                      <img src="assets/img/img-400x400.jpg" alt="img">
+                      <div class="overlay-content is-animated">
+                        <h3>Design</h3>
+                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
+                      </div><!-- /.overlay-content -->
+                    </div><!-- /.overlay-container -->
+                  </div><!-- /.thumbnail -->
+                  <h5 class="no-margin">Project Iteration</h5>
+                  <small>Item Preview</small>
+                </div><!-- /.widget -->
+              </div><!-- /.col -->
+              <div class="col-sm-12 col-md-3 isotope-item oranges">
+                <div class="widget">
+                  <div class="thumbnail">
+                    <div class="overlay-container">
+                      <img src="assets/img/img-400x400.jpg" alt="img">
+                      <div class="overlay-content is-animated">
+                        <h3>Design</h3>
+                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
+                      </div><!-- /.overlay-content -->
+                    </div><!-- /.overlay-container -->
+                  </div><!-- /.thumbnail -->
+                  <h5 class="no-margin">Project Iteration</h5>
+                  <small>Item Preview</small>
+                </div><!-- /.widget -->
+              </div><!-- /.col -->
+              <div class="col-sm-12 col-md-3 isotope-item apples">
+                <div class="widget">
+                  <div class="thumbnail">
+                    <div class="overlay-container">
+                      <img src="assets/img/img-400x400.jpg" alt="img">
+                      <div class="overlay-content is-animated">
+                        <h3>Design</h3>
+                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
+                      </div><!-- /.overlay-content -->
+                    </div><!-- /.overlay-container -->
+                  </div><!-- /.thumbnail -->
+                  <h5 class="no-margin">Project Iteration</h5>
+                  <small>Item Preview</small>
+                </div><!-- /.widget -->
+              </div><!-- /.col -->
+              <div class="col-sm-12 col-md-3 isotope-item kiwis">
+                <div class="widget">
+                  <div class="thumbnail">
+                    <div class="overlay-container">
+                      <img src="assets/img/img-400x400.jpg" alt="img">
+                      <div class="overlay-content is-animated">
+                        <h3>Design</h3>
+                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
+                      </div><!-- /.overlay-content -->
+                    </div><!-- /.overlay-container -->
+                  </div><!-- /.thumbnail -->
+                  <h5 class="no-margin">Project Iteration</h5>
+                  <small>Item Preview</small>
+                </div><!-- /.widget -->
+              </div><!-- /.col -->
+              <div class="col-sm-12 col-md-3 isotope-item oranges">
+                <div class="widget">
+                  <div class="thumbnail">
+                    <div class="overlay-container">
+                      <img src="assets/img/img-400x400.jpg" alt="img">
+                      <div class="overlay-content is-animated">
+                        <h3>Design</h3>
+                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
+                      </div><!-- /.overlay-content -->
+                    </div><!-- /.overlay-container -->
+                  </div><!-- /.thumbnail -->
+                  <h5 class="no-margin">Project Iteration</h5>
+                  <small>Item Preview</small>
+                </div><!-- /.widget -->
+              </div><!-- /.col -->
+              <div class="col-sm-12 col-md-3 isotope-item oranges">
+                <div class="widget">
+                  <div class="thumbnail">
+                    <div class="overlay-container">
+                      <img src="assets/img/img-400x400.jpg" alt="img">
+                      <div class="overlay-content is-animated">
+                        <h3>Design</h3>
+                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
+                      </div><!-- /.overlay-content -->
+                    </div><!-- /.overlay-container -->
+                  </div><!-- /.thumbnail -->
+                  <h5 class="no-margin">Project Iteration</h5>
+                  <small>Item Preview</small>
+                </div><!-- /.widget -->
+              </div><!-- /.col -->
+              <div class="col-sm-12 col-md-3 isotope-item apples">
+                <div class="widget">
+                  <div class="thumbnail">
+                    <div class="overlay-container">
+                      <img src="assets/img/img-400x400.jpg" alt="img">
+                      <div class="overlay-content is-animated">
+                        <h3>Design</h3>
+                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
+                      </div><!-- /.overlay-content -->
+                    </div><!-- /.overlay-container -->
+                  </div><!-- /.thumbnail -->
+                  <h5 class="no-margin">Project Iteration</h5>
+                  <small>Item Preview</small>
+                </div><!-- /.widget -->
+              </div><!-- /.col -->
+              <div class="col-sm-12 col-md-3 isotope-item kiwis">
+                <div class="widget">
+                  <div class="thumbnail">
+                    <div class="overlay-container">
+                      <img src="assets/img/img-400x400.jpg" alt="img">
+                      <div class="overlay-content is-animated">
+                        <h3>Design</h3>
+                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
+                      </div><!-- /.overlay-content -->
+                    </div><!-- /.overlay-container -->
+                  </div><!-- /.thumbnail -->
+                  <h5 class="no-margin">Project Iteration</h5>
+                  <small>Item Preview</small>
+                </div><!-- /.widget -->
+              </div><!-- /.col -->
+              <div class="col-sm-12 col-md-3 isotope-item oranges">
+                <div class="widget">
+                  <div class="thumbnail">
+                    <div class="overlay-container">
+                      <img src="assets/img/img-400x400.jpg" alt="img">
+                      <div class="overlay-content is-animated">
+                        <h3>Design</h3>
+                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
+                      </div><!-- /.overlay-content -->
+                    </div><!-- /.overlay-container -->
+                  </div><!-- /.thumbnail -->
+                  <h5 class="no-margin">Project Iteration</h5>
+                  <small>Item Preview</small>
+                </div><!-- /.widget -->
+              </div><!-- /.col -->
+              <div class="col-sm-12 col-md-3 isotope-item oranges">
+                <div class="widget">
+                  <div class="thumbnail">
+                    <div class="overlay-container">
+                      <img src="assets/img/img-400x400.jpg" alt="img">
+                      <div class="overlay-content is-animated">
+                        <h3>Design</h3>
+                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
+                      </div><!-- /.overlay-content -->
+                    </div><!-- /.overlay-container -->
+                  </div><!-- /.thumbnail -->
+                  <h5 class="no-margin">Project Iteration</h5>
+                  <small>Item Preview</small>
+                </div><!-- /.widget -->
+              </div><!-- /.col -->
+            </div><!-- /.isotope-container -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </section>
+    </main><!-- /.admin-content -->
+  </div><!-- /.admin-wrapper -->
+
+  <!-- last but not least the javascript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="assets/js/jquery-1.8.3.min.js"><\/script>')</script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/prism/prism.js"></script>
+  <script src="assets/icheck/icheck.min.js"></script>
+  <script src="assets/bootstrap-select/bootstrap-select.min.js"></script>
+  <script src="assets/isotope/isotope.pkgd.min.js"></script>
+  <script src="assets/jquery.countdown/jquery.countdown.min.js"></script>
+  <script src="assets/summernote/summernote.min.js"></script>
+
+  <script src="assets/morris/morris.min.js"></script>
+  <script src="assets/morris/raphael-min.js"></script>
+
+  <script src="assets/js/holder.js"></script>
+  <script src="assets/js/demo-admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+.navbar {
+	min-height: 1px;
+	margin-bottom: 0; // no margin is necessary since .wrapper-* have their own padding to account for separation between sections
+
+	.border-radius(@navbar-border-radius);
+	&.navbar-static-top {
+		// discard border radius when navbar is static
+		.border-radius(0);
+		z-index: auto;
+	}
+	&.navbar-fixed-top {
+		// discard border radius when navbar is static
+		.border-radius(0);
+	}
+
+	.navbar-nav {
+		>li>a {
+			padding-top: @navbar-link-padding; // this also affects navbar height
+			padding-bottom: @navbar-link-padding; // this also affects navbar height
+			line-height: @navbar-line-height; // this also affects navbar height
+			font-weight: bold;
+		}
+	}
+	.navbar-toggle {
+		margin-top: 10px;
+	}
+}
+
+// Navbar Default
+// --------------------------------------------------
+.navbar-default {
+	background: @navbar-default-bg;
+	border: 0 solid @navbar-default-border;
+	// navigation ul
+	.navbar-nav {
+		>li>a {
+			color: @navbar-default-link-color;
+			&:hover, &:focus {
+				color: @navbar-default-link-hover-color;
+				background-color: @navbar-default-link-hover-bg;
+			}
+		}
+		// active link
+		>.active>a,
+		>.active>a:hover,
+		>.active>a:focus {
+			color: @navbar-default-link-active-color;
+			background-color: @navbar-default-link-active-bg;
+		}
+		// dropdown links
+		>.open>a,
+		>.open>a:hover,
+		>.open>a:focus {
+			color: @navbar-default-link-hover-color;
+			background-color: @navbar-default-link-active-bg;
+		}
+		// caret
+		>.dropdown>a {
+			color: @navbar-default-link-color;
+			.caret,
+			&:hover .caret,
+			&:focus .caret {
+				border-top-color: @navbar-default-link-hover-color;
+				border-bottom-color: @navbar-default-link-hover-color;
+			}
+		}
+		// Dropdowns inside navbar default
+		@media (max-width: 767px) {
+			.open .dropdown-menu {
+				// links
+				>li>a {
+					color: @navbar-default-link-color;
+					&:hover, &:focus {
+						color: @navbar-default-link-hover-color;
+						background: @navbar-default-link-hover-bg;
+					}
+				}
+				// disabled links
+				>.disabled>a {
+					&,
+					&:hover,
+					&:focus {
+						color: fade(@navbar-default-link-color, 50%);
+					}
+				}
+				.divider {
+					background-color: darken(@navbar-default-bg, 10%);
+					.box-shadow(0 1px 0 lighten(@navbar-default-bg, 10%))
+				}
+			}
+		}
+	}
+
+	.navbar-toggle {
+		border-color: @navbar-default-toggle-border-color;
+		color: @navbar-default-link-color;
+		&:hover,
+		&:focus {
+			background-color: @navbar-default-toggle-hover-bg;
+		}
+		.icon-bar {
+			background-color: @navbar-default-toggle-icon-bar-bg;
+		}
+	}
+
+	.navbar-brand {
+		color: @navbar-default-brand-color;
+		&:hover, &:focus {
+			color: @navbar-default-brand-hover-color;
+			background: @navbar-default-brand-hover-bg;
+		}
+	}
+	// navbar text and non navigation links
+	.navbar-text {
+		color: @navbar-default-color;
+	}
+	.navbar-link {
+		color: @navbar-default-link-color;
+		&:hover, &:focus {
+			color: @navbar-default-link-hover-color;
+		}
+	}
+	// divider shadows (when navbar is collapsed)
+	.navbar-collapse,
+	.navbar-form {
+		border-color: darken(@navbar-default-bg, 10%);
+		@shadow: inset 0 1px 0 lighten(@navbar-default-bg, 10%), 0 1px 0 lighten(@navbar-default-bg, 10%);
+		.box-shadow(@shadow);
+	}
+}
+
+// Navbar Inverse
+// --------------------------------------------------
+.navbar-inverse {
+	background: @navbar-inverse-bg;
+	border: 0 solid @navbar-inverse-border;
+	// navigation ul
+	.navbar-nav {
+		>li>a {
+			color: @navbar-inverse-link-color;
+			&:hover, &:focus {
+				color: @navbar-inverse-link-hover-color;
+				background-color: @navbar-inverse-link-hover-bg;
+			}
+		}
+		// active link
+		>.active>a,
+		>.active>a:hover,
+		>.active>a:focus {
+			color: @navbar-inverse-link-active-color;
+			background-color: @navbar-inverse-link-active-bg;
+		}
+		// dropdown links
+		>.open>a,
+		>.open>a:hover,
+		>.open>a:focus {
+			color: @navbar-inverse-link-hover-color;
+			background-color: @navbar-inverse-link-hover-bg;
+		}
+		// caret
+		>.dropdown>a {
+			color: @navbar-inverse-link-color;
+			.caret,
+			&:hover .caret,
+			&:focus .caret {
+				border-top-color: @navbar-inverse-link-hover-color;
+				border-bottom-color: @navbar-inverse-link-hover-color;
+			}
+		}
+		// Dropdowns inside navbar inverse
+		@media (max-width: 767px) {
+			.open .dropdown-menu {
+				// links
+				>li>a {
+					color: @navbar-inverse-link-color;
+					&:hover, &:focus {
+						color: @navbar-inverse-link-hover-color;
+						background: @navbar-inverse-link-hover-bg;
+					}
+				}
+				// disabled links
+				>.disabled>a {
+					&,
+					&:hover,
+					&:focus {
+						color: fade(@navbar-inverse-link-color, 50%);
+					}
+				}
+				.divider {
+					background-color: @navbar-inverse-border;
+					.box-shadow(0 1px 0 lighten(@navbar-inverse-bg, 10%));
+				}
+			}
+		}
+	}
+
+	// Darken the responsive nav toggle
+	.navbar-toggle {
+		border-color: @navbar-inverse-toggle-border-color;
+		color: @navbar-inverse-link-color;
+		&:hover,
+		&:focus {
+			background-color: @navbar-inverse-toggle-hover-bg;
+		}
+		.icon-bar {
+			background-color: @navbar-inverse-toggle-icon-bar-bg;
+		}
+	}
+
+	.navbar-brand {
+		color: @navbar-inverse-brand-color;
+		&:hover, &:focus {
+			color: @navbar-inverse-brand-hover-color;
+			background: @navbar-inverse-brand-hover-bg;
+		}
+	}
+	// navbar text and non navigation links
+	.navbar-text {
+		color: @navbar-inverse-color;
+	}
+	.navbar-link {
+		color: @navbar-inverse-link-color;
+		&:hover, &:focus {
+			color: @navbar-inverse-link-hover-color;
+		}
+	}
+	// divider shadows (when navbar is collapsed)
+	.navbar-collapse,
+	.navbar-form {
+		border-color: @navbar-inverse-border;
+		@shadow: inset 0 1px 0 lighten(@navbar-inverse-bg, 10%), 0 1px 0 lighten(@navbar-inverse-bg, 10%);
+		.box-shadow(@shadow);
+	}
+}
+
+// Brand
+// --------------------------------------------------
+.navbar-brand {
+	height: auto;
+	padding-top: (@navbar-height - 50) / 2; // 50 is the logo height
+	padding-bottom: (@navbar-height - 50) / 2;
+	img {
+			max-height: @navbar-height;
+			width: auto;
+		}
+}
+.navbar-text {
+	line-height: @navbar-line-height;
+	padding-top: @navbar-link-padding;
+	padding-bottom: @navbar-link-padding;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.navbar-form {
+	margin-top: ((@navbar-height - 34) / 2) - (@btn-border-width / 2); // 34 is the input form height
+	margin-bottom: ((@navbar-height - 34) / 2) - (@btn-border-width / 2);
+	.form-control {
+		display: table;
+	}
+}
+.navbar-btn {
+	margin-top: ((@navbar-height - 34) / 2) - (@btn-border-width / 2); // 34 is the navbar-btn height
+	margin-bottom: ((@navbar-height - 34) / 2) - (@btn-border-width / 2);
+	vertical-align: middle;
+}
+
+// discard navbar shadows (when above 1200px)
+@media (min-width: 1200px) {
+	.navbar-default,
+	.navbar-inverse {
+		.navbar-collapse,
+		.navbar-form {
+			.box-shadow(none);
+		}
+	}
+}
+
+// Dropdown menus (default, before navbar collapsing)
+// --------------------------------------------------
+.dropdown-menu {
+	background-color: @dropdown-bg;
+	border: 1px solid darken(@dropdown-bg, 10%);
+	.border-radius(@dropdown-border-radius);
+	.box-shadow(0 6px 12px fade(darken(@dropdown-bg, 80%), 20%));
+	>li>a {
+		color: @dropdown-link-color;
+		&:hover, &:focus {
+			color: @dropdown-link-hover-color;
+			background: @dropdown-link-hover-bg;
+		}
+	}
+	>.disabled {
+		>a,
+		>a:hover,
+		>a:focus {
+			color: @dropdown-link-disabled-color;
+		}
+	}
+	.divider {
+		background-color: darken(@dropdown-bg, 10%);
+		.box-shadow(0 1px 0 lighten(@dropdown-bg, 10%));
+	}
+}
+.dropdown-header {
+	color: @dropdown-header-color;
+}
+
+// Caret
+// --------------------------------------------------
+.caret,
+.dropdown .caret,
+.btn-default .caret,
+.dropup .btn-default .caret {
+	border-bottom-color: @text-color; // bottom
+}
+.btn-default .caret {
+	border-top-color: @text-color; // top
+}

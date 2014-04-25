@@ -1,0 +1,333 @@
+// Scaffolding
+// -------------------------
+html,
+body{
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  padding-top: @body-padding;
+  color: @text-color;
+  font-family: @font-family-base;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  -webkit-font-smoothing: antialiased;
+  a {
+    color: @link-color;
+    &:hover, &:focus {
+      color: @link-color-hover;
+    }
+  }
+}
+
+// Full width section wrappers
+// -------------------------
+.wrapper-xs {
+  padding: 1em 0;
+}
+.wrapper-sm {
+  padding: 2em 0;
+}
+.wrapper-md {
+  padding: 5em 0;
+}
+.wrapper-lg {
+  padding: 8em 0;
+}
+
+// Contextual backgrounds
+// -------------------------
+// .section-variant(@background-color, @heading-color, @text-color);
+
+.bg-primary {
+  .section-variant(@brand-primary, #fff, #fff);
+}
+.bg-primary-light {
+  .section-variant(@brand-primary-light, #fff, #fff);
+}
+.bg-primary-lighter {
+  .section-variant(@brand-primary-lighter, #fff, #fff);
+}
+.bg-primary-dark {
+  .section-variant(@brand-primary-dark, #fff, #fff);
+}
+.bg-primary-darker {
+  .section-variant(@brand-primary-darker, #fff, #fff);
+}
+// -------------------------
+.bg-secondary {
+  .section-variant(@brand-secondary, #fff, #fff);
+}
+.bg-secondary-light {
+  .section-variant(@brand-secondary-light, #fff, #fff);
+}
+.bg-secondary-lighter {
+  .section-variant(@brand-secondary-lighter, #fff, #fff);
+}
+.bg-secondary-dark {
+  .section-variant(@brand-secondary-dark, #fff, #fff);
+}
+.bg-secondary-darker {
+  .section-variant(@brand-secondary-darker, #fff, #fff);
+}
+// -------------------------
+.bg-tertiary {
+  .section-variant(@brand-tertiary, #fff, #fff);
+}
+.bg-tertiary-light {
+  .section-variant(@brand-tertiary-light, #fff, #fff);
+}
+.bg-tertiary-lighter {
+  .section-variant(@brand-tertiary-lighter, #fff, #fff);
+}
+.bg-tertiary-dark {
+  .section-variant(@brand-tertiary-dark, #fff, #fff);
+}
+.bg-tertiary-darker {
+  .section-variant(@brand-tertiary-darker, #fff, #fff);
+}
+// -------------------------
+.bg-info {
+  .section-variant(@brand-info, #fff, #fff);
+}
+.bg-warning {
+  .section-variant(@brand-warning, #fff, #fff);
+}
+.bg-success {
+  .section-variant(@brand-success, #fff, #fff);
+}
+.bg-danger {
+  .section-variant(@brand-danger, #fff, #fff);
+}
+// -------------------------
+.bg-highlight {
+  .section-variant(@brand-highlight, @headings-font-color, @text-color);
+}
+.bg-white {
+  .section-variant(#fff, inherit, @text-color);
+}
+.bg-gray-lighter {
+  .section-variant(@gray-lighter, @headings-font-color, @text-color);
+}
+.bg-gray-light {
+  .section-variant(@gray-light, #fff, #fff);
+}
+.bg-gray {
+  .section-variant(@gray, #fff, #fff);
+}
+.bg-gray-dark {
+  .section-variant(@gray-dark, #fff, #fff);
+}
+.bg-gray-darker {
+  .section-variant(@gray-darker, #fff, #fff);
+}
+.bg-black {
+  .section-variant(@black, #fff, #fff);
+}
+// -------------------------
+.bg-primary-alpha {
+  .section-variant(@bg-primary-alpha, #fff, #fff);
+}
+.bg-secondary-alpha {
+  .section-variant(@bg-secondary-alpha, #fff, #fff);
+}
+.bg-white-alpha {
+  .section-variant(@bg-white-alpha, #fff, #fff);
+}
+.bg-black-alpha {
+  .section-variant(@bg-black-alpha, #fff, #fff);
+}
+
+// Modifiers classes
+// -------------------------
+.padding-xs {
+  padding: .5em !important;
+}
+.padding-sm {
+  padding: 1em !important;
+}
+.padding-md {
+  padding: 2em !important;
+}
+.padding-lg {
+  padding: 3em !important;
+}
+.padding-xl {
+  padding: 4em !important;
+}
+.no-padding {
+  padding: 0 !important;
+}
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+.no-margin {
+  margin: 0 !important;
+}
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+.no-radius {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+// Borders
+// -------------------------
+.no-border {
+  border: none !important;
+}
+.border-dashed {
+  border-width: 1px;
+  border-style: dashed;
+  border-color: @base-border-color;
+}
+.border-default {
+  border-width: 1px;
+  border-style: solid;
+  border-color: @base-border-color;
+}
+
+// Line breaks (spacers)
+// -------------------------
+[class*="spacer"]:after {
+  display: block;
+  content: " ";
+}
+.spacer-sm {
+  margin-bottom: 1em;
+  line-height: 1em; // IE
+}
+.spacer-md {
+  margin-bottom: 2em;
+  line-height: 2em; // IE
+}
+.spacer-lg {
+  margin-bottom: 4em;
+  line-height: 4em; // IE
+}
+.spacer-xl {
+  margin-bottom: 8em;
+  line-height: 8em; // IE
+}
+
+// Embed responsive - for iframes, google maps, videos, etc.
+.embed-responsive {
+  position: relative;
+  padding-top: 30px;
+  height: 0;
+  padding-bottom: 50%; // height is set via aspect ratio
+  overflow: hidden;
+  iframe, object, embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+// Embed wrapper - Optional arbitrary heights
+@media (min-width: 768px) {
+  .embed-responsive.embed-sm {
+    padding-bottom: 25%;
+  }
+  // medium (50%) is default, see above
+  .embed-responsive.embed-lg {
+    padding-bottom: 75%;
+  }
+  .embed-responsive.embed-square {
+    padding-bottom: 100%;
+  }
+}
+
+// List - Image stream (e.g. flickr, dribbble, advertising, etc).
+// -------------------------
+.img-stream {
+  .clearfix();
+  margin-bottom: 0;
+  padding: 0;
+   li {
+    float: left;
+    display: block;
+    margin: 0 0.4em 0.4em 0;
+  }
+}
+
+// List - social media icons
+// -------------------------
+.social-networks {
+  padding-left: 0;
+  margin-bottom: 0;
+  .clearfix();
+  li {
+    display: inline-block;
+    float: left;
+    margin: 0 0.2em 0.5em 0;
+    .text-center & {
+      float: none;
+    }
+    .text-right & {
+      float: right;
+    }
+    a {
+      padding: 8px 10px;
+      font-size: @font-size-base*1.2;
+      color: #fff;
+    }
+  }
+}
+
+// Fix - FontAwesome
+// let stacked icons center under .text-center
+.fa-stack-1x, .fa-stack-2x {
+  left: 0;
+}
+
+// Images
+// -------------------------
+// Rounded corners
+.img-rounded {
+  border-radius: @base-border-radius;
+}
+// Image thumbnails
+.img-thumbnail {
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid @base-border-color;
+  border-radius: @base-border-radius;
+}
+.img-rounded, .img-thumbnail, .img-circle {
+  margin-bottom: 1em;
+}
+
+// negative offsets
+.offset-top-sm {
+  margin-top: -1em;
+}
+.offset-top-md {
+  margin-top: -2em;
+}
+.offset-top-lg {
+  margin-top: -4em;
+}
+.offset-top-xl {
+  margin-top: -8em;
+}
+// drop in, for images or drop-cap like elements
+.drop-in-left {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: .5em;
+}
+.drop-in-right {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: .5em;
+}
+
+.bg-custom-lg {
+  background: @brand-secondary url("../img/slide-1-2.jpg") center center;
+  .background-size(cover);
+}

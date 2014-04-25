@@ -1,0 +1,146 @@
+
+.form-control {
+  color: @form-control-text-color;
+  border-width: @form-control-border-width;
+  border-color: @form-control-border-color;
+  border-radius: @form-control-border-radius;
+  .box-shadow(none);
+  &:not(.input-sm, .input-lg) {
+    height: 36px;
+  }
+  &:focus {
+    border-color: @form-control-focus-border-color;
+    outline: 0;
+    .box-shadow(none);
+  }
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    background-color: darken(@form-control-disabled-bg, 5%);
+  }
+}
+
+// fix: make form controls (input text) adapt to variable height (due to buttons border width)
+.input-group .form-control {
+  height: 100%;
+}
+// fix: bootstra-tagsinput - add better styles
+.bootstrap-tagsinput {
+  .form-control;
+  width: 100%;
+}
+// fix: summernote RTF editor - add better styles
+.note-editor {
+  .form-control;
+  .btn-default {
+    .btn-white;
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      border: 1px solid @base-border-color;
+    }
+  }
+  .note-editable {
+    background-color: #fff;
+  }
+}
+
+// Form control feedback states
+.has-warning {
+  .form-control-validation(@brand-warning; @brand-warning; @state-warning-bg);
+}
+.has-error {
+  .form-control-validation(@state-danger-text; @state-danger-text; @state-danger-bg);
+}
+.has-success {
+  .form-control-validation(@brand-success; @brand-success; @state-success-bg);
+}
+
+// Add icheck support
+.icheck {
+  padding-left: 0;
+}
+
+// toggle switches
+// ------------------------------
+.onoffswitch {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 70px;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select: none;
+  .onoffswitch-checkbox {
+      display: none;
+  }
+  .onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    cursor: pointer;
+    border: 2px solid darken(@base-border-color, 20%);
+    border-radius: 50px;
+      .onoffswitch-inner {
+        width: 200%;
+        margin-left: -100%;
+        .transition(margin 0.3s ease-in 0s);
+      }
+      .onoffswitch-inner:before, .onoffswitch-inner:after {
+        float: left;
+        padding: 0;
+        width: 50%;
+        height: 24px;
+        line-height: 24px;
+        font-size: 1em;
+        color: white;
+        font-weight: bold;
+      }
+      .onoffswitch-inner:before {
+      content: "ON";
+      padding-left: 10px;
+      background-color: @brand-primary;
+      color: #FFFFFF;
+    }
+    .onoffswitch-inner:after {
+      content: "OFF";
+      padding-right: 10px;
+      background-color: #EEEEEE;
+      color: darken(@base-border-color, 20%);
+      text-align: right;
+    }
+    .onoffswitch-switch {
+      width: 28px;
+      background: #FFFFFF;
+      border: 2px solid darken(@base-border-color, 20%);
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 42px; // switch container width - knob width
+      .transition(all 0.3s ease-in 0s); 
+    }
+  }
+  .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner,
+  .onoffswitch-checked .onoffswitch-inner {
+      margin-left: 0;
+  }
+  .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch,
+  .onoffswitch-checked .onoffswitch-switch {
+      right: 0px; 
+  }
+}
+
+
+// form validation styles 
+// ------------------------------
+.card.non-valid {
+  .opacity(.3);
+}
+.card.valid {
+  .opacity(1);
+  color: @brand-success;
+  font-weight: bold;
+}

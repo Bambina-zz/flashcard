@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title></title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+
+  <link rel="shortcut icon" href="assets/ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/favicon-152.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="assets/ico/favicon-144.png">
+
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/simple-lines/simple-line-icons.css">
+  <link rel="stylesheet" href="assets/bootstrap-select/bootstrap-select.min.css">
+  <link rel="stylesheet" href="assets/icheck/skins/flat/flat.css">
+  <link rel="stylesheet" href="assets/prism/prism.css">
+  <link rel="stylesheet" href="assets/summernote/summernote.css">
+  <link rel="stylesheet" href="assets/tags-input/bootstrap-tagsinput.css">
+  <link rel="stylesheet" href="assets/css/theme.min.css">
+  <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/selectivizr.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="is-admin">
+  <div class="admin-wrapper">
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <a href="#link">
+          <img class="sidebar-logo" src="assets/img/logo-white.png" alt="lgo"> Admin Panel
+        </a>
+      </div>
+      <div class="sidebar-subheader">
+        <img class="img-circle" src="assets/img/user-male-2.jpg" width="100" height="100" alt="img">
+        <p class="no-margin"><strong>Cooper Black</strong></p>
+        <p><small><i class="fa fa-globe"></i> Paris, France</small></p>
+        <p><a href="#link" class="btn btn-outline btn-primary">Edit Profile</a></p>
+      </div><!-- /.sidebar-subheader -->
+      <ul class="sidebar-nav">
+        <li class="active">
+          <a href="index.html">
+            <i class="icon-home"></i>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="widgets.html">
+            <i class="icon-grid"></i>
+            Widgets
+          </a>
+        </li>
+        <li>
+          <a href="tables.html">
+            <i class="icon-layers"></i>
+            Data
+          </a>
+        </li>
+        <li class="header"><i class="fa fa-circle-o text-info"></i> Pubishing</li>
+        <li>
+          <a href="publishing.html">
+            <i class="icon-note"></i>
+            Publishing
+          </a>
+        </li>
+        <li>
+          <a href="gallery.html">
+            <i class="icon-picture"></i>
+            Media
+          </a>
+        </li>
+        <li>
+          <a href="dashboard.html">
+            <i class="icon-pie-chart"></i>
+            Stats
+          </a>
+        </li>
+        <li>
+          <a href="edit-profile.html">
+            <i class="icon-user"></i>
+            Edit Profile
+          </a>
+        </li>
+        <li class="header"><i class="fa fa-circle-o text-success"></i> Settings</li>
+        <li>
+          <a href="#link" data-toggle="collapse" data-target="#submenu-1">
+            <i class="icon-folder"></i>
+            Dropdown
+          </a>
+          <ul class="sidebar-sub-nav collapse" id="submenu-1">
+            <li class="active"><a href="#link"><i class="fa fa-fw fa-angle-right"></i> Submenu</a></li>
+            <li><a href="#link"><i class="fa fa-fw fa-angle-right"></i> Submenu</a></li>
+            <li><a href="#link"><i class="fa fa-fw fa-angle-right"></i> Submenu</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="billing.html">
+            <i class="icon-credit-card"></i>
+            Billing
+          </a>
+        </li>
+        <li>
+          <a href="settings.html">
+            <i class="icon-settings"></i>
+            Settings
+          </a>
+        </li>
+        <li>
+          <a href="login.html">
+            <i class="icon-logout"></i>
+            Logout
+          </a>
+        </li>
+      </ul><!-- /.sidebar-nav -->
+      <div class="padding-sm">
+        <div class="padding-sm bg-secondary-light">
+          <strong>Upgrade:</strong>
+          <p><small>Upgrade to get rid of all banner ads.</small></p>
+          <a href="#link" class="btn btn-white btn-outline btn-block">Upgrade Now!</a>
+        </div>
+      </div>
+    </aside><!-- /.sidebar -->
+
+    <!-- Page content -->
+    <main class="admin-content">
+      <section class="wrapper-xs bg-secondary">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-4 col-md-6">
+              <button type="button" class="btn btn-link" data-toggle="admin-sidebar">
+                <span class="text-white"><i class="fa fa-fw fa-align-justify"></i> Menu</span>
+              </button>
+            </div><!-- /.col -->
+            <div class="col-xs-8 col-md-6">
+              <form class="form-horizontal">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <label for="navbar-search" class="control-label">Omnisearch:</label>
+                  </div>
+                  <div class="col-xs-9">
+                    <input type="text" class="form-control" id="navbar-search" placeholder="Search by keyword"/>
+                  </div>
+                </div>
+              </form>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </section><!-- /.wrapper -->
+      <section class="wrapper-xs bg-white border-default">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <ol class="breadcrumb no-margin">
+                <li><strong>My Admin</strong></li>
+                <li><a href="#link">Main</a></li>
+                <li><a href="#link">Section</a></li>
+                <li class="active"><a href="#link">Current</a></li>
+              </ol>
+            </div><!-- /.col -->
+            <div class="col-md-6">
+              <div class="pull-right">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                    <span class="text-muted"><i class="fa fa-fw fa-bell"></i></span>
+                    <span class="label label-danger notif-count">1</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-notif pull-right" role="menu">
+                    <li class="notif-row notif-header">
+                      <strong>New Comments</strong>
+                    </li>
+                    <div class="notif-tray">
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <img class="notif-preview" src="assets/img/user-female-2.jpg" width="64" height="64" alt="64x64">
+                        <h5><i class="fa fa-dot-circle-o text-success"></i> Lucida Sans</h5>
+                        You have a new maessage from a friend in Dubai
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <img class="notif-preview" src="assets/img/user-female-2.jpg" width="64" height="64" alt="64x64">
+                        <h5><i class="fa fa-dot-circle-o text-success"></i> Lucida Sans</h5>
+                        You have a new maessage from a friend in Dubai
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <img class="notif-preview" src="assets/img/user-female-2.jpg" width="64" height="64" alt="64x64">
+                        <h5><i class="fa fa-dot-circle-o text-success"></i> Lucida Sans</h5>
+                        You have a new maessage from a friend in Dubai
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <img class="notif-preview" src="assets/img/user-female-2.jpg" width="64" height="64" alt="64x64">
+                        <h5><i class="fa fa-dot-circle-o text-success"></i> Lucida Sans</h5>
+                        You have a new maessage from a friend in Dubai
+                      </li>
+                    </div><!-- /.notif-tray -->
+                    <li class="notif-row notif-footer">
+                      <i class="fa fa-fw fa-plus"></i> View all notifications »
+                      <a href="#link"></a>
+                    </li>
+                  </ul><!-- /.dropdown-menu.dropdown-notif -->
+                </div><!-- /.btn-group -->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                    <span class="text-muted"><i class="fa fa-fw fa-cloud-download"></i></span>
+                    <span class="label label-danger notif-count">2</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-notif pull-right" role="menu">
+                    <li class="notif-row notif-header">
+                      <strong>Software Updates</strong>
+                    </li>
+                    <div class="notif-tray">
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <h5><span class="text-danger">New</span> Framework Update</h5>
+                        <span class="text-muted">20:32</span> Installation is now complete
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <h5><span class="text-danger">New</span> Framework Update</h5>
+                        <span class="text-muted">20:32</span> Installation is now complete
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <h5><span class="text-danger">New</span> Framework Update</h5>
+                        <span class="text-muted">20:32</span> Installation is now complete
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <h5><span class="text-danger">New</span> Framework Update</h5>
+                        <span class="text-muted">20:32</span> Installation is now complete
+                      </li>
+                    </div>
+                    <li class="notif-row notif-footer">
+                      <a href="#link"></a>
+                      <i class="fa fa-fw fa-plus"></i> View all notifications »
+                    </li>
+                  </ul><!-- /.dropdown-notif -->
+                </div><!-- /.btn-group -->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                    <span class="text-muted"><i class="fa fa-fw fa-globe"></i></span>
+                    <span class="label label-danger notif-count">3</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-notif pull-right" role="menu">
+                    <li class="notif-row notif-header">
+                      <strong>Repository Activity</strong>
+                    </li>
+                    <div class="notif-tray">
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <div class="notif-preview">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                            <i class="fa fa-code-fork fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </div>
+                        <h5>Cooper Black</h5>
+                        <span class="text-muted">20:32</span> Merge pull request <span class="text-primary">#1116</span>
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <div class="notif-preview">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-success"></i>
+                            <i class="fa fa-comments fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </div>
+                        <h5>Cooper Black</h5>
+                        <span class="text-muted">20:32</span> Merge pull request <span class="text-primary">#1116</span>
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <div class="notif-preview">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-info"></i>
+                            <i class="fa fa-star fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </div>
+                        <h5>Cooper Black</h5>
+                        <span class="text-muted">20:32</span> Merge pull request <span class="text-primary">#1116</span>
+                      </li>
+                      <li class="notif-row notif-excerpt">
+                        <a href="#link"></a>
+                        <div class="notif-preview">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-warning"></i>
+                            <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </div>
+                        <h5>Cooper Black</h5>
+                        <span class="text-muted">20:32</span> Merge pull request <span class="text-primary">#1116</span>
+                      </li>
+                    </div><!-- /.notif-tray -->
+                    <li class="notif-row notif-footer">
+                      <i class="fa fa-fw fa-plus"></i> View all notifications »
+                      <a href="#link"></a>
+                    </li>
+                  </ul><!-- /.dropdown-notif -->
+                </div><!-- /.btn-group -->
+              </div><!-- /.pull-right -->
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </section><!-- /.wrapper -->
+
+      <section class="wrapper-sm">
+        <div class="container-fluid">
+          <h1 class="page-header">Settings panel</h1>
+          <div class="row">
+            <div class="col-sm-12 col-md-8 col-md-offset-2">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="no-margin">Select your settings</h4>
+                </div><!-- /.panel-heading -->
+                <div class="panel-body no-padding">
+                  <div class="meta-row">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <strong>Connect Faceook</strong>
+                      </div><!-- /.col -->
+                      <div class="col-xs-6">
+                        <div class="onoffswitch pull-right">
+                          <input type="checkbox" name="switch-facebook" class="onoffswitch-checkbox" id="switch-facebook">
+                          <label class="onoffswitch-label" for="switch-facebook">
+                            <div class="onoffswitch-inner"></div>
+                            <div class="onoffswitch-switch"></div>
+                          </label>
+                        </div><!-- /.onoffswitch -->
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.padding -->
+                  <div class="meta-row">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <strong>Connect Twitter</strong>
+                      </div><!-- /.col -->
+                      <div class="col-xs-6">
+                        <div class="onoffswitch pull-right">
+                          <input type="checkbox" name="switch-twitter" class="onoffswitch-checkbox" id="switch-twitter" checked>
+                          <label class="onoffswitch-label" for="switch-twitter">
+                            <div class="onoffswitch-inner"></div>
+                            <div class="onoffswitch-switch"></div>
+                          </label>
+                        </div><!-- /.onoffswitch -->
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.meta-row -->
+                  <div class="meta-row">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <strong>Send me newsletters</strong>
+                      </div><!-- /.col -->
+                      <div class="col-xs-6">
+                        <div class="onoffswitch pull-right">
+                          <input type="checkbox" name="send-me-email" class="onoffswitch-checkbox" id="send-me-email" checked>
+                          <label class="onoffswitch-label" for="send-me-email">
+                            <div class="onoffswitch-inner"></div>
+                            <div class="onoffswitch-switch"></div>
+                          </label>
+                        </div><!-- /.onoffswitch -->
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.meta-row -->
+                  <div class="meta-row">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <strong>Bill me later</strong>
+                      </div><!-- /.col -->
+                      <div class="col-xs-6">
+                        <div class="onoffswitch pull-right">
+                          <input type="checkbox" name="bill-me-later" class="onoffswitch-checkbox" id="bill-me-later" checked>
+                          <label class="onoffswitch-label" for="bill-me-later">
+                            <div class="onoffswitch-inner"></div>
+                            <div class="onoffswitch-switch"></div>
+                          </label>
+                        </div><!-- /.onoffswitch -->
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.meta-row -->
+                  <div class="meta-row">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <strong>Select your interests</strong>
+                      </div><!-- /.col -->
+                      <div class="col-xs-6">
+                        <div class="icheck checkbox">
+                          <label>
+                            <input type="checkbox" value="">
+                            JavaScript
+                          </label>
+                        </div>
+                        <div class="icheck checkbox">
+                          <label>
+                            <input type="checkbox" value="">
+                            Python Django
+                          </label>
+                        </div>
+                        <div class="icheck checkbox">
+                          <label>
+                            <input type="checkbox" value="">
+                            Ruby on Rails
+                          </label>
+                        </div>
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.meta-row -->
+                  <div class="meta-row">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <strong>Back up email</strong>
+                      </div><!-- /.col -->
+                      <div class="col-xs-6">
+                        <input type="text" class="form-control input-md" placeholder="name@email.com">
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.meta-row -->
+                  <div class="meta-row">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <strong>Short bio</strong>
+                      </div><!-- /.col -->
+                      <div class="col-xs-6">
+                        <textarea class="form-control" rows="3" placeholder="Write an answer..."></textarea>
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.meta-row -->
+                  <div class="meta-row">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <strong>Band width usage</strong>
+                      </div><!-- /.col -->
+                      <div class="col-xs-6">
+                        <div class="progress progress-striped active no-margin">
+                          <div class="progress-bar progress-bar-danger" style="width:20%"><span class="sr-only">Loading or something</span></div>
+                        </div>
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.meta-row -->
+                  <div class="meta-row">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <strong>Select your industry</strong>
+                      </div><!-- /.col -->
+                      <div class="col-xs-6">
+                        <select class="form-control input-md selectpicker show-tick no-margin" title='Choose One' data-style="btn-primary" data-live-search="true" placeholder="name@email.com">
+                          <option value="programming">Programming</option>
+                          <option value="design">Design</option>
+                          <option value="illustration">Illustration</option>
+                          <option value="develpment">Developement</option>
+                          <option value="business">Business in general</option>
+                        </select>
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.meta-row -->
+                </div><!-- /.panel-body -->
+                <div class="panel-footer clearfix">
+                  <button class="btn btn-inverse btn-outline pull-right">Save Settings</button>
+                </div><!-- /.panel-footer -->
+              </div>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </section>
+    </main><!-- /.admin-content -->
+  </div><!-- /.admin-wrapper -->
+
+  <!-- last but not least the javascript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="assets/js/jquery-1.8.3.min.js"><\/script>')</script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/prism/prism.js"></script>
+  <script src="assets/icheck/icheck.min.js"></script>
+  <script src="assets/bootstrap-select/bootstrap-select.min.js"></script>
+  <script src="assets/isotope/isotope.pkgd.min.js"></script>
+  <script src="assets/jquery.countdown/jquery.countdown.min.js"></script>
+  <script src="assets/summernote/summernote.min.js"></script>
+  <script src="assets/tags-input/bootstrap-tagsinput.min.js"></script>
+  <script src="assets/credit-card-validator/jquery.creditCardValidator.js"></script>
+  <script src="assets/validator/validator.min.js"></script>
+  <script src="assets/autosize/jquery.autosize.min.js"></script>
+
+  <script src="assets/morris/morris.min.js"></script>
+  <script src="assets/morris/raphael-min.js"></script>
+
+  <script src="assets/js/holder.js"></script>
+  <script src="assets/js/demo-admin.js"></script>
+</body>
+</html>

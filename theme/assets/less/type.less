@@ -1,0 +1,115 @@
+
+// Headings
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-top: 0;
+  color: @headings-font-color;
+  font-family: @headings-font-family;
+  font-weight: @headings-font-weight;
+  text-transform: capitalize;
+  small {
+    color: @headings-small-color;
+  }
+  &.heading-lg {
+    font-size: 66px;
+  }
+}
+
+// Restore default heading color
+.heading-default {
+  color: @headings-font-color !important;
+}
+
+// Page headings
+.page-header {
+  margin-top: 0;
+  border-bottom: 1px solid lighten(@text-color, 40%);
+}
+
+.headline {
+  position: relative;
+  margin-bottom: 1em;
+  &:after {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    content: " ";
+    width: 2em;
+    height: 0.15em;
+    margin-bottom: -0.5em;
+
+    // this rule does not apply for `.thumbnail>.overlay-content` and `.section-variant()` mixin
+    // those have arbitrary styles
+    background: @headings-font-color;
+
+    // Justifying variants:
+    left: 0; // position #1: justified left
+  }
+  // position #2: justified center
+  .text-center &:after,
+  &.text-center:after {
+    left: 50%;
+    margin-left: -1em;
+  }
+  // position #3: justified right
+  .text-right &:after,
+  &.text-right:after {
+    left: auto;
+    right: 0;
+  }
+}
+
+// Block Quotes
+blockquote {
+  position: relative;
+  padding: 1.5em;
+  border-left: 2px solid @brand-primary;
+  .border-radius(@base-border-radius);
+  p {
+    font-family: @font-family-serif;
+    margin-bottom: 1em;
+  }
+  .quote-author {
+    display: block;
+    float: left;
+    margin-right: 1em;
+    max-width: 40px;
+    .border-radius(@base-border-radius);
+  }
+}
+
+.blockquote-default {
+  .blockquote-variant (#fff, darken(@base-border-color, 15%), @headings-font-color);
+}
+.blockquote-primary {
+  .blockquote-variant (@brand-primary, darken(@brand-primary, 15%), #fff);
+}
+.blockquote-secondary {
+  .blockquote-variant (@brand-secondary, darken(@brand-secondary, 15%), #fff);
+}
+
+// Contextual emphasis
+.text-default {
+  .text-emphasis-variant(@text-color);
+}
+.text-muted { 
+  .text-emphasis-variant(lighten(@text-color, 25%));
+}
+.text-primary {
+  .text-emphasis-variant(@brand-primary);
+}
+.text-warning {
+  .text-emphasis-variant(@brand-warning);
+}
+.text-danger {
+  .text-emphasis-variant(@brand-danger);
+}
+.text-success {
+  .text-emphasis-variant(@brand-success);
+}
+.text-info {
+  .text-emphasis-variant(@brand-info);
+}
+.text-white {
+  .text-emphasis-variant(#fff);
+}
