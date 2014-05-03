@@ -1,11 +1,16 @@
 source 'https://rubygems.org'
 source 'https://rails-assets.org'
+ruby '2.0.0'
 
 gem 'rails', '3.2.14'
 gem 'pg', '0.12.2'
 gem 'bower-rails', '~> 0.7.1'
 gem 'sorcery'
 gem 'mandrill-api'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
