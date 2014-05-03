@@ -52,7 +52,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="index.html">
-          <img src="assets/img/logo-white.png" alt="Website Logo">
+          <img src="assets/img/logo-white.png" alt="Logo">
         </a>
       </div><!-- /.navbar-header -->
       <div id="navbar-main" class="collapse navbar-collapse">
@@ -78,8 +78,8 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-6">
-          <h2>Prerequisites:</h2>
-          <p>Make sure you have theses scripts and polyfills in every page you create.</p>
+          <h2>Extra scripts:</h2>
+          <p>Polyfills used for this theme.</p>
           <ul>
             <li>HTML5 Shiv <a href="https://github.com/aFarkas/html5shiv" target="_blanket">html5shiv.js</a></li>
             <li>Selectivizr <a href="https://github.com/keithclark/selectivizr" target="_blanket">selectivizr.js</a></li>
@@ -191,9 +191,13 @@
     </div><!-- /.container -->
   </section>
 
-  <section class="wrapper-md bg-custom-lg">
+  <section class="wrapper-md bg-custom-lg text-white">
     <div class="container">
       <h2><span class="text-white">Basic Alpha backgrounds:</span></h2>
+      <p><span class="label label-danger">Custom Component</span></p>
+      <p>Alpha backgrounds add a preset semi-transparent background to an element, which can be used as an overlay (often in conjunction with another element).</p>
+      <p><strong>Usage Example:</strong> <code>div.bg-custom>div.bg-primary-alpha>div.padding-md>{Lorem}</code></p>
+      <br class="spacer-m">
       <div class="row">
         <div class="col-sm-12 col-md-3">
           <div class="widget padding-md bg-primary-alpha">.bg-primary-alpha</div>
@@ -219,6 +223,7 @@
       <div class="row">
         <div class="col-sm-12 col-md-6">
           <h3>Wrappers: <small>(See wrappers example)</small></h3>
+          <p><code>.wrapper-xxs</code> = 0.5em padding (top &amp; bottom)</p>
           <p><code>.wrapper-xs</code> = 1em padding (top &amp; bottom)</p>
           <p><code>.wrapper-sm</code> = 2em padding (top &amp; bottom)</p>
           <p><code>.wrapper-md</code> = 5em padding (top &amp; bottom)</p>
@@ -226,6 +231,7 @@
           <br class="spacer-md">
 
           <h3>Padding:</h3>
+          <p><code>.padding-xs</code> = 0.5em padding (four sides)</p>
           <p><code>.padding-sm</code> = 1em padding (four sides)</p>
           <p><code>.padding-md</code> = 2em padding (four sides)</p>
           <p><code>.padding-lg</code> = 3em padding (four sides)</p>
@@ -248,6 +254,7 @@
           <br class="spacer-md">
 
           <h3>Line breaks:</h3>
+          <p><code>br.spacer-xs</code> = 0.5em margin (bottom)</p>
           <p><code>br.spacer-sm</code> = 1em margin (bottom)</p>
           <p><code>br.spacer-md</code> = 2em margin (bottom)</p>
           <p><code>br.spacer-lg</code> = 4em margin (bottom)</p>
@@ -588,7 +595,7 @@
           </blockquote>
         </div><!-- /.col -->
         <div class="col-sm-12 col-md-6">
-          <p><code>blockquote>(p)+(footer{Author Name})</code></p>
+          <p><code>blockquote>(p)+(footer{Author})</code></p>
           <blockquote>
             <p>You know you are a designer when you purposefully make life difficult for clients who supply artworks in MS Office formats.</p>
             <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
@@ -604,7 +611,7 @@
       <p><span class="label label-danger">Custom Component</span></p>
       <div class="row">
         <div class="col-lg-4">
-          <p><code>.blockquote-default>(p)+(footer>img.quote-author+{Author Name})</code></p>
+          <p><code>.blockquote-default>(p)+(footer>img.quote-author+{Author})</code></p>
           <blockquote class="blockquote-default">
             <p>You know you are a designer when you purposefully make life difficult for clients who supply artworks in MS Office formats.</p>
             <footer>
@@ -614,7 +621,7 @@
           </blockquote>
         </div><!-- /.col -->
         <div class="col-lg-4">
-          <p><code>.blockquote-primary>(p)+(footer>img.quote-author+{Author Name})</code></p>
+          <p><code>.blockquote-primary>(p)+(footer>img.quote-author+{Author})</code></p>
           <blockquote class="blockquote-primary">
             <p>You know you are a designer when you purposefully make life difficult for clients who supply artworks in MS Office formats.</p>
             <footer>
@@ -624,7 +631,7 @@
           </blockquote>
         </div><!-- /.col -->
         <div class="col-lg-4">
-          <p><code>.blockquote-secondary>(p)+(footer>img.quote-author+{Author Name})</code></p>
+          <p><code>.blockquote-secondary>(p)+(footer>img.quote-author+{Author})</code></p>
           <blockquote class="blockquote-secondary">
             <p>You know you are a designer when you purposefully make life difficult for clients who supply artworks in MS Office formats.</p>
             <footer>
@@ -2274,9 +2281,8 @@ $('.selectpicker').selectpicker();
           <br class="spacer-lg">
           <p class="lead">Navbar Default</p>
 
-          <!-- Navbar Default -->
+          <!-- Navbar default example -->
           <nav class="navbar navbar-default" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
@@ -2284,7 +2290,9 @@ $('.selectpicker').selectpicker();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#link"><img data-src="holder.js/100x50/auto/text:100x50" alt="Website Logo"></a>
+              <a class="navbar-brand" href="#link">
+                <img data-src="holder.js/100x50/auto/text:100x50" alt="Logo">
+              </a>
             </div><!-- /.navbar-header -->
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -2301,9 +2309,9 @@ $('.selectpicker').selectpicker();
                     <li><a href="#link">Separated link</a></li>
                     <li class="divider"></li>
                     <li><a href="#link">One more separated link</a></li>
-                  </ul>
-                </li>
-              </ul>
+                  </ul><!-- /.dropdown-menu --> <!-- Nested -->
+                </li><!-- /.dropdown -->
+              </ul><!-- /.nav.navbar-nav -->
               <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Search">
@@ -2320,18 +2328,17 @@ $('.selectpicker').selectpicker();
                     <li><a href="#link">Something else here</a></li>
                     <li class="divider"></li>
                     <li><a href="#link">Separated link</a></li>
-                  </ul>
-                </li>
-              </ul>
+                  </ul><!-- /.dropdown-menu --> <!-- Nested -->
+                </li><!-- /.dropdown -->
+              </ul><!-- /.nav.navbar-nav -->
               <p class="navbar-text">Signed in as Mark Otto</p>
               <button type="button" class="btn btn-inverse navbar-btn">Sign in</button>
             </div><!-- /.navbar-collapse -->
-          </nav><!-- /.navbar -->
+          </nav><!-- /.navbar --> <!-- End of navbar default -->
 
-          <!-- Navbar Inverse -->
+          <!-- Navbar inverse example -->
           <p class="lead">Navbar Inverse</p>
           <nav class="navbar navbar-inverse" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
                 <span class="sr-only">Toggle navigation</span>
@@ -2339,7 +2346,9 @@ $('.selectpicker').selectpicker();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#link"><img data-src="holder.js/100x50/auto/text:100x50" alt="Website Logo"></a>
+              <a class="navbar-brand" href="#link">
+                <img data-src="holder.js/100x50/auto/text:100x50" alt="Logo">
+              </a>
             </div><!-- /.navbar-header -->
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
@@ -2356,9 +2365,9 @@ $('.selectpicker').selectpicker();
                     <li><a href="#link">Separated link</a></li>
                     <li class="divider"></li>
                     <li><a href="#link">One more separated link</a></li>
-                  </ul>
-                </li>
-              </ul>
+                  </ul><!-- /.dropdown-menu --> <!-- Nested -->
+                </li><!-- /.dropdown -->
+              </ul><!-- /.nav.navbar-nav -->
               <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Search">
@@ -2375,13 +2384,76 @@ $('.selectpicker').selectpicker();
                     <li><a href="#link">Something else here</a></li>
                     <li class="divider"></li>
                     <li><a href="#link">Separated link</a></li>
-                  </ul>
-                </li>
-              </ul>
+                  </ul><!-- /.dropdown-menu --> <!-- Nested -->
+                </li><!-- /.dropdown -->
+              </ul><!-- /.nav.navbar-nav -->
               <p class="navbar-text">Signed in as Mark Otto</p>
               <button type="button" class="btn btn-warning navbar-btn">Sign in</button>
             </div><!-- /.navbar-collapse -->
-          </nav><!-- /.navbar -->
+          </nav><!-- /.navbar --> <!-- End of navbar inverse -->
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+      <br class="spacer-md"/>
+      <div class="row">
+        <div class="col-sm-12">
+<pre class="line-numbers">
+<code class="language-markup">
+&lt;!-- Navbar default example --&gt;
+&lt;nav class="navbar navbar-default" role="navigation"&gt;
+  &lt;div class="navbar-header"&gt;
+    &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"&gt;
+      &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+      &lt;span class="icon-bar"&gt;&lt;/span&gt;
+      &lt;span class="icon-bar"&gt;&lt;/span&gt;
+      &lt;span class="icon-bar"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;a class="navbar-brand" href="#link"&gt;
+      &lt;img data-src="holder.js/100x50/auto/text:100x50" alt="Logo"&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;&lt;!-- /.navbar-header --&gt;
+  &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
+  &lt;div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"&gt;
+    &lt;ul class="nav navbar-nav"&gt;
+      &lt;li class="active"&gt;&lt;a href="#link"&gt;Link&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#link"&gt;Link&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="dropdown"&gt;
+        &lt;a href="#link" class="dropdown-toggle" data-toggle="dropdown"&gt;Dropdown &lt;b class="caret"&gt;&lt;/b&gt;&lt;/a&gt;
+        &lt;ul class="dropdown-menu" role="menu"&gt;
+          &lt;li&gt;&lt;a href="#link"&gt;Action&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#link"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#link"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="divider"&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#link"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="divider"&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#link"&gt;One more separated link&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;&lt;!-- /.dropdown-menu --&gt; &lt;!-- Nested --&gt;
+      &lt;/li&gt;&lt;!-- /.dropdown --&gt;
+    &lt;/ul&gt;&lt;!-- /.nav.navbar-nav --&gt;
+    &lt;form class="navbar-form navbar-left" role="search"&gt;
+      &lt;div class="form-group"&gt;
+        &lt;input type="text" class="form-control" placeholder="Search"&gt;
+      &lt;/div&gt;
+      &lt;button type="submit" class="btn btn-inverse"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;ul class="nav navbar-nav navbar-right"&gt;
+      &lt;li&gt;&lt;a href="#link"&gt;Link&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="dropdown"&gt;
+        &lt;a href="#link" class="dropdown-toggle" data-toggle="dropdown"&gt;Dropdown &lt;b class="caret"&gt;&lt;/b&gt;&lt;/a&gt;
+        &lt;ul class="dropdown-menu" role="menu"&gt;
+          &lt;li&gt;&lt;a href="#link"&gt;Action&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#link"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#link"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="divider"&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#link"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;&lt;!-- /.dropdown-menu --&gt; &lt;!-- Nested --&gt;
+      &lt;/li&gt;&lt;!-- /.dropdown --&gt;
+    &lt;/ul&gt;&lt;!-- /.nav.navbar-nav --&gt;
+    &lt;p class="navbar-text"&gt;Signed in as Mark Otto&lt;/p&gt;
+    &lt;button type="button" class="btn btn-inverse navbar-btn"&gt;Sign in&lt;/button&gt;
+  &lt;/div&gt;&lt;!-- /.navbar-collapse --&gt;
+&lt;/nav&gt;&lt;!-- /.navbar --&gt; &lt;!-- End of navbar default --&gt;
+</code>
+</pre>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container -->
@@ -2822,9 +2894,9 @@ $('.selectpicker').selectpicker();
         <div class="col-sm-12 col-md-7">
           <p>Metadata rows and cells are meant to house small sub-sections of metadata inside larger compoenents like thumbnails or panels.</p>
           <br class="spacer-md">
-          <p><code>.meta-wrapper</code> = only needed when controlling <code>.meta-cell</code> width via <code>.col-*</code></p>
-          <p><code>.meta-row</code> = will draw a new row and print a top border for separation (has padding)</p>
-          <p><code>.meta-cell</code> = will draw a full-width and full-hight cell (has padding)</p>
+          <p><code>.meta-wrapper</code> = needed only if you want to control <code>.meta-cell</code> width via <code>.col-*</code></p>
+          <p><code>.meta-row</code> = draw a new row and print a top border for separation (has inner padding)</p>
+          <p><code>.meta-cell</code> = draw a full-width and full-hight cell (has inner padding)</p>
           <br class="spacer-md">
           <p><span class="label label-info">Heads up:</span> Here's where vertical align classes come in handy. See alignment section for a reference.</p>
         </div><!-- /.col -->
@@ -2903,53 +2975,54 @@ $('.selectpicker').selectpicker();
         <div class="col-lg-12">
           <h2>Progress Bars</h2>
           <p><span class="label label-info">Reference:</span> <a href="http://getbootstrap.com/components/#progress" target="_blank">Bootstrap Progress Bars</a></p>
-          <p><code>div.progress.progress-striped>div.progress-bar[style=width:20%]>span.sr-only{Loading or something}</code></p>
-          <p class="lead">Default:</p>
+          <p><code>div.progress.progress-striped>div.progress-bar.progress-bar-danger[style=width:20%]>span.sr-only{Loading or something}</code></p>
+          <br class="spacer-md">
+          <p><code>.progress-bar</code></p>
           <div class="progress progress-striped">
             <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-              <span class="sr-only">40% Complete (success)</span>
+              <span class="sr-only">40% Complete</span>
             </div>
           </div><!-- /.progress -->
-          <p class="lead">Success:</p>
+          <p><code>.progress-bar-success</code></p>
           <div class="progress progress-striped">
             <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-              <span class="sr-only">40% Complete (success)</span>
+              <span class="sr-only">40% Complete</span>
             </div>
           </div><!-- /.progress -->
-          <p class="lead">Info:</p>
+          <p><code>.progress-bar-info</code></p>
           <div class="progress progress-striped">
             <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
               <span class="sr-only">20% Complete</span>
             </div>
           </div><!-- /.progress -->
-          <p class="lead">Warning:</p>
+          <p><code>.progress-bar-warning</code></p>
           <div class="progress progress-striped">
             <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-              <span class="sr-only">60% Complete (warning)</span>
+              <span class="sr-only">60% Complete</span>
             </div>
           </div><!-- /.progress -->
-          <p class="lead">Danger:</p>
+          <p><code>.progress-bar-danger</code></p>
           <div class="progress progress-striped">
             <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-              <span class="sr-only">80% Complete (danger)</span>
+              <span class="sr-only">80% Complete</span>
             </div>
           </div><!-- /.progress -->
-          <p class="lead">Active:</p>
+          <p><code>.progress.progress-striped.active</code></p>
           <div class="progress progress-striped active">
             <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-              <span class="sr-only">80% Complete (danger)</span>
+              <span class="sr-only">80% Complete</span>
             </div>
           </div><!-- /.progress -->
-          <p class="lead">Stacked:</p>
+          <p><code>.progress>(.progress-bar.progress-bar-success)+(progress-bar.progress-bar-warning)+(progress-bar.progress-bar-danger)</code></p>
           <div class="progress">
             <div class="progress-bar progress-bar-success" style="width: 35%">
-              <span class="sr-only">35% Complete (success)</span>
+              <span class="sr-only">35% Complete</span>
             </div>
             <div class="progress-bar progress-bar-warning" style="width: 20%">
-              <span class="sr-only">20% Complete (warning)</span>
+              <span class="sr-only">20% Complete</span>
             </div>
             <div class="progress-bar progress-bar-danger" style="width: 10%">
-              <span class="sr-only">10% Complete (danger)</span>
+              <span class="sr-only">10% Complete</span>
             </div>
           </div><!-- /.progress -->
         </div><!-- /.col -->
@@ -3467,7 +3540,7 @@ $('.selectpicker').selectpicker();
               <h1>$12 <small>/month</small></h1>
             </div>
             <ul class="plan-features">
-              <li><i class="fa fa-check"></i> Unlimited Support <i class="fa fa-info-sign" data-toggle="tooltip" data-original-title="Restrictions apply"></i></li>
+              <li><i class="fa fa-check"></i> Unlimited Support <i class="fa fa-info-circle" data-toggle="tooltip" data-original-title="Restrictions apply"></i></li>
               <li><i class="fa fa-times"></i> Basic Options</li>
               <li><i class="fa fa-times"></i> 100GB Storage</li>
               <li><i class="fa fa-times"></i> Ad Free Streaming</li>
@@ -3492,7 +3565,7 @@ $('.selectpicker').selectpicker();
               <h1>$24 <small>/month</small></h1>
             </div>
             <ul class="plan-features">
-              <li><i class="fa fa-check"></i> Unlimited Support <i class="fa fa-info-sign" data-toggle="tooltip" data-original-title="Restrictions apply"></i></li>
+              <li><i class="fa fa-check"></i> Unlimited Support <i class="fa fa-info-circle" data-toggle="tooltip" data-original-title="Restrictions apply"></i></li>
               <li><i class="fa fa-check"></i> Basic Options</li>
               <li><i class="fa fa-times"></i> 100GB Storage</li>
               <li><i class="fa fa-times"></i> Ad Free Streaming</li>
@@ -3517,7 +3590,7 @@ $('.selectpicker').selectpicker();
               <h1>$48 <small>/month</small></h1>
             </div>
             <ul class="plan-features">
-              <li><i class="fa fa-check"></i> Unlimited Support <i class="fa fa-info-sign" data-toggle="tooltip" data-original-title="Restrictions apply"></i></li>
+              <li><i class="fa fa-check"></i> Unlimited Support <i class="fa fa-info-circle" data-toggle="tooltip" data-original-title="Restrictions apply"></i></li>
               <li><i class="fa fa-check"></i> Basic Options</li>
               <li><i class="fa fa-check"></i> 100GB Storage</li>
               <li><i class="fa fa-check"></i> Ad Free Streaming</li>
@@ -3804,7 +3877,7 @@ $('.selectpicker').selectpicker();
 
 <pre><code class="language-javascript">
 // Load the JS
-&lt;script src="assets/js/isotope.pkgd.min"&gt;&lt;/script&gt;
+&lt;script src="assets/isotope/isotope.pkgd.min.js"&gt;&lt;/script&gt;
 
 // Usage example
 $(window).load(function() {

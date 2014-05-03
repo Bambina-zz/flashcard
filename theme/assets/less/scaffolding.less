@@ -1,10 +1,5 @@
 // Scaffolding
 // -------------------------
-html,
-body{
-  height: 100%;
-  min-height: 100%;
-}
 
 body {
   padding-top: @body-padding;
@@ -23,6 +18,9 @@ body {
 
 // Full width section wrappers
 // -------------------------
+.wrapper-xxs {
+  padding: .5em 0;
+}
 .wrapper-xs {
   padding: 1em 0;
 }
@@ -169,8 +167,7 @@ body {
   margin-bottom: 0 !important;
 }
 .no-radius {
-  -webkit-border-radius: 0;
-  border-radius: 0;
+  .border-radius(0);
 }
 
 // Borders
@@ -194,6 +191,10 @@ body {
 [class*="spacer"]:after {
   display: block;
   content: " ";
+}
+.spacer-xs {
+  margin-bottom: .5em;
+  line-height: .5em; // IE
 }
 .spacer-sm {
   margin-bottom: 1em;
@@ -249,6 +250,7 @@ body {
   margin-bottom: 0;
   padding: 0;
    li {
+    text-align: center;
     float: left;
     display: block;
     margin: 0 0.4em 0.4em 0;

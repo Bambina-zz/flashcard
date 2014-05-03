@@ -6,9 +6,9 @@
   color: @text-color;
   background-color: @panel-bg;
   border: 1px solid @panel-border-color;
-  border-radius: (@panel-border-radius + 1px); // make it fit with inner panel-heading
+  .border-radius(@panel-border-radius + 1px); // make it fit with inner panel-heading
   .panel-group & {
-    border-radius: @panel-border-radius;
+    .border-radius(@panel-border-radius);
   }
 }
 

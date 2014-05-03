@@ -35,7 +35,7 @@
     <aside class="admin-sidebar">
       <div class="sidebar-header">
         <a href="#link">
-          <img class="sidebar-logo" src="assets/img/logo-white.png" alt="lgo"> Admin Panel
+          <img class="sidebar-logo" src="assets/img/logo-white.png" alt="logo"> Admin Panel
         </a>
       </div>
       <div class="sidebar-subheader">
@@ -45,22 +45,29 @@
         <p><a href="#link" class="btn btn-outline btn-primary">Edit Profile</a></p>
       </div><!-- /.sidebar-subheader -->
       <ul class="sidebar-nav">
-        <li class="active">
+        <li>
           <a href="index.html">
             <i class="icon-home"></i>
             Home
           </a>
         </li>
+        <li class="header"><i class="fa fa-circle-o text-warning"></i> Admin</li>
         <li>
-          <a href="widgets.html">
-            <i class="icon-grid"></i>
-            Widgets
+          <a href="dashboard.html">
+            <i class="icon-pie-chart"></i>
+            Stats
           </a>
         </li>
         <li>
-          <a href="tables.html">
-            <i class="icon-layers"></i>
-            Data
+          <a href="activity.html">
+            <i class="icon-fire"></i>
+            Activity
+          </a>
+        </li>
+        <li class="active">
+          <a href="widgets.html">
+            <i class="icon-grid"></i>
+            Widgets
           </a>
         </li>
         <li class="header"><i class="fa fa-circle-o text-info"></i> Pubishing</li>
@@ -77,15 +84,15 @@
           </a>
         </li>
         <li>
-          <a href="dashboard.html">
-            <i class="icon-pie-chart"></i>
-            Stats
-          </a>
-        </li>
-        <li>
           <a href="edit-profile.html">
             <i class="icon-user"></i>
             Edit Profile
+          </a>
+        </li>
+        <li>
+          <a href="tables.html">
+            <i class="icon-layers"></i>
+            Data
           </a>
         </li>
         <li class="header"><i class="fa fa-circle-o text-success"></i> Settings</li>
@@ -387,8 +394,8 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-12 col-md-4">
-              <div class="widget">
-                <div class="meta-row bg-info">
+              <div class="widget border-default ">
+                <div class="meta-row bg-info no-border">
                   <strong>
                     <span class="fa-stack">
                       <i class="fa fa-circle fa-stack-2x heading-default"></i>
@@ -397,29 +404,36 @@
                     @twBootstrap
                   </strong>
                 </div>
-                <div class="border-default">
-                  <div class="meta-cell bg-highlight"><strong>1.450<br/> Tweets</strong></div>
-                  <div class="meta-cell bg-highlight"><strong>12.690<br/> Followers</strong></div>
-                  <div class="meta-cell bg-highlight"><strong>120<br/> Following</strong></div>
-                  <div class="meta-row">
-                    Hey nerds! As always, we're happy to listen and improve. Feel free to email me, too, if you'd rather not write another post &lt;3. — @twBootstap <a href="#link">#Bootstap</a> <a href="#link">#Mobile</a>
-                  </div>
-                  <div class="meta-row bg-highlight">
-                    <strong><small>Mar 6, 1014</small></strong>
-                  </div>
+                <div class="meta-cell bg-highlight"><strong>1.450<br/> Tweets</strong></div>
+                <div class="meta-cell bg-highlight"><strong>12.690<br/> Followers</strong></div>
+                <div class="meta-cell bg-highlight"><strong>120<br/> Following</strong></div>
+                <div class="meta-row">
+                  Hey nerds! As always, we're happy to listen and improve. Feel free to email me, too, if you'd rather not write another post &lt;3. — @twBootstap <a href="#link">#Bootstap</a> <a href="#link">#Mobile</a>
+                </div><!-- /.meta-row -->
+                <div class="meta-row bg-highlight">
+                  <strong><small>Mar 6, 1014</small></strong>
                 </div>
-              </div>
+              </div><!-- /.widget -->
             </div><!-- /.col -->
             <div class="col-sm-12 col-md-4">
               <div class="widget">
-                <div class="meta-row bg-danger point-down">
-                  Metadata is data about data
+                <div class="meta-row bg-danger no-border">
+                  <strong>
+                    <span class="fa-stack">
+                      <i class="fa fa-circle fa-stack-2x heading-default"></i>
+                      <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+                    </span>
+                    Pinterest
+                  </strong>
                 </div>
+                <div class="meta-cell bg-highlight"><strong>1.450<br/> Tweets</strong></div>
+                <div class="meta-cell bg-highlight"><strong>12.690<br/> Followers</strong></div>
+                <div class="meta-cell bg-highlight"><strong>120<br/> Following</strong></div>
                 <img class="img-responsive" src="assets/img/img-400x400.jpg" alt="img">
-                <div class="meta-row bg-secondary point-up">
-                  Classified
+                <div class="panel-footer no-border bg-secondary-light point-up">
+                  <strong><small>Mar 6, 1014</small></strong>
                 </div>
-              </div>
+              </div><!-- /.widget -->
             </div><!-- /.col -->
             <div class="col-sm-12 col-md-4">
               <div class="widget border-default">

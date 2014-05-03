@@ -177,10 +177,22 @@
 @navbar-inverse-brand-hover-color:      #fff;
 @navbar-inverse-brand-hover-bg:         transparent;
 
-// Sidebar
+// Admin and Sidebar
 // -------------------------
-@sidebar-width: 190px;
-@sidebar-bg: @brand-secondary;
+@admin-bg:                          @brand-highlight;
+// sidebar content
+@sidebar-width:                     190px;
+@sidebar-text-color:                #fff;
+@sidebar-bg:                        @brand-secondary;
+@sidebar-header-bg:                 @brand-primary;
+// sidebar links
+@sidebar-header-text-color:         fade(#fff, 20%);
+@sidebar-link-color:                #fff;
+@sidebar-link-hover-bg:             rgba(255,255,255,0.1);
+@sidebar-link-active-bg:            lighten(@sidebar-bg, 5%);
+// sidebar subnav links
+@sidebar-subnav-link-color:         #fff;
+@sidebar-subnav-link-active-color:  @brand-primary;
 
 // Navs Tabs
 // -------------------------

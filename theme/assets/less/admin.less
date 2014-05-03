@@ -1,34 +1,41 @@
 
-// Sidebar
-body.is-admin {
-  overflow-x: hidden;
-  background-color: @body-bg;
-}
+// Admin layout and Sidebar
+// -------------------------
 
+html {
+  height: 100%;
+  overflow: auto;
+}
+body.is-admin {
+  height: 100%;
+  overflow-x: hidden;
+  background-color: @admin-bg;
+}
 .admin-wrapper {
   position: relative;
+  min-height: 100%;
+  overflow: visible;
   .transition(all .5s);
 }
-
 .admin-sidebar {
   position: absolute;
-  width: @sidebar-width;
   min-height: 100%;
-  margin-left: -@sidebar-width;
   overflow: visible;
+  width: @sidebar-width;
+  margin-left: -@sidebar-width;
   z-index: 1000;
   background-color: @sidebar-bg;
 }
 .sidebar-header {
-  .padding-sm;
+  padding: 1em;
   text-align: center;
-  background-color: @brand-primary;
+  background-color: @sidebar-header-bg;
   a {
-    color: #fff;
+    color: @sidebar-link-color;
     &:hover,
     &:focus,
     &:active {
-      color: #fff;
+      color: @sidebar-link-color;
       text-decoration: none;
     }
   }
@@ -39,7 +46,7 @@ body.is-admin {
 }
 .sidebar-subheader {
   padding: 1em;
-  color: #fff;
+  color: @sidebar-text-color;
   text-align: center;
 }
 .sidebar-nav {
@@ -49,7 +56,7 @@ body.is-admin {
   >li {
     &.active >a {
       position: relative;
-      background-color: lighten(@sidebar-bg, 5%);
+      background-color: @sidebar-link-active-bg;
       &:before {
         content: " ";
         position: absolute;
@@ -62,20 +69,20 @@ body.is-admin {
     }
     &.header {
       padding: 20px 15px;
-      color: fade(#fff, 20%);
+      color: @sidebar-header-text-color;
       text-transform: uppercase;
       font-size: 85%;
     }
     a {
       display: block;
       padding: 10px 15px;
-      color: #fff;
+      color: @sidebar-link-color;
       text-decoration: none;
       &:hover,
       &:focus,
       &:active {
-        color: #fff;
-        background: rgba(255,255,255,0.1);
+        color: @sidebar-link-color;
+        background: @sidebar-link-hover-bg;
         text-decoration: none;
       }
       [class^="icon-"]:first-child {
@@ -88,7 +95,7 @@ body.is-admin {
     list-style: none;
     li {
       &.active >a {
-        color: @brand-primary;
+        color: @sidebar-subnav-link-active-color;
       }
       background-color: darken(@sidebar-bg, 5%);
       >a {

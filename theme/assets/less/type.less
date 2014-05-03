@@ -3,6 +3,7 @@
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-top: 0;
+  margin-bottom: .7em;
   color: @headings-font-color;
   font-family: @headings-font-family;
   font-weight: @headings-font-weight;
@@ -59,8 +60,20 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
+// Align
+.v-align-middle {
+  vertical-align: middle;
+}
+.v-align-top {
+  vertical-align: top;
+}
+.v-align-bottom {
+  vertical-align: bottom;
+}
+
 // Block Quotes
 blockquote {
+  .clearfix;
   position: relative;
   padding: 1.5em;
   border-left: 2px solid @brand-primary;
@@ -78,6 +91,7 @@ blockquote {
   }
 }
 
+// @background, @border, @color
 .blockquote-default {
   .blockquote-variant (#fff, darken(@base-border-color, 15%), @headings-font-color);
 }
