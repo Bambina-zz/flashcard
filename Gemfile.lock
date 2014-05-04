@@ -58,6 +58,9 @@ GEM
     dotenv-deployment (0.0.1)
     dotenv-rails (0.11.0)
       dotenv (= 0.11.0)
+    email_spec (1.5.0)
+      launchy (~> 2.1)
+      mail (~> 2.2)
     erubis (2.7.0)
     excon (0.33.0)
     execjs (2.0.2)
@@ -193,6 +196,7 @@ DEPENDENCIES
   coffee-rails (= 3.2.2)
   database_cleaner (~> 1.0.1)
   dotenv-rails
+  email_spec
   factory_girl_rails (~> 4.2.1)
   faker (~> 1.1.2)
   jquery-rails (= 2.0.2)
