@@ -236,10 +236,10 @@ describe WordsController do
 					}.to change(Word, :count).by -1
 				end
 
-				it 'redirects contacts index' do
+				it 'redirects words index' do
 					delete :destroy,
 					id: @word
-					expect(response).to redirect_to words_url
+					expect(response).to redirect_to words_path
 				end
 			end
 		end

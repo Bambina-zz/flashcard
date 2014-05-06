@@ -11,7 +11,10 @@ describe HomeController do
 	end
 
 	describe 'guest access' do
-		it_behaves_like 'public access to home'
+		it 'renders the :inedx template' do
+			get :index
+			expect( response ).to require_login
+		end
 	end
 
 	describe 'login user access' do
