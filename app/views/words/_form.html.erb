@@ -19,10 +19,6 @@
     <%= f.label :word_type %><br />
     <%= f.text_field :word_type %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
 
   <%= f.fields_for :sentences do |sentence_form| %>
     <div class="field">
@@ -32,6 +28,6 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit id: 'create_word' %>
   </div>
 <% end %>

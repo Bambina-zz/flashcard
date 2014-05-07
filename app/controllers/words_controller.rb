@@ -43,7 +43,8 @@ before_filter :require_login
   # POST /words
   # POST /words.json
   def create
-    @word = Word.new(params[:word])
+    @user = current_user
+    @word = @user.words.create(params[:word])
 
     respond_to do |format|
       if @word.save
