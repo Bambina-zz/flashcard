@@ -313,15 +313,16 @@
       </section><!-- /.wrapper -->
       <section class="wrapper-sm">
         <div class="container-fluid">
-          <h2 class="headline">Media Gallery</h2>
+          <h2 class="headline">Vocabulary Gallery</h2>
           <div class="row">
             <div class="col-sm-12">
               <!-- filters -->
               <ul id="filters" class="tags">
                 <li class="active"><a class="btn btn-outline btn-primary" href="#link" data-filter="*">Show All</a></li>
-                <li><a class="btn btn-outline btn-primary" href="#link" data-filter=".apples">Apples</a></li>
-                <li><a class="btn btn-outline btn-primary" href="#link" data-filter=".kiwis">Kiwis</a></li>
-                <li><a class="btn btn-outline btn-primary" href="#link" data-filter=".oranges">Oranges</a></li>
+                <li><a class="btn btn-outline btn-primary" href="#link" data-filter=".noun">Noun</a></li>
+                <li><a class="btn btn-outline btn-primary" href="#link" data-filter=".verb">Verb</a></li>
+                <li><a class="btn btn-outline btn-primary" href="#link" data-filter=".adjective">Adjective</a></li>
+                <li><a class="btn btn-outline btn-primary" href="#link" data-filter=".adverb">Adverb</a></li>
               </ul>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -329,186 +330,25 @@
           <!-- items -->
           <div class="row">
             <div class="isotope-container">
-              <div class="col-sm-12 col-md-3 isotope-item apples">
+              <% @words.each do |word| %>
+              <div class="col-sm-12 col-md-3 isotope-item <%= word.word_type %>">
                 <div class="widget">
                   <div class="thumbnail">
                     <div class="overlay-container">
-                      <img src="assets/img-400x400.jpg" alt="img">
+                      <!-- <img src="assets/img-400x400.jpg" alt="img"> -->
+                      <div class="card-size"><h3><%= word.name %></h3></div>
                       <div class="overlay-content is-animated">
-                        <h3>Design</h3>
-                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
+                        <h3><%= word.word_type %></h3>
+                        <p><% word.sentences.each do |sentence| %>
+                          <%= sentence.content %>
+                          <% end %>
+                          </p>
                       </div><!-- /.overlay-content -->
                     </div><!-- /.overlay-container -->
                   </div><!-- /.thumbnail -->
-                  <h5 class="no-margin">Project Iteration</h5>
-                  <small>Item Preview</small>
                 </div><!-- /.widget -->
               </div><!-- /.col -->
-              <div class="col-sm-12 col-md-3 isotope-item kiwis">
-                <div class="widget">
-                  <div class="thumbnail">
-                    <div class="overlay-container">
-                      <img src="assets/img-400x400.jpg" alt="img">
-                      <div class="overlay-content is-animated">
-                        <h3>Design</h3>
-                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
-                      </div><!-- /.overlay-content -->
-                    </div><!-- /.overlay-container -->
-                  </div><!-- /.thumbnail -->
-                  <h5 class="no-margin">Project Iteration</h5>
-                  <small>Item Preview</small>
-                </div><!-- /.widget -->
-              </div><!-- /.col -->
-              <div class="col-sm-12 col-md-3 isotope-item oranges">
-                <div class="widget">
-                  <div class="thumbnail">
-                    <div class="overlay-container">
-                      <img src="assets/img-400x400.jpg" alt="img">
-                      <div class="overlay-content is-animated">
-                        <h3>Design</h3>
-                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
-                      </div><!-- /.overlay-content -->
-                    </div><!-- /.overlay-container -->
-                  </div><!-- /.thumbnail -->
-                  <h5 class="no-margin">Project Iteration</h5>
-                  <small>Item Preview</small>
-                </div><!-- /.widget -->
-              </div><!-- /.col -->
-              <div class="col-sm-12 col-md-3 isotope-item oranges">
-                <div class="widget">
-                  <div class="thumbnail">
-                    <div class="overlay-container">
-                      <img src="assets/img-400x400.jpg" alt="img">
-                      <div class="overlay-content is-animated">
-                        <h3>Design</h3>
-                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
-                      </div><!-- /.overlay-content -->
-                    </div><!-- /.overlay-container -->
-                  </div><!-- /.thumbnail -->
-                  <h5 class="no-margin">Project Iteration</h5>
-                  <small>Item Preview</small>
-                </div><!-- /.widget -->
-              </div><!-- /.col -->
-              <div class="col-sm-12 col-md-3 isotope-item apples">
-                <div class="widget">
-                  <div class="thumbnail">
-                    <div class="overlay-container">
-                      <img src="assets/img-400x400.jpg" alt="img">
-                      <div class="overlay-content is-animated">
-                        <h3>Design</h3>
-                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
-                      </div><!-- /.overlay-content -->
-                    </div><!-- /.overlay-container -->
-                  </div><!-- /.thumbnail -->
-                  <h5 class="no-margin">Project Iteration</h5>
-                  <small>Item Preview</small>
-                </div><!-- /.widget -->
-              </div><!-- /.col -->
-              <div class="col-sm-12 col-md-3 isotope-item kiwis">
-                <div class="widget">
-                  <div class="thumbnail">
-                    <div class="overlay-container">
-                      <img src="assets/img-400x400.jpg" alt="img">
-                      <div class="overlay-content is-animated">
-                        <h3>Design</h3>
-                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
-                      </div><!-- /.overlay-content -->
-                    </div><!-- /.overlay-container -->
-                  </div><!-- /.thumbnail -->
-                  <h5 class="no-margin">Project Iteration</h5>
-                  <small>Item Preview</small>
-                </div><!-- /.widget -->
-              </div><!-- /.col -->
-              <div class="col-sm-12 col-md-3 isotope-item oranges">
-                <div class="widget">
-                  <div class="thumbnail">
-                    <div class="overlay-container">
-                      <img src="assets/img-400x400.jpg" alt="img">
-                      <div class="overlay-content is-animated">
-                        <h3>Design</h3>
-                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
-                      </div><!-- /.overlay-content -->
-                    </div><!-- /.overlay-container -->
-                  </div><!-- /.thumbnail -->
-                  <h5 class="no-margin">Project Iteration</h5>
-                  <small>Item Preview</small>
-                </div><!-- /.widget -->
-              </div><!-- /.col -->
-              <div class="col-sm-12 col-md-3 isotope-item oranges">
-                <div class="widget">
-                  <div class="thumbnail">
-                    <div class="overlay-container">
-                      <img src="assets/img-400x400.jpg" alt="img">
-                      <div class="overlay-content is-animated">
-                        <h3>Design</h3>
-                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
-                      </div><!-- /.overlay-content -->
-                    </div><!-- /.overlay-container -->
-                  </div><!-- /.thumbnail -->
-                  <h5 class="no-margin">Project Iteration</h5>
-                  <small>Item Preview</small>
-                </div><!-- /.widget -->
-              </div><!-- /.col -->
-              <div class="col-sm-12 col-md-3 isotope-item apples">
-                <div class="widget">
-                  <div class="thumbnail">
-                    <div class="overlay-container">
-                      <img src="assets/img-400x400.jpg" alt="img">
-                      <div class="overlay-content is-animated">
-                        <h3>Design</h3>
-                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
-                      </div><!-- /.overlay-content -->
-                    </div><!-- /.overlay-container -->
-                  </div><!-- /.thumbnail -->
-                  <h5 class="no-margin">Project Iteration</h5>
-                  <small>Item Preview</small>
-                </div><!-- /.widget -->
-              </div><!-- /.col -->
-              <div class="col-sm-12 col-md-3 isotope-item kiwis">
-                <div class="widget">
-                  <div class="thumbnail">
-                    <div class="overlay-container">
-                      <img src="assets/img-400x400.jpg" alt="img">
-                      <div class="overlay-content is-animated">
-                        <h3>Design</h3>
-                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
-                      </div><!-- /.overlay-content -->
-                    </div><!-- /.overlay-container -->
-                  </div><!-- /.thumbnail -->
-                  <h5 class="no-margin">Project Iteration</h5>
-                  <small>Item Preview</small>
-                </div><!-- /.widget -->
-              </div><!-- /.col -->
-              <div class="col-sm-12 col-md-3 isotope-item oranges">
-                <div class="widget">
-                  <div class="thumbnail">
-                    <div class="overlay-container">
-                      <img src="assets/img-400x400.jpg" alt="img">
-                      <div class="overlay-content is-animated">
-                        <h3>Design</h3>
-                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
-                      </div><!-- /.overlay-content -->
-                    </div><!-- /.overlay-container -->
-                  </div><!-- /.thumbnail -->
-                  <h5 class="no-margin">Project Iteration</h5>
-                  <small>Item Preview</small>
-                </div><!-- /.widget -->
-              </div><!-- /.col -->
-              <div class="col-sm-12 col-md-3 isotope-item oranges">
-                <div class="widget">
-                  <div class="thumbnail">
-                    <div class="overlay-container">
-                      <img src="assets/img-400x400.jpg" alt="img">
-                      <div class="overlay-content is-animated">
-                        <h3>Design</h3>
-                        <p>Design is the creation of a plan or convention for the construction of an object or a system </p>
-                      </div><!-- /.overlay-content -->
-                    </div><!-- /.overlay-container -->
-                  </div><!-- /.thumbnail -->
-                  <h5 class="no-margin">Project Iteration</h5>
-                  <small>Item Preview</small>
-                </div><!-- /.widget -->
-              </div><!-- /.col -->
+              <% end %>
             </div><!-- /.isotope-container -->
           </div><!-- /.row -->
         </div><!-- /.container -->

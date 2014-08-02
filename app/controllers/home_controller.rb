@@ -1,9 +1,12 @@
 class HomeController < ApplicationController
-  before_filter :require_login
-  
-  def index
-  end
+	before_filter :require_login
 
-  def secret
-  end
+	def index
+		if current_user
+			@words = Word.where(user_id: current_user.id)
+		end
+	end
+
+	def secret
+	end
 end

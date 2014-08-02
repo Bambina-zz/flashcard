@@ -13,3 +13,22 @@
  *= require_tree .
  *= require theme.min.css
  */
+
+/* HOME */
+.card-size{
+	padding: 60px 20px;
+	margin-bottom: 0;
+}
+
+.card-size h3 {
+	text-align: center;
+	margin-bottom: 0;
+	text-transform: none;
+	white-space: normal;
+	display: block;
+    word-break: break-all;
+}
+
+.overlay-content.is-animated p {
+	font-weight: bold;
+}
