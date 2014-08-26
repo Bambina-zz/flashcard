@@ -1,33 +1,65 @@
 <%= form_for(@word) do |f| %>
-  <% if @word.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@word.errors.count, "error") %> prohibited this word from being saved:</h2>
+<% if @word.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@word.errors.count, "error") %> prohibited this word from being saved:</h2>
 
-      <ul>
-      <% @word.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <ul>
+    <% @word.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="col-sm-12 col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-body no-padding">
+        <div class="meta-row">
+          <div class="row">
+            <div class="col-xs-6">
+              <strong><%= f.label :name %></strong>
+            </div><!-- /.col -->
+            <div class="col-xs-6">
+              <%= f.text_field :name, class:"form-control input-md", placeholder:"Add a new word..." %>    
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.meta-row -->
+        <div class="meta-row">
+          <div class="row">
+            <div class="col-xs-6">
+              <strong>Select a word type</strong>
+            </div><!-- /.col -->
+            <div class="col-xs-6">
+              <select id="word_word_type" name="word[word_type]" class="form-control input-md selectpicker show-tick no-margin" title='Choose One' data-style="btn-primary" data-live-search="true" placeholder="verb">
+                <option value="noun">Noun</option>
+                <option value="verb">Verb</option>
+                <option value="phrasal_verb">Phrasal Verb</option>
+                <option value="adjective">Adjective</option>
+                <option value="adverb">Adverb</option>
+              </select>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.meta-row -->
+        <div class="meta-row">
+          <div class="row">
+            <div class="col-xs-6">
+              <strong>Example Sentence</strong>
+            </div><!-- /.col -->
+            <%= f.fields_for :sentences do |sentence_form| %>
+            <div class="col-xs-6">
+              <%= sentence_form.text_area :content,:class => "form-control", :rows => "3",:placeholder => "Make a sentence using a new word..." %>
+            </div><!-- /.col -->
+            <% end %>
+          </div><!-- /.row -->
+        </div><!-- /.meta-row -->
+      </div><!-- /.panel-body -->
+      <div class="panel-footer clearfix">
+        <div class="actions">
+          <%= f.submit id: 'create_word', class: "btn btn-inverse btn-outline pull-right" %>
+        </div>
+      </div><!-- /.panel-footer -->
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :word_type %><br />
-    <%= f.text_field :word_type %>
-  </div>
-
-  <%= f.fields_for :sentences do |sentence_form| %>
-    <div class="field">
-      <%= sentence_form.label :content %><br />
-      <%= sentence_form.text_field :content %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit id: 'create_word' %>
-  </div>
+  </div><!-- /.col -->
+</div><!-- /.row -->
 <% end %>
