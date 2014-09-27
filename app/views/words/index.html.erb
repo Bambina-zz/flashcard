@@ -1,27 +1,36 @@
-<h1>Listing words</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Word type</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @words.each do |word| %>
-  <tr>
-    <td><%= word.name %></td>
-    <td><%= word.word_type %></td>
-    <td><%= word.user_id %></td>
-    <td><%= link_to 'Show', word %></td>
-    <td><%= link_to 'Edit', edit_word_path(word) %></td>
-    <td><%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Word', new_word_path %>
+<section class="wrapper-sm">
+  <div class="container-fluid">
+    <h1>Listing Words</h1>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Word</th>
+                <th>Type</th>
+                <th>Show</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @words.each do |word| %>
+              <tr>
+                <td><%= word.name %></td>
+                <td><%= word.word_type %></td>
+                <td><%= link_to 'Show', word, class:"btn btn-info btn-sm" %></td>
+                <td><%= link_to 'Edit', edit_word_path(word), class:"btn btn-primary btn-sm" %></td>
+                <td><%= link_to 'Delete', word, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm" %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <br />
+          <%= link_to 'New Word', new_word_path %>
+        </div>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section>
