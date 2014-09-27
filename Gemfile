@@ -8,6 +8,7 @@ gem 'bower-rails', '~> 0.7.1'
 gem 'sorcery'
 gem 'mandrill-api'
 gem 'bcrypt', '~> 3.1.7'
+gem 'gon', '~> 5.2.0'
 
 group :production do
   gem 'rails_12factor'
