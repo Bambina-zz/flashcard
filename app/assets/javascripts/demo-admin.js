@@ -89,111 +89,110 @@ $(window).load(function() {
 
 // chart examples
 // -------------------------------
-$(window).load(function() {
+
 // morris charts
-  Morris.Area({
-    element: 'morris-1',
-    data: [
-      { y: '2006', a: 100, b: 90 },
-      { y: '2007', a: 75,  b: 65 },
-      { y: '2008', a: 50,  b: 40 },
-      { y: '2009', a: 75,  b: 65 },
+Morris.Area({
+  element: 'morris-1',
+  data: [
+    { y: '2006', a: 100, b: 90 },
+    { y: '2007', a: 75,  b: 65 },
+    { y: '2008', a: 50,  b: 40 },
+    { y: '2009', a: 75,  b: 65 },
 
-      { y: '2010', a: 50,  b: 40 },
-      { y: '2011', a: 75,  b: 65 },
-      { y: '2012', a: 100, b: 90 }
-    ],
-    xkey: 'y',
-    ykeys: ['a', 'b'],
-    labels: ['Series A', 'Series B'],
-    smooth: false,
-    lineColors: ['#252931', '#3498db',]
-  });
+    { y: '2010', a: 50,  b: 40 },
+    { y: '2011', a: 75,  b: 65 },
+    { y: '2012', a: 100, b: 90 }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Series A', 'Series B'],
+  smooth: false,
+  lineColors: ['#252931', '#3498db',]
+});
 
-  Morris.Line({
-    element: 'morris-2',
-    data: [
-      { y: '2006', a: 10, b: 30 },
-      { y: '2007', a: 50,  b: 65 },
-      { y: '2008', a: 50,  b: 40 },
-      { y: '2009', a: 75,  b: 65 },
-      { y: '2010', a: 50,  b: 40 },
-      { y: '2011', a: 85,  b: 65 },
-      { y: '2012', a: 100, b: 80 }
-    ],
-    xkey: 'y',
-    ykeys: ['a', 'b'],
-    labels: ['Series A', 'Series B'],
-    smooth: false,
-    lineColors: ['#3498db', '#252931',]
-  });
+Morris.Line({
+  element: 'morris-2',
+  data: [
+    { y: '2006', a: 10, b: 30 },
+    { y: '2007', a: 50,  b: 65 },
+    { y: '2008', a: 50,  b: 40 },
+    { y: '2009', a: 75,  b: 65 },
+    { y: '2010', a: 50,  b: 40 },
+    { y: '2011', a: 85,  b: 65 },
+    { y: '2012', a: 100, b: 80 }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Series A', 'Series B'],
+  smooth: false,
+  lineColors: ['#3498db', '#252931',]
+});
 
-  Morris.Donut({
-    element: 'morris-3',
-    data: [
-      {label: "Download Sales", value: 12},
-      {label: "In-Store Sales", value: 30},
-      {label: "Mail-Order Sales", value: 20}
-    ],
-    colors: [ '#3b414e', '#0f1114', '#252931']
-  });
+Morris.Donut({
+  element: 'morris-3',
+  data: [
+    {label: "Download Sales", value: 12},
+    {label: "In-Store Sales", value: 30},
+    {label: "Mail-Order Sales", value: 20}
+  ],
+  colors: [ '#3b414e', '#0f1114', '#252931']
+});
 
-  Morris.Bar({
-    element: 'morris-4',
-    data: [
-      { y: '2006', a: 100, b: 90 },
-      { y: '2007', a: 75,  b: 65 },
-      { y: '2008', a: 50,  b: 40 },
-      { y: '2009', a: 75,  b: 65 },
-      { y: '2010', a: 50,  b: 40 },
-      { y: '2011', a: 75,  b: 65 },
-      { y: '2012', a: 100, b: 90 }
-    ],
-    xkey: 'y',
-    ykeys: ['a', 'b'],
-    labels: ['Series A', 'Series B'],
-    barColors: ['#1276b9', '#3498db']
-  });
+Morris.Bar({
+  element: 'morris-4',
+  data: [
+    { y: '2006', a: 100, b: 90 },
+    { y: '2007', a: 75,  b: 65 },
+    { y: '2008', a: 50,  b: 40 },
+    { y: '2009', a: 75,  b: 65 },
+    { y: '2010', a: 50,  b: 40 },
+    { y: '2011', a: 75,  b: 65 },
+    { y: '2012', a: 100, b: 90 }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Series A', 'Series B'],
+  barColors: ['#1276b9', '#3498db']
+});
 
-  Morris.Area({
-    element: 'morris-line-white',
-    data: [
-      { y: '2006', a: 0},
-      { y: '2007', a: 15},
-      { y: '2008', a: 50},
-      { y: '2009', a: 60},
-      { y: '2010', a: 50},
-      { y: '2011', a: 75},
-      { y: '2012', a: 90}
-    ],
-    xkey: 'y',
-    ykeys: ['a'],
-    labels: ['Series A'],
-    lineColors: ['#fff'],
-    gridTextColor: '#fff',
-    grid: false,
-    fillOpacity: 0.0,
-    smooth: false
-  });
+Morris.Area({
+  element: 'morris-line-white',
+  data: [
+    { y: '2006', a: 0},
+    { y: '2007', a: 15},
+    { y: '2008', a: 50},
+    { y: '2009', a: 60},
+    { y: '2010', a: 50},
+    { y: '2011', a: 75},
+    { y: '2012', a: 90}
+  ],
+  xkey: 'y',
+  ykeys: ['a'],
+  labels: ['Series A'],
+  lineColors: ['#fff'],
+  gridTextColor: '#fff',
+  grid: false,
+  fillOpacity: 0.0,
+  smooth: false
+});
 
-  Morris.Area({
-    element: 'morris-line-white-2',
-    data: [
-      { y: '2006', a: 0},
-      { y: '2007', a: 15},
-      { y: '2008', a: 50},
-      { y: '2009', a: 60},
-      { y: '2010', a: 50},
-      { y: '2011', a: 75},
-      { y: '2012', a: 80}
-    ],
-    xkey: 'y',
-    ykeys: ['a'],
-    labels: ['Series A'],
-    lineColors: ['#fff'],
-    gridTextColor: '#fff',
-    grid: true,
-    fillOpacity: 0.0,
-    smooth: false
-  });
+Morris.Area({
+  element: 'morris-line-white-2',
+  data: [
+    { y: '2006', a: 0},
+    { y: '2007', a: 15},
+    { y: '2008', a: 50},
+    { y: '2009', a: 60},
+    { y: '2010', a: 50},
+    { y: '2011', a: 75},
+    { y: '2012', a: 80}
+  ],
+  xkey: 'y',
+  ykeys: ['a'],
+  labels: ['Series A'],
+  lineColors: ['#fff'],
+  gridTextColor: '#fff',
+  grid: true,
+  fillOpacity: 0.0,
+  smooth: false
 });
