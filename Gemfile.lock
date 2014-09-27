@@ -194,6 +194,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bower-rails (~> 0.7.1)
   capybara (~> 2.1.0)
   capybara-webkit

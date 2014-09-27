@@ -7,6 +7,7 @@ gem 'pg', '0.12.2'
 gem 'bower-rails', '~> 0.7.1'
 gem 'sorcery'
 gem 'mandrill-api'
+gem 'bcrypt', '~> 3.1.7'
 
 group :production do
   gem 'rails_12factor'
