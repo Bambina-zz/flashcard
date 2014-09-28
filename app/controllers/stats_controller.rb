@@ -6,11 +6,11 @@ class StatsController < ApplicationController
 
     @words = Word.where( user_id: current_user.id )
 
-    past_6_months = get_past_6_months()
-    numbers_of_words = get_numbers_of_words()
+    past_7_months = get_past_7_months()
+    numbers_of_words = get_numbers_of_words(current_user)
 
     gon.push({
-      :months  => past_6_months,
+      :months  => past_7_months,
       :numbers => numbers_of_words
     })
 
