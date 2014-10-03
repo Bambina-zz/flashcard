@@ -104,6 +104,7 @@ GEM
     multi_json (1.9.0)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    newrelic_rpm (3.9.5.251)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     oauth (0.4.7)
@@ -214,6 +215,7 @@ DEPENDENCIES
   jquery-rails (= 2.0.2)
   launchy (~> 2.3.0)
   mandrill-api
+  newrelic_rpm
   pg (= 0.12.2)
   rails (= 3.2.14)
   rails-assets-angular
