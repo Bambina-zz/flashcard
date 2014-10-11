@@ -86,26 +86,27 @@ $(window).load(function() {
     window.location = "index.html";
   });
 
-  var months  = gon.months;
-  var numbers = gon.numbers;
+  if (typeof(gon) != "undefined") {
+    var months  = gon.months;
+    var numbers = gon.numbers;
 
-  Morris.Bar({
-    element: 'new_words_per_month',
-    data: [
-      { y: months[0], a: numbers[0] },
-      { y: months[1], a: numbers[1] },
-      { y: months[2], a: numbers[2] },
-      { y: months[3], a: numbers[3] },
-      { y: months[4], a: numbers[4] },
-      { y: months[5], a: numbers[5] },
-      { y: months[6], a: numbers[6] }
-    ],
-    xkey: 'y',
-    ykeys: ['a'],
-    labels: ['Words'],
-    barColors: ['#3498db']
-  });
-
+    Morris.Bar({
+      element: 'new_words_per_month',
+      data: [
+        { y: months[0], a: numbers[0] },
+        { y: months[1], a: numbers[1] },
+        { y: months[2], a: numbers[2] },
+        { y: months[3], a: numbers[3] },
+        { y: months[4], a: numbers[4] },
+        { y: months[5], a: numbers[5] },
+        { y: months[6], a: numbers[6] }
+      ],
+      xkey: 'y',
+      ykeys: ['a'],
+      labels: ['Words'],
+      barColors: ['#3498db']
+    });
+  }
 });
 
 
