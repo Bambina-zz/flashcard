@@ -3,15 +3,22 @@ class StatsController < ApplicationController
   include StatsHelper
 
   def index
+    @sub_title = 'Statistics'
+    @sub_title2 = 'See the Number of the Words'
 
     @words = Word.where( user_id: current_user.id )
 
     past_7_months = get_past_7_months()
     numbers_of_words = get_numbers_of_words(current_user)
+    numbers_of_classified_words = get_numbers_of_classified_words(current_user)
+    @total = @words.count
+    @high_classified = numbers_of_classified_words[4][1]
+    @low_classified = numbers_of_classified_words[0][1]
 
     gon.push({
       :months  => past_7_months,
-      :numbers => numbers_of_words
+      :numbers => numbers_of_words,
+      :classified_numbers => numbers_of_classified_words
     })
 
     respond_to do |format|

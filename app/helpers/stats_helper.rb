@@ -28,5 +28,18 @@ module StatsHelper
 
 		numbers_of_words
 	end
+
+	def get_numbers_of_classified_words(user)
+		class_list = ['noun','verb','phrasal_verb','adjective','adverb']
+		class_hash = {'noun'=>'Noun','verb'=>'Verb','phrasal_verb'=>'Phrasal Verb',
+			'adjective'=>'Adjective','adverb'=>'Adverb'}
+
+		numbers_of_words = {}
+		class_list.each do |c|
+			numbers_of_words[class_hash[c]] =
+			Word.where(user_id: user.id, word_type: c).count
+		end
+		numbers_of_classified_words = numbers_of_words.sort_by{|key,val| val}
+	end
 end
 

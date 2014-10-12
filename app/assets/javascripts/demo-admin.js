@@ -89,6 +89,7 @@ $(window).load(function() {
   if (typeof(gon) != "undefined") {
     var months  = gon.months;
     var numbers = gon.numbers;
+    var classified_numbers = gon.classified_numbers;
 
     Morris.Bar({
       element: 'new_words_per_month',
@@ -105,6 +106,18 @@ $(window).load(function() {
       ykeys: ['a'],
       labels: ['Words'],
       barColors: ['#3498db']
+    });
+
+    Morris.Donut({
+      element: 'morris-3',
+      data: [
+      {label: classified_numbers[0][0], value: classified_numbers[0][1]},
+      {label: classified_numbers[1][0], value: classified_numbers[1][1]},
+      {label: classified_numbers[2][0], value: classified_numbers[2][1]},
+      {label: classified_numbers[3][0], value: classified_numbers[3][1]},
+      {label: classified_numbers[4][0], value: classified_numbers[4][1]}
+      ],
+      colors: [ '#1ccdaa', '#16a085', '#107360', '#3b414e', '#f39c12']
     });
   }
 });

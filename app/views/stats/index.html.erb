@@ -1,35 +1,55 @@
-
-	<div class="wrapper-sm">
-      <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm-12">
-              <h1 class="headline">Statistics</h1>
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-          <hr>
-          <div class="row">
-            <div class="col-sm-12 col-md-6">
-              <div class="panel panel-secondary">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Number of new words per month</h3>
-                </div>
-                <div class="panel-body">
-                  <div class="chart" id="new_words_per_month"></div>
-                </div><!-- /.panel-body -->
-                <div class="meta-row no-padding text-center">
-                  <div class="meta-cell">
-                    <strong><i class="fa fa-fw fa-circle text-success"></i> Planned: 90%</strong>
-                  </div><!-- /.meta-cell -->
-                  <div class="meta-cell">
-                    <strong><i class="fa fa-fw fa-circle text-warning"></i> 150%</strong>
-                  </div><!-- /.meta-cell -->
-                  <div class="meta-cell">
-                    <strong><i class="fa fa-fw fa-circle text-danger"></i> 590%</strong>
-                  </div><!-- /.meta-cell -->
-                </div><!-- /.mata-row -->
-              </div><!-- /.panel -->
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </div><!-- /.container -->
-      </div><!-- /.wrapper -->
+<div class="wrapper-sm">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="headline">Statistics</h1>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+    <hr>
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="panel panel-secondary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Number of new words per month</h3>
+          </div>
+          <div class="panel-body">
+            <div class="chart" id="new_words_per_month"></div>
+          </div><!-- /.panel-body -->
+          <div class="meta-row no-padding text-center">
+            <div class="meta-cell">
+              <strong><i class="fa fa-fw fa-circle text-success"></i> Total: <%= @total %></strong>
+            </div><!-- /.meta-cell -->
+            <div class="meta-cell">
+              <strong><i class="fa fa-fw fa-circle text-warning"></i> High: 3</strong>
+            </div><!-- /.meta-cell -->
+            <div class="meta-cell">
+              <strong><i class="fa fa-fw fa-circle text-danger"></i> Low: 0</strong>
+            </div><!-- /.meta-cell -->
+          </div><!-- /.mata-row -->
+        </div><!-- /.panel -->
+      </div><!-- /.col -->
+      <div class="col-sm-12 col-md-6">
+        <div class="panel panel-secondary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Number of Classified Words</h3>
+          </div>
+          <div class="panel-body">
+            <div class="chart" id="morris-3"></div>
+          </div><!-- /.panel-body -->
+          <div class="meta-row no-padding text-center">
+            <div class="meta-cell">
+              <strong><i class="fa fa-fw fa-circle text-success"></i> Total: <%= @total %></strong>
+            </div><!-- /.meta-cell -->
+            <div class="meta-cell">
+              <strong><i class="fa fa-fw fa-circle text-warning"></i> High: <%= @high_classified %></strong>
+            </div><!-- /.meta-cell -->
+            <div class="meta-cell">
+              <strong><i class="fa fa-fw fa-circle text-danger"></i> Low: <%= @low_classified %></strong>
+            </div><!-- /.meta-cell -->
+          </div><!-- /.meta-row -->
+        </div><!-- /.panel -->
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div><!-- /.wrapper -->
 
