@@ -1,4 +1,4 @@
-FirstApp::Application.routes.draw do
+Flashcard::Application.routes.draw do
   get 'stats' => 'stats#index'
 
   resources :sentences
