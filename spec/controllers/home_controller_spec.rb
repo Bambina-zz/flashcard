@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe HomeController do
+RSpec.describe HomeController, :type => :controller do
 	shared_examples('public access to home') do
 		describe 'GET #index' do
 			it 'renders the :inedx template' do

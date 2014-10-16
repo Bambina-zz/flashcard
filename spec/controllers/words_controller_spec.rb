@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe WordsController do
+RSpec.describe WordsController, :type => :controller do
 	describe 'guest access' do
 		before :each do
 			@user = create(:user)
-			@word = create(:word, user_id: @user.id)
+			@word = create(:word, user: @user)
 		end
 
 		describe 'GET #new' do
@@ -56,8 +56,8 @@ describe WordsController do
 
 		describe 'GET #index' do
 			it 'populates an array of words having login_user_id' do
-				word1 = create(:word, user_id: @user.id)
-				word2 = create(:word, user_id: @user.id, name: 'walk')
+				word1 = create(:word, user: @user)
+				word2 = create(:word, user: @user, name: 'walk')
 				word3 = create(:word)
 				get :index
 				expect( assigns(:words).count ).to eq 3 #including auto generated word(banana)
@@ -71,25 +71,26 @@ describe WordsController do
 
 		describe 'GET #show' do
 			it 'assigns the requested word to @word' do
-				word = create(:word, user_id: @user.id)
+				word = create(:word, user: @user)
 				get :show, id: word
 				expect( assigns(:word) ).to eq word
 			end
 
 			it 'assigns @word which has a login_user_id' do
-				word = create(:word, user_id: @user.id)
+				word = create(:word, user: @user)
 				get :show, id: word
 				expect( assigns(:word).user_id ).to eq @user.id
 			end
 
 			it 'does not assign @word which was made by an another user' do
-				word = create(:word)
+				@user2 = create(:user)
+				word = create(:word, user: @user2)
 				get :show, id: word
 				expect( assigns(:word) ).to eq nil
 			end
 
 			it 'renders the :show template' do
-				word = create(:word, user_id: @user.id)
+				word = create(:word, user: @user)
 				get :show, id: word
 				expect( response ).to render_template :show
 			end
@@ -109,13 +110,13 @@ describe WordsController do
 
 		describe 'GET #edit' do
 			it 'assigns the requested word to @word' do
-				word = create(:word, user_id: @user.id)
+				word = create(:word, user: @user)
 				get :edit, id: word
 				expect( assigns(:word) ).to eq word
 			end
 
 			it 'assigns @word having login_user_id' do
-				word = create(:word, user_id: @user.id)
+				word = create(:word, user: @user)
 				get :edit, id: word
 				expect( assigns(:word).user_id ).to eq @user.id
 			end
@@ -127,7 +128,7 @@ describe WordsController do
 			end
 
 			it 'renders the :edit template' do
-				word = create(:word, user_id: @user.id)
+				word = create(:word, user: @user)
 				get :edit, id: word
 				expect( response ).to render_template :edit
 			end
@@ -144,13 +145,13 @@ describe WordsController do
 				it 'saves a new word in the database' do
 					expect{
 						post :create,
-						word: attributes_for(:word, user_id: @user.id, sentences_attributes: @sentences)
+						word: attributes_for(:word, user: @user, sentences_attributes: @sentences)
 						}.to change(Word, :count).by(1)
 				end
 
 				it 'redireccts to words#show' do
 					post :create,
-					word: attributes_for(:word, user_id: @user.id, sentences_attributes: @sentences)
+					word: attributes_for(:word, user: @user, sentences_attributes: @sentences)
 					expect( response ).to redirect_to word_path(assigns[:word])
 				end
 			end
@@ -175,7 +176,7 @@ describe WordsController do
 			before :each do
 				@word = create(
 					:word,
-					user_id: @user.id)
+					user: @user)
 			end
 			context 'with valid attributes' do
 				it 'locates requested @word' do
@@ -225,7 +226,7 @@ describe WordsController do
 			before :each do
 				@word = create(
 					:word,
-					user_id: @user.id)
+					user: @user)
 			end
 
 			context 'with valid attributes' do

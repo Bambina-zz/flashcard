@@ -3,11 +3,11 @@ RSpec::Matchers.define :require_login do |expected|
 		expect(actual).to redirect_to login_path
 	end
 
-	failure_message_for_should do |actual|
+	failure_message do |actual|
 		'expected to require login to access the method'
 	end
 
-	failure_message_for_should do |actual|
+	failure_message do |actual|
 		'expected not to reqiuire login to access the method'
 	end
 

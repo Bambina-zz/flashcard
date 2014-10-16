@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe StatsController do
+RSpec.describe StatsController, :type => :controller do
 	shared_examples('public access to stats') do
 		describe 'GET #index' do
 			it 'renders the :inedx template' do
 				get :index
-				expect( response ).to render_template :index
+			    expect(response).to render_template("index")
 			end
 		end
 	end
@@ -13,7 +13,7 @@ describe StatsController do
 	describe 'guest access' do
 		it 'renders the :inedx template' do
 			get :index
-			expect( response ).to require_login
+			expect(response).to require_login
 		end
 	end
 
@@ -22,7 +22,6 @@ describe StatsController do
 			@user = create(:user)
 			login_user(@user)
 		end
-
-		it_behaves_like 'public access to home'
+		it_behaves_like 'public access to stats'
 	end
 end

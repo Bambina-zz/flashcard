@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UsersController do
+RSpec.describe UsersController, :type => :controller do
 	describe 'Admin user access' do
 		before :each do
 			@user1 = create(:user, :admin)

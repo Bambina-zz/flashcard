@@ -17,14 +17,22 @@ before_filter :require_login
   def show
     word_array = Word.where( user_id: current_user.id, id: params[:id] )
     @word = word_array.any? ? word_array.last : nil
-    @sub_title = 'Listing Words'
-    if @word
-      @sub_title2 = @word.name
-    end
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @word }
+    if @word
+      @sub_title = 'Listing Words'
+      if @word
+        @sub_title2 = @word.name
+      end
+
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @word }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to root_url, :alert => "There is no such a word..." }
+        format.json { head :no_content }
+      end
     end
   end
 
@@ -46,11 +54,18 @@ before_filter :require_login
   def edit
     word_array = Word.where( user_id: current_user.id, id: params[:id] )
     @word = word_array.any? ? word_array.last : nil
-    @sub_title = 'Listing Words'
     if @word
-      @sub_title2 = @word.name
+      @sub_title = 'Listing Words'
+      if @word
+        @sub_title2 = @word.name
+      end
+      @sub_title3 = 'Edit'
+    else
+      respond_to do |format|
+        format.html { redirect_to root_url, :alert => "There is no such a word..." }
+        format.json { head :no_content }
+      end
     end
-    @sub_title3 = 'Edit'
   end
 
   # POST /words

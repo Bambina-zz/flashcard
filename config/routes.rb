@@ -1,4 +1,6 @@
 Flashcard::Application.routes.draw do
+  default_url_options :host => "localhost:3000"
+
   get 'stats' => 'stats#index'
 
   resources :sentences
@@ -22,6 +24,7 @@ Flashcard::Application.routes.draw do
 
 
   root :to => 'home#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

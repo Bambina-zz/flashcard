@@ -2,7 +2,6 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
 require 'email_spec'
 require 'database_cleaner'
 require 'capybara/poltergeist'
@@ -23,7 +22,8 @@ RSpec.configure do |config|
   # config.mock_with :mocha
   # config.mock_with :flexmock
   # config.mock_with :rr
-
+  config.infer_spec_type_from_file_location!
+  config.include RSpec::Rails::RequestExampleGroup, type: :feature
   config.include FactoryGirl::Syntax::Methods
   config.include EmailSpec::Helpers
   config.include EmailSpec::Matchers
@@ -36,6 +36,7 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = false
+  config.render_views
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
@@ -49,8 +50,10 @@ RSpec.configure do |config|
   config.order = "random"
   config.filter_run :focus => true
   config.run_all_when_everything_filtered = true
-  config.include Sorcery::TestHelpers::Rails
-
+  #config.include Sorcery::TestHelpers::Rails
+  config.include Sorcery::TestHelpers::Rails::Controller, type: :controller
+  config.include Sorcery::TestHelpers::Rails::Integration, type: :feature
+  config.include Capybara::DSL
   config.before :each do
     if Capybara.current_driver == :rack_test
       DatabaseCleaner.strategy = :transaction

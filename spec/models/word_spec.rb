@@ -1,23 +1,23 @@
 require 'spec_helper'
 
-describe Word do
+RSpec.describe Word, :type => :model do
 	it 'is valid with name, user_id, word_type' do
 		expect( build(:word) ).to be_valid
 	end
 
 	it 'is invalid without a name' do
 		word = build(:word, name: nil)
-		expect( word ).to have(1).errors_on(:name)
+		expect(word).to validate_presence_of(:name)
 	end
 
 	it 'is invalid without a word_type' do
 		word = build(:word, word_type: nil)
-		expect( word ).to have(1).errors_on(:word_type)
+		expect( word ).to validate_presence_of(:word_type)
 	end
 
 	it 'is invalid without a user_id' do
 		word = build(:word, user_id: nil)
-		expect( word ).to have(1).errors_on(:user_id)
+		expect( word ).to validate_presence_of(:user_id)
 	end
 
 	it 'does not allow duplicate word names per user' do
@@ -32,7 +32,7 @@ describe Word do
 		work_word = user.words.build(
 			name: 'work',
 			word_type: 'noun')
-		expect( work_word ).to have(1).errors_on(:name)
+		expect( work_word ).to validate_uniqueness_of(:name).scoped_to(:user_id)
 	end
 
 	it 'allows two users to have a same word' do
