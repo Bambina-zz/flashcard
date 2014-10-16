@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 source 'https://rails-assets.org'
-ruby '2.0.0'
+ruby '2.1.0'
 
 gem 'rails', '3.2.14'
 gem 'pg', '0.12.2'
@@ -39,5 +39,6 @@ group :test do
   gem 'launchy', '~> 2.3.0'
   gem 'selenium-webdriver', '~> 2.39.0'
   gem 'email_spec'
+  gem 'poltergeist', '~> 1.5.1'
 end
 

@@ -4,21 +4,12 @@ feature 'Stats management' do
 	DatabaseCleaner.clean
 	scenario 'see the stats' do
 		visit root_path
-		expect(page).to have_content 'Create an account'
-		expect{
-			click_link 'Create an account'
-			fill_in 'user_name', with: 'mayuko'
-			fill_in 'user_email', with: 'example123@example.com'
-			fill_in 'user_password', with: 'password123'
-			fill_in 'user_password_confirmation', with: 'password123'
-			find('input#create_user').click
-		}.to change(User, :count).by(1)
-
-		expect(current_path).to eq root_path
-
-		within 'aside' do
-			expect(page).to have_content 'mayuko'
-		end
+		click_link 'Create an account'
+		fill_in 'user_name', with: 'mayuko'
+		fill_in 'user_email', with: 'example123@example.com'
+		fill_in 'user_password', with: 'password123'
+		fill_in 'user_password_confirmation', with: 'password123'
+		find('input#create_user').click
 
 		visit '/words'
 		click_link 'New Word'
@@ -28,5 +19,7 @@ feature 'Stats management' do
 		find('input#create_word').click
 
 		visit '/stats'
+		str_expected = "Total: #{Word.all.count}"
+		expect(page).to have_content str_expected
 	end
 end

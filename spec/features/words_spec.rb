@@ -1,47 +1,26 @@
 require 'spec_helper'
 
 feature 'Word management' do
-	DatabaseCleaner.clean
-	scenario 'login user adds 2 words and choose a category to see only adjectives', js:true do
-		pending "TODO: get rid of _form.html with html helper"
-
-		#TODO: doesn't work below
-		# user = create(:user)
-		# visit "/login"
-		# fill_in "email",    with: user.email
-		# fill_in "password", with: user.password
-		# find('input#login_user').click
-
+	scenario 'login user adds a new word' do
 		visit root_path
+
+		expect(page).to have_content 'Create an account'
 		click_link 'Create an account'
 		fill_in 'user_name', with: 'mayuko'
-		fill_in 'user_email', with: 'example@example.com'
+		fill_in 'user_email', with: 'example123@example.com'
 		fill_in 'user_password', with: 'password123'
 		fill_in 'user_password_confirmation', with: 'password123'
 		find('input#create_user').click
 
-		visit '/words'
-		click_link 'New Word'
+		click_link 'Add a New Word'
 		fill_in 'word_name', with: 'bite'
-		select 'Noun', :from => 'word_word_type'
+		select 'Noun', from: 'word_word_type'
 		fill_in 'word_sentences_attributes_0_content', with: 'Shall we grab a bite?'
 		find('input#create_word').click
 
-		visit root_path
+		click_link 'Vocabulary Gallery'
 		expect(page).to have_content 'bite'
 		expect(page).to have_content 'Noun'
 		expect(page).to have_content 'Shall we grab a bite?'
-
-		visit '/words'
-		click_link 'New Word'
-		fill_in 'word_name', with: 'exuberant'
-		fill_in 'word_word_type', with: 'adjective'
-		fill_in 'word_sentences_attributes_0_content', with: 'Alcohol make me exuberant.'
-		find('input#create_word').click
-
-		visit root_path
-		click_link 'Adjective'
-		expect(page).to have_content 'exuberant'
-		expect(page).to_not have_content 'bite'
 	end
 end
