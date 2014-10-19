@@ -76,7 +76,7 @@ Rails.application.configure do
     port:                 '587',
     user_name:            ENV['MANDRILL_USERNAME'],
     password:             ENV['MANDRILL_APIKEY'],
-    domain:               'flashcar-d.herokuapp.com',
+    domain:               'herokuapp.com',
     authentication:       'plain'
   }
 
