@@ -32,3 +32,7 @@
 .overlay-content.is-animated p {
 	font-weight: bold;
 }
+/* SIDE MENU */
+.word-break {
+	word-break: break-all;
+}

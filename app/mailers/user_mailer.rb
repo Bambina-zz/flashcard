@@ -1,9 +1,9 @@
 class UserMailer < ActionMailer::Base
-  default from: "app22461025@heroku.com"
+  default from: "Flashcar-d"
 
   def welcome_email(user)
-  	@user = user
-  	@url = "#{root_url(only_path: false)}login"
-  	mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+	@user = user
+	@url = "#{root_url(only_path: false)}login"
+	mail(to: @user.email, subject: 'Welcome to Flashcar-d')
   end
 end

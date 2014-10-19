@@ -1,4 +1,4 @@
-Flashcard::Application.routes.draw do
+Rails.application.routes.draw do
   default_url_options :host => "localhost:3000"
 
   get 'stats' => 'stats#index'
@@ -59,7 +59,7 @@ Flashcard::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

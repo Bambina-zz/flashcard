@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 source 'https://rails-assets.org'
 ruby '2.1.0'
 
-gem 'rails', '4.0.0'
+gem 'rails', '4.1.6'
 gem 'pg', '0.17.1'
 gem 'bower-rails', '~> 0.7.1'
 gem 'sorcery', '~> 0.8.5'
