@@ -218,7 +218,7 @@ DEPENDENCIES
   gon (~> 5.2.0)
   jquery-rails (~> 3.1.2)
   launchy (~> 2.3.0)
-  mandrill-api
+  mandrill-api (~> 1.0.53)
   newrelic_rpm
   pg (= 0.17.1)
   poltergeist (~> 1.5.1)

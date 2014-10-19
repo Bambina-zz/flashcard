@@ -12,7 +12,7 @@ describe UserMailer do
 		end
 
 		it 'has corect subject' do
-			expect(@welcome_email).to have_subject 'Welcome to My Awesome Site'
+			expect(@welcome_email).to have_subject 'Welcome to Flashcar-d'
 		end
 
 		it 'contains login url' do

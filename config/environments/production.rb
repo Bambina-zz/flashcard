@@ -47,7 +47,6 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
   config.logger = Logger.new(STDOUT)
-  config.logger.level = Logger.const_get(ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'INFO')
 
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
@@ -60,7 +59,7 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
@@ -70,15 +69,16 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.default_url_options = { :host => 'flashcar-d.herokuapp.com' }
-  config.action_mailer.smtp_settings = {
-    :port =>           '587',
-    :address =>        'smtp.mandrillapp.com',
-    :user_name =>      ENV['MANDRILL_USERNAME'],
-    :password =>       ENV['MANDRILL_APIKEY'],
-    :authentication => :plain
-  }
 
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    port:                 '587',
+    address:              'smtp.mandrillapp.com',
+    user_name:            ENV['MANDRILL_USERNAME'],
+    password:             ENV['MANDRILL_APIKEY'],
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
