@@ -4,6 +4,6 @@ class UserMailer < ActionMailer::Base
 	@url = "#{root_url(only_path: false)}login"
 	mail :subject => "Welcome to Flashcar-d",
          :to      => @user.email,
-         :from    => "Flashcar-d"
+         :from    => "app22461025@heroku.com"
   end
 end
