@@ -14,7 +14,7 @@ gem 'coffee-rails', '4.0.0'
 gem 'uglifier', '1.2.3'
 gem 'rails-assets-bootstrap'
 gem 'rails-assets-angular'
-gem 'jquery-rails', '2.0.2'
+gem 'jquery-rails', '~> 3.1.2'
 gem 'protected_attributes'
 
 group :production do
