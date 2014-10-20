@@ -3,9 +3,19 @@ before_filter :require_login
   # GET /words
   # GET /words.json
   def index
-    @words = Word.where( user_id: current_user.id )
-    @sub_title = 'Listing Words'
+    if params[:search]
+      query = params[:search].downcase
+      @words = Word.joins(:sentences)
+              .where( user_id: current_user.id )
+              .where('lower(sentences.content) like ? OR lower(name) like ?',
+                     "%#{query}%", "%#{query}%")
+              .order('created_at DESC')
+    else
+      @words = Word.where( user_id: current_user.id )
+              .order('created_at DESC')
+    end
 
+    @sub_title = 'Listing Words'
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @words }

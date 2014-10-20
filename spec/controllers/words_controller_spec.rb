@@ -56,15 +56,33 @@ RSpec.describe WordsController, :type => :controller do
 
 		describe 'GET #index' do
 			it 'populates an array of words having login_user_id' do
-				word1 = create(:word, user: @user)
-				word2 = create(:word, user: @user, name: 'walk')
-				word3 = create(:word)
+				word1     = create(:word, user: @user)
+				word2     = create(:word, user: @user, name: 'walk')
+				word3     = create(:word)
+				sentence1 = create(:sentence, word: word1)
+				sentence2 = create(:sentence, word: word2, content: 'take a walk')
 				get :index
 				expect( assigns(:words).count ).to eq 3 #including auto generated word(banana)
 			end
 
 			it 'renders the :inedx template' do
 				get :index
+				expect( response ).to render_template :index
+			end
+		end
+
+		describe 'GET #index with search query' do
+			it 'populates an array of words having login_user_id' do
+				word1     = create(:word, user: @user, name: 'work')
+				word2     = create(:word, user: @user, name: 'walk')
+				sentence1 = create(:sentence, word: word1, content: 'allow to work')
+				sentence2 = create(:sentence, word: word2, content: 'take a walk')
+				get :index, {:search => 'al'}
+				expect( assigns(:words) ).to match_array [word1, word2]
+			end
+
+			it 'renders the :inedx template' do
+				get :index, {:search => 'al'}
 				expect( response ).to render_template :index
 			end
 		end

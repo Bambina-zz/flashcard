@@ -9,20 +9,18 @@
             <thead>
               <tr>
                 <th>Word</th>
-                <th>Type</th>
-                <th>Show</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>Sentence</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
               <% @words.each do |word| %>
               <tr>
                 <td><%= word.name %></td>
-                <td><%= word.word_type %></td>
-                <td><%= link_to 'Show', word, class:"btn btn-info btn-sm" %></td>
-                <td><%= link_to 'Edit', edit_word_path(word), class:"btn btn-primary btn-sm" %></td>
-                <td><%= link_to 'Delete', word, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm" %></td>
+                <td><%= word.sentences[0].content %></td>
+                <td><%= link_to 'Show', word, class:"btn btn-info btn-sm" %>&nbsp;&nbsp;
+                    <%= link_to 'Edit', edit_word_path(word), class:"btn btn-primary btn-sm" %>&nbsp;&nbsp;
+                    <%= link_to 'Delete', word, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm" %></td>
               </tr>
               <% end %>
             </tbody>

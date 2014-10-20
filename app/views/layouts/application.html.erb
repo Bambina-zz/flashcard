@@ -78,6 +78,19 @@
               </button>
             </div><!-- /.col -->
             <div class="col-xs-8 col-md-6">
+              <% if params[:controller] == 'words' && params[:action] == 'index' %>
+                <%= form_tag(words_path, :method => "get", id: "search-form", class: "form-horizontal") do %>
+                  <div class="row">
+                    <div class="col-xs-3">
+                    <label for="search" class="control-label">Word Search:</label>
+                    </div>
+                    <div class="col-xs-9">
+                    <%= text_field_tag :search, params[:search], placeholder: "Search by keyword",id:"navbar-search", class: "form-control" %>
+                    <%= submit_tag "Search", name: nil, id: 'search-submit', style: "display:none" %>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
             </div><!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container -->

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Word management' do
-	scenario 'login user adds a new word' do
+	scenario 'login user adds a new word AND search for a specific word' do
 		visit root_path
 
 		expect(page).to have_content 'Create an account'
@@ -22,5 +22,10 @@ feature 'Word management' do
 		expect(page).to have_content 'bite'
 		expect(page).to have_content 'Noun'
 		expect(page).to have_content 'Shall we grab a bite?'
+
+		click_link 'Word Lists'
+		fill_in 'navbar-search', with: 'banana\n'
+		find('input#search-submit', visible: false).click
+		expect(page).to_not have_content 'bite'
 	end
 end
