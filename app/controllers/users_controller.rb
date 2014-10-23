@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if current_user == @user || current_user.admin == true
       respond_to do |format|
-        format.html # show.html.erb
+        format.html { render layout: 'application' }
         format.json { render json: @user }
       end
     else
@@ -49,7 +49,15 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
-    if current_user != @user || current_user.admin == true
+    @sub_title = 'Edit Profile'
+    @sub_title2 = @user.name
+
+    if current_user == @user || current_user.admin == true
+      respond_to do |format|
+        format.html { render layout: 'application' }
+        format.json { render json: @user }
+      end
+    else
       respond_to do |format|
         format.html { redirect_to root_url }
         format.json { head :no_content }
@@ -81,10 +89,13 @@ class UsersController < ApplicationController
     if current_user == @user || current_user.admin == true
       respond_to do |format|
         if @user.update_attributes(params[:user])
-          format.html { redirect_to @user, notice: 'User was successfully updated.' }
+          flash[:notice] = 'User was successfully updated.'
+          @sub_title = 'Edit Profile'
+          @sub_title2 = @user.name
+          format.html { render layout: 'application', action: "edit" }
           format.json { head :no_content }
         else
-          format.html { render action: "edit" }
+          format.html { render layout: 'application', action: "edit" }
           format.json { render json: @user.errors, status: :unprocessable_entity }
         end
       end

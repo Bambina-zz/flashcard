@@ -1,3 +1,5 @@
+Paperclip.options[:command_path] = "/opt/ImageMagick/bin/"
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -35,7 +37,8 @@ Rails.application.configure do
     user_name:            ENV['GMAIL_USER'],
     password:             ENV['GMAIL_PASSWORD'],
     authentication:       'plain',
-    enable_starttls_auto: true  }
+    enable_starttls_auto: true
+  }
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.

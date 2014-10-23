@@ -5,9 +5,10 @@ require 'rspec/rails'
 require 'email_spec'
 require 'database_cleaner'
 require 'capybara/poltergeist'
+require "paperclip/matchers"
 
+ActiveRecord::Migration.maintain_test_schema!
 DatabaseCleaner.strategy = :truncation
-
 Capybara.javascript_driver = :poltergeist
 
 # Requires supporting ruby files with custom matchers and macros, etc,
@@ -28,7 +29,7 @@ RSpec.configure do |config|
   config.include EmailSpec::Helpers
   config.include EmailSpec::Matchers
   config.include Rails.application.routes.url_helpers
-
+  config.include Paperclip::Shoulda::Matchers
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

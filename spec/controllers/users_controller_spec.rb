@@ -50,19 +50,21 @@ RSpec.describe UsersController, :type => :controller do
 		end
 
 		describe 'PUT #update' do
-			it "changes @user2's attributes" do
+			it "changes @user2's name and email" do
 				new_name  = 'new name'
 				new_email = 'new_email@example.com'
 				put :update,
 				id: @user2,
-				user: attributes_for(:user, name: new_name, email: new_email)
+				user: attributes_for(:user,
+									 name: new_name,
+									 email: new_email)
 				@user2.reload
 				expect(@user2.name).to eq new_name
 				expect(@user2.email).to eq new_email
 			end
 			it 'redirects to the updated user' do
 				put :update, id: @user2, user: attributes_for(:user)
-				expect(response).to redirect_to @user2
+				expect(response).to render_template(:edit)
 			end
 		end
 

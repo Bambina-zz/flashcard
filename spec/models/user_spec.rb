@@ -1,6 +1,13 @@
 require 'spec_helper'
 
 RSpec.describe User, :type => :model do
+	it { should have_attached_file(:avatar) }
+	it { should validate_attachment_content_type(:avatar).
+                allowing('image/png', 'image/jpg').
+                rejecting('text/plain', 'text/xml') }
+	it { should validate_attachment_size(:avatar).
+                less_than(2.megabytes) }
+
 	it 'is valid with a name, email, password and password confirmation' do
 		expect( build(:user) ).to be_valid
 	end
@@ -34,7 +41,7 @@ RSpec.describe User, :type => :model do
 	it 'is invalid when password and password_confirmation are not equal' do
 		user = build(
 			:user,
-			password:							 '12345asdfg',
+			password:              '12345asdfg',
 			password_confirmation: 'asdfg12345')
 		expect( user ).to be_invalid
 	end
