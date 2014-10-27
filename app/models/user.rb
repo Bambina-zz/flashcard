@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
                     :path     => ":attachment/:id/:style.:extension",
                     :s3_permissions => 'public-read-write',
                     :s3_credentials => "#{Rails.root}/config/s3.yml",
-                    :default_url    => ':attachment/user-female-2.jpg'#:original,
+                    :default_url    => ':attachment/logo-full-color.png'#:original,
 
   validates :email, uniqueness: true
   validates :password, confirmation: true
