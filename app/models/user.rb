@@ -6,11 +6,11 @@ class User < ActiveRecord::Base
   has_attached_file :avatar,
                     :provider => 'AWS',
                     :storage  => :s3,
-                    :styles   => { :thumb => ["100x100#", :png] },
-                    :path     => ":attachment/:id/:style.:extension",
+                    :styles   => { :thumb => '100x100#' },
+                    :path     => ':attachment/:id/:style.:extension',
                     :s3_permissions => 'public-read-write',
-                    :s3_credentials => "#{Rails.root}/config/s3.yml",
-                    :default_url    => 'logo-full-color.png'#:original,
+                    :s3_credentials => '#{Rails.root}/config/s3.yml',
+                    :default_url    => 'user-female-2.jpg'
 
   validates :email, uniqueness: true
   validates :password, confirmation: true

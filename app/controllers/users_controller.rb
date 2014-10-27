@@ -92,7 +92,7 @@ class UsersController < ApplicationController
           flash[:notice] = 'User was successfully updated.'
           @sub_title = 'Edit Profile'
           @sub_title2 = @user.name
-          format.html { render layout: 'application', action: "edit" }
+          format.html { redirect_to :back }
           format.json { head :no_content }
         else
           format.html { render layout: 'application', action: "edit" }
