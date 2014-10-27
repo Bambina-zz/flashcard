@@ -2,20 +2,24 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
   attr_accessible :email, :password, :password_confirmation, :name, :avatar
+
   has_attached_file :avatar,
-                    #:storage => :s3,
-                    #:s3_permissions => :public,
-                    #:s3_credentials => "#{Rails.root}/config/s3.yml",
-                    :styles => { :thumb => "100x100#" },
-                    :default_url => "user-male-2.jpg"
+                    :provider => 'AWS',
+                    :storage  => :s3,
+                    :styles   => { :thumb => ["100x100#", :png] },
+                    :path     => ":attachment/:id/:style.:extension",
+                    :s3_permissions => 'public-read-write',
+                    :s3_credentials => "#{Rails.root}/config/s3.yml",
+                    :default_url    => ':attachment/user-female-2.jpg'#:original,
 
   validates :email, uniqueness: true
   validates :password, confirmation: true
   validates :password, :password_confirmation, presence: true, on: :create
   validates :name, :email, presence: true
 
-  validates_attachment :avatar, :content_type => { content_type: /\Aimage\/.*\Z/ },
-                                :size => { :in => 0..2.megabytes }
+  validates_attachment :avatar,
+                       content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
+                       size: { :in => 0..2.megabytes }
 
   has_many :words
   after_create :send_welcome_email, :create_example_words
