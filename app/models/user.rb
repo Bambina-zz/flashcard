@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
                     :styles   => { :thumb => '100x100#' },
                     :path     => ':attachment/:id/:style.:extension',
                     :s3_permissions => 'public-read-write',
-                    :s3_credentials => '#{Rails.root}/config/s3.yml',
+                    :s3_credentials => "#{Rails.root}/config/s3.yml",
                     :default_url    => 'user-female-2.jpg'
 
   validates :email, uniqueness: true
