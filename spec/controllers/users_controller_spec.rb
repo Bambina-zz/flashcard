@@ -50,6 +50,9 @@ RSpec.describe UsersController, :type => :controller do
 		end
 
 		describe 'PUT #update' do
+			before(:each) do
+				request.env["HTTP_REFERER"] = "http://test.host/#{Rails.root}/users/#{@user2.id}/edit"
+			end
 			it "changes @user2's name and email" do
 				new_name  = 'new name'
 				new_email = 'new_email@example.com'
@@ -64,7 +67,7 @@ RSpec.describe UsersController, :type => :controller do
 			end
 			it 'redirects to the updated user' do
 				put :update, id: @user2, user: attributes_for(:user)
-				expect(response).to render_template(:edit)
+				expect(response).to redirect_to :back
 			end
 		end
 
@@ -131,6 +134,9 @@ RSpec.describe UsersController, :type => :controller do
 		end
 
 		describe 'PUT #update' do
+			before(:each) do
+				request.env["HTTP_REFERER"] = "http://test.host/#{Rails.root}/users/#{@user1.id}/edit"
+			end
 			it "changes @user1's attributes" do
 				new_name = 'new name'
 				new_email = 'newemail@example.com'
