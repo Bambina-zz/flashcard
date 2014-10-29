@@ -34,6 +34,7 @@ feature 'User management' do
 		}.to change(User, :count).by(1)
 
 		click_link 'Edit Profile'
+		attach_file('user_avatar', "#{Rails.root}/spec/support/user-female-2.jpg")
 		fill_in 'user_name', with: 'mayuyu'
 		fill_in 'user_email', with: 'changed123@example.com'
 		fill_in 'user_password', with: 'password123'

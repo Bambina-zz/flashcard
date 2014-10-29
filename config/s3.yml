@@ -1,4 +1,17 @@
-bucket:            'flashcar-d'
-s3_host_name:      's3.amazonaws.com'
-access_key_id:     <%= ENV['AWS_ACCESS_KEY'] %>
-secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+development:
+  bucket:            'dev-flashcar-d'
+  s3_host_name:      's3.amazonaws.com'
+  access_key_id:     <%= ENV['DEV_AWS_ACCESS_KEY'] %>
+  secret_access_key: <%= ENV['DEV_AWS_SECRET_ACCESS_KEY'] %>
+
+test:
+  bucket:            'test-flashcar-d'
+  s3_host_name:      's3.amazonaws.com'
+  access_key_id:     <%= ENV['TEST_AWS_ACCESS_KEY'] %>
+  secret_access_key: <%= ENV['TEST_AWS_SECRET_ACCESS_KEY'] %>
+
+production:
+  bucket:            'flashcar-d'
+  s3_host_name:      's3.amazonaws.com'
+  access_key_id:     <%= ENV['AWS_ACCESS_KEY'] %>
+  secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
