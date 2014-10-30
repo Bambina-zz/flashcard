@@ -72,7 +72,7 @@ RSpec.describe WordsController, :type => :controller do
 		end
 
 		describe 'GET #index with search query' do
-			it 'populates an array of words having login_user_id' do
+			it 'populates an array of words having search query' do
 				word1     = create(:word, user: @user, name: 'work')
 				word2     = create(:word, user: @user, name: 'walk')
 				sentence1 = create(:sentence, word: word1, content: 'allow to work')
@@ -84,6 +84,21 @@ RSpec.describe WordsController, :type => :controller do
 			it 'renders the :inedx template' do
 				get :index, {:search => 'al'}
 				expect( response ).to render_template :index
+			end
+		end
+
+		describe 'GET #index with pagination' do
+			it 'populates an array of first 10 words' do
+				word_list = ['the','museum','will','house','server',
+							 'host','first','ever','website','in','London']
+				word_list.each_with_index do |word,i|
+					eval("@word#{i} = create(:word, user: @user, name: word)")
+					eval("@sentence#{i} = create(:sentence, word: @word#{i}, content: #{i})")
+				end
+				get :index
+				## array ordered by 'created_at DESC' ##
+				expect( assigns(:words) ).to match_array [@word1,@word2,@word3,@word4,@word5,
+														  @word6,@word7,@word8,@word9,@word10]
 			end
 		end
 
