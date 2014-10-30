@@ -1,27 +1,30 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @word.name %>
-</p>
-
-<p>
-  <b>Word type:</b>
-  <%= @word.word_type %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @word.user_id %>
-</p>
-
-<p>
-  <b>Sentence:</b>
-  <% @word.sentences.each do |sentence| %>
-	  <p><%= sentence.content %></p><br />
-  <% end %>
-</p>
-
-
-<%= link_to 'Edit', edit_word_path(@word) %> |
-<%= link_to 'Back', words_path %>
+<section class="wrapper-sm">
+  <div class="container-fluid">
+    <h1 class="page-header">Selected word</h1>
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <div class="widget border-default panel">
+          <div class="meta-row bg-info point-down">
+            <h1><strong><%= @word.name %></strong></h1>
+          </div>
+          <div class="meta-row">
+            <% @word.sentences.each do |sentence| %>
+              <p><%= sentence.content %></p><br />
+            <% end %>
+          </div>
+          <div class="meta-row">
+            <i class="fa fa-fw fa-tags"></i> Type <p class="pull-right"><%= @word.word_type %></p>
+          </div>
+          <div class="meta-row">
+            <i class="fa fa-fw fa-calendar"></i> Created at <p class="pull-right"><%= @word.created_at.localtime.strftime("%d %b,  %Y") %></p>
+          </div>
+          <div class="meta-row">
+            <i class="fa fa-fw fa-user"></i> Created by <p class="pull-right"><%= @word.user.name %></p>
+          </div>
+        </div>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+    <%= link_to 'Edit', edit_word_path(@word) %> |
+    <%= link_to 'Back', words_path %>
+  </div><!-- /.container -->
+</section>
