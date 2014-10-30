@@ -10,9 +10,11 @@ before_filter :require_login
               .where('lower(sentences.content) like ? OR lower(name) like ?',
                      "%#{query}%", "%#{query}%")
               .order('created_at DESC')
+              .page(params[:page])
     else
       @words = Word.where( user_id: current_user.id )
               .order('created_at DESC')
+              .page(params[:page])
     end
 
     @sub_title = 'Listing Words'

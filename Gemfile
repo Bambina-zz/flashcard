@@ -18,6 +18,7 @@ gem 'jquery-rails', '~> 3.1.2'
 gem 'protected_attributes'
 gem 'paperclip', '~> 4.2.0'
 gem 'aws-sdk'
+gem 'kaminari', '~> 0.16.1'
 
 group :production do
   gem 'rails_12factor'

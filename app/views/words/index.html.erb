@@ -25,8 +25,7 @@
               <% end %>
             </tbody>
           </table>
-          <br />
-          <%= link_to 'New Word', new_word_path %>
+          <%= paginate @words %>
         </div>
       </div><!-- /.col -->
     </div><!-- /.row -->
