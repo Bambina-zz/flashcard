@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   default_url_options :host => "localhost:3000"
 
-  get '/.*/assets/favicon.ico' => redirect('/assets/favicon.ico')
-  get '/.*/.*/assets/favicon.ico' => redirect('/assets/favicon.ico')
-
   resources :password_resets
 
   get '/stats' => 'stats#index'
