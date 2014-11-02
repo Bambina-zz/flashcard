@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   validates :email, uniqueness: true
   validates :password, confirmation: true
-  validates :password, :password_confirmation, presence: true, on: :create
+  validates :password, :password_confirmation, presence: true
   validates :name, :email, presence: true
 
   validates_attachment :avatar,

@@ -6,6 +6,7 @@
           <ul class="nav nav-tabs">
             <li><a href='/login'><span class="text-default">Login</span></a></li>
             <li class="active"><a href='/users/new'><span class="text-default">Create an account</span></a></li>
+            <li><a href='/password_resets/new'><span class="text-default">Forgot password?</span></a></li>
           </ul>
           <div class="tab-content">
             <div>
@@ -33,7 +34,7 @@
               </div>
               <div class="form-group">
                 <%= f.label(:password, 'Create a password') %>
-                <%= f.text_field :password, type:'password', class:'form-control', placeholder:'Password' %>
+                <%= f.text_field :password, type:'password', class:'form-control', placeholder:'Enter password' %>
               </div>
               <div class="form-group">
                 <%= f.label(:password_confirmation, 'Password Confirmation') %>

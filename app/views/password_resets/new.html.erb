@@ -1,0 +1,34 @@
+<div class="wrapper-lg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-md-offset-3">
+        <div class="widget padding-md bg-white-alpha text-default">
+          <ul class="nav nav-tabs">
+            <li><a href='/login'><span class="text-default">Login</span></a></li>
+            <li><a href='/users/new'><span class="text-default">Create an account</span></a></li>
+            <li class='active'><a href='/password_resets/new'><span class="text-default">Forgot password?</span></a></li>
+          </ul>
+          <div class="tab-content">
+            <% if flash[:alert] %>
+            <div class="alert alert-danger">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-fw fa-times-circle"></i></button>
+              <p><i class="fa fa-info-circle"></i> <strong>Alert:</strong> <%= flash[:alert] %></p>
+            </div>
+            <% end %>
+            <p class='heading-default'>Enter your email and send password reset email.</p>
+            <div>
+              <%= form_tag password_resets_path, :method => :post do %>
+              <div class="form-group">
+                <%= text_field_tag :email, nil, class: 'form-control', placeholder:'Enter email address' %>
+              </div>
+
+              <%= submit_tag "Send an email", id: 'send_email', class: 'btn btn-primary' %>
+              <% end %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

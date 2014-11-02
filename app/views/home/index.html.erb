@@ -1,6 +1,9 @@
-
-<%# link_to "Visit secret page", secret_path %>
-
+<% if flash[:success] %>
+<div class="alert alert-success">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-fw fa-times-circle"></i></button>
+  <p><strong>Success:</strong> <%= flash[:success] %></p>
+</div>
+<% end %>
 <section class="wrapper-sm">
   <div class="container-fluid">
     <h2 class="headline">Vocabulary Gallery</h2>

@@ -6,31 +6,48 @@
           <ul class="nav nav-tabs">
             <li class="active"><a href='/login'><span class="text-default">Login</span></a></li>
             <li><a href='/users/new'><span class="text-default">Create an account</span></a></li>
+            <li><a href='/password_resets/new'><span class="text-default">Forgot password?</span></a></li>
           </ul>
           <div class="tab-content">
             <div>
               <%= form_tag sessions_path do %>
-              <% flash.each do |key, value| %>
-              <div id="error_explanation" class="alert alert-danger alert-dismissable">
+              <% if flash[:success] %>
+              <div class="alert alert-success">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-fw fa-times-circle"></i></button>
-                <i class="fa fa-info-circle"></i><strong> <%= flash.count %> prohibited this user from being logged in:</strong>
-                <ul>
-                  <%= content_tag :li, value %>
-                </ul>
+                <p><strong>Check your email:</strong> <%= flash[:success] %></p>
               </div>
               <% end %>
 
+              <% if flash[:notice] %>
+              <div class="alert alert-info">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-fw fa-times-circle"></i></button>
+                <p><i class="fa fa-info-circle"></i> <strong>Status:</strong> <%= flash[:notice] %></p>
+              </div>
+              <% end %>
+
+              <% if flash[:alert] %>
+                <% flash.each do |key, value| %>
+                <div id="error_explanation" class="alert alert-danger alert-dismissable">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-fw fa-times-circle"></i></button>
+                  <i class="fa fa-info-circle"></i><strong> <%= flash.count %> prohibited this user from being logged in:</strong>
+                  <ul>
+                    <%= content_tag :li, value %>
+                  </ul>
+                </div>
+                <% end %>
+              <% end %>
               <div class="form-group">
                 <%= label_tag(:email, 'Email address') %>
                 <%= text_field_tag :email, params[:email], class: 'form-control', placeholder: 'Enter email' %>
               </div>
               <div class="form-group">
                 <%= label_tag(:password, 'Password') %>
-                <%= password_field_tag :password, nil, class: 'form-control', placeholder: 'Enter Password' %>
+                <%= password_field_tag :password, nil, class: 'form-control', placeholder: 'Enter password' %>
               </div>
               <div class="checkbox">
                 <label>
-                  <%= check_box_tag :remember_me, 1, params[:remember_me] %> Remember me
+                  <%= check_box_tag :remember_me, 1, params[:remember_me] %> Remember me&nbsp;·&nbsp;
+                  <%= link_to 'Forgot password?', new_password_reset_path %>
                 </label>
               </div>
               <%= submit_tag "I'm Ready!", id: 'login_user', class: 'btn btn-primary' %>
