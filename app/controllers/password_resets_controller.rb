@@ -14,10 +14,10 @@ class PasswordResetsController < ApplicationController
 
     if @user
 	    @user.deliver_reset_password_instructions!
-      flash[:success] = 'Instructions have been sent to your email.'
+      flash.now[:success] = 'Instructions have been sent to your email.'
 	    redirect_to login_path
     else
-	    flash[:alert] = 'Sorry, something went wrong..make sure email address is correct.'
+	    flash.now[:alert] = 'Sorry, something went wrong..make sure email address is correct.'
 	    render 'new'
   	end
   end
@@ -47,7 +47,7 @@ class PasswordResetsController < ApplicationController
 
     if @user.change_password!(params[:user][:password])
       login(@user.email, params[:user][:password], true)
-      flash[:success] = 'Password was successfully updated.'
+      flash.now[:success] = 'Password was successfully updated.'
       redirect_to root_path
     else
       render :action => "edit"
