@@ -29,32 +29,32 @@
         <p><a href="/users/<%= current_user.id %>/edit" class="btn btn-outline btn-primary">Edit Profile</a></p>
       </div><!-- /.sidebar-subheader -->
       <ul class="sidebar-nav">
-        <li class="active">
+        <li class="<%= 'active' if current_page?('/') %>">
           <a href="/">
             <i class="icon-grid"></i>
             Vocabulary Gallery
           </a>
         </li>
-        <li>
+        <li class="<%= 'active' if current_page?('/words/new') %>">
           <a href="/words/new">
             <i class="icon-note"></i>
             Add a New Word
           </a>
         </li>
-        <li>
+        <li class="<%= 'active' if current_page?('/words') %>">
           <a href="/words">
             <i class="icon-list"></i>
             Word Lists
           </a>
         </li>
-        <li>
+        <li class="<%= 'active' if current_page?('/stats') %>">
           <a href="/stats">
             <i class="icon-pie-chart"></i>
             Statistics
           </a>
         </li>
-        <li>
-          <a href="settings.html">
+        <li class="<%= 'active' if current_page?('/settings') %>">
+          <a href="/settings">
             <i class="icon-settings"></i>
             Settings
           </a>

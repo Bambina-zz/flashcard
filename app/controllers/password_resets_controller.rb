@@ -14,7 +14,7 @@ class PasswordResetsController < ApplicationController
 
     if @user
 	    @user.deliver_reset_password_instructions!
-      flash.now[:success] = 'Instructions have been sent to your email.'
+      flash[:success] = 'Instructions have been sent to your email.'
 	    redirect_to login_path
     else
 	    flash.now[:alert] = 'Sorry, something went wrong..make sure email address is correct.'
