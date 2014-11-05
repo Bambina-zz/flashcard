@@ -12,8 +12,10 @@ class StatsController < ApplicationController
     numbers_of_words = get_numbers_of_words(current_user)
     numbers_of_classified_words = get_numbers_of_classified_words(current_user)
     @total = @words.count
+    @high_month = numbers_of_words.max
+    @low_month  = numbers_of_words.min
     @high_classified = numbers_of_classified_words[4][1]
-    @low_classified = numbers_of_classified_words[0][1]
+    @low_classified  = numbers_of_classified_words[0][1]
 
     gon.push({
       :months  => past_7_months,

@@ -1,0 +1,33 @@
+<section class="wrapper-sm">
+  <div class="container-fluid">
+    <h2 class="headline">Quizzes</h2>
+    <div class="row">
+      <div class="col-sm-12 col-md-8 col-md-offset-2">
+          <h1 class="flash-alert">sorry it's developing!</h1>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="no-margin">Fill in the blanks</h4>
+          </div><!-- /.panel-heading -->
+          <div class="panel-body no-padding">
+            <% @words.each do |w| %>
+            <div class="meta-row">
+              <div class="row">
+                <div class="col-xs-6">
+                  <strong><%= w.sentences.first.content.gsub(w.name,'_____') %></strong>
+                </div><!-- /.col -->
+                <div class="col-xs-6">
+                  <input type="text" class="form-control input-md" placeholder="Write an answer">
+                </div><!-- /.col -->
+              </div><!-- /.row -->
+            </div><!-- /.meta-row -->
+            <% end %>
+          </div>
+          <div class="panel-footer clearfix">
+            <button class="btn btn-inverse btn-outline pull-right">See Answers</button>
+          </div><!-- /.panel-footer -->
+        </div>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section>

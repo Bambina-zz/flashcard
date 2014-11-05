@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get '/stats' => 'stats#index'
 
+  get '/quizzes' => 'quizzes#index'
+
   resources :sentences
 
   resources :words
