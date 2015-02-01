@@ -70,9 +70,16 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
 
+    user_params = {
+      name:  params[:user_name],
+      email: params[:user_email],
+      password: params[:user_password],
+      password_confirmation: params[:user_password_confirmation]
+    }
+
     respond_to do |format|
-      if @user.save
-        login(@user.email, params[:user][:password], true)
+      if @user.update(user_params)
+        login(@user.email, params[:user_password], true)
         format.html { redirect_to root_path, :notice => "You are registered now!" }
         #format.json { render json: @user, status: :created, location: @user }
       else
@@ -123,5 +130,17 @@ class UsersController < ApplicationController
         format.json { head :no_content }
       end
     end
+  end
+
+  def confirm_user
+    result = {'result'=>'nil'}
+    if params[:email]
+      if User.find_by(email: params[:email])
+        result[:result] = 'existing'
+      else
+        result[:result] = 'unique'
+      end
+    end
+    render :json => result
   end
 end

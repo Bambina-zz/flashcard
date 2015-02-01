@@ -85,6 +85,8 @@ before_filter :require_login
   def create
     @user = current_user
     @word = @user.words.create(params[:word])
+    @sub_title = 'Words'
+    @sub_title2 = 'Create a New Word'
 
     respond_to do |format|
       if @word.save

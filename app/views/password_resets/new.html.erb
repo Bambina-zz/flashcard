@@ -15,18 +15,21 @@
               <p><i class="fa fa-info-circle"></i> <strong>Alert:</strong> <%= flash[:alert] %></p>
             </div>
             <% end %>
-            <p class='heading-default'>Enter your email and send password reset email.</p>
             <div>
-              <%= form_tag password_resets_path, :method => :post do %>
+              <%= form_tag password_resets_path, :method => :post, 'ng-controller'=>'PasswordResetController as prCtrl', 'name'=>'reset_user' do %>
               <div class="form-group">
-                <%= text_field_tag :email, nil, class: 'form-control', placeholder:'Enter email address' %>
+                <label class='heading-default'>Enter your email and send password reset email.</label>
+                <%= email_field :email, nil, class: 'form-control', placeholder:'Enter email address', name: 'resetpasswordemail', 'ng-model'=>'prCtrl.reset_user.email', 'required'=>'', 'ng-model-options'=>"{ updateOn: 'blur' }", 'is-existing'=>'' %>
+                <div ng-show="reset_user.resetpasswordemail.$dirty && reset_user.resetpasswordemail.$invalid" class="ng-cloak has-error has-feedback" ng-cloak>
+                  <span class="control-label" ng-show="reset_user.resetpasswordemail.$error.email">email is invalid</span>
+                  <span class="control-label" ng-show="reset_user.resetpasswordemail.$error.required">email is required</span>
+                  <span class="control-label" ng-show="reset_user.resetpasswordemail.$error.isExisting">email hasn't been registered</span>
+                </div>
               </div>
-
-              <%= submit_tag "Send an email", id: 'send_email', class: 'btn btn-primary' %>
+              <%= submit_tag "Send an email", id: "send_email", class: "btn btn-primary" %>
               <% end %>
             </div>
           </div>
-
         </div>
       </div>
     </div>

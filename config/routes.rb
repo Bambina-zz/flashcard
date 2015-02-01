@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :words
 
+  post '/users/confirm_user' => 'users#confirm_user'
   resources :users
 
   get "logout" => "sessions#destroy", :as => "logout"

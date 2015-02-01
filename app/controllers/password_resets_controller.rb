@@ -10,11 +10,11 @@ class PasswordResetsController < ApplicationController
   end
 
   def create 
-    @user = User.find_by_email(params[:email])
+    @user = User.find_by_email(params[:resetpasswordemail])
 
     if @user
 	    @user.deliver_reset_password_instructions!
-      flash[:success] = 'Instructions have been sent to your email.'
+      flash[:success] = 'Instructions have been sent.'
 	    redirect_to login_path
     else
 	    flash.now[:alert] = 'Sorry, something went wrong..make sure email address is correct.'

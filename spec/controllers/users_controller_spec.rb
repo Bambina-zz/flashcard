@@ -32,12 +32,10 @@ RSpec.describe UsersController, :type => :controller do
 			it 'saves a new user in the database' do
 				expect{
 					post :create,
-					user: attributes_for(
-						:user,
-						name: 'name',
-						email: '1234@example.com',
-						password: 'password1234',
-						password_confirmation: 'password1234')
+					user_name: 'name',
+					user_email: '1234@example.com',
+					user_password: 'password1234',
+					user_password_confirmation: 'password1234'
 				}.to change(User, :count).by 1
 			end
 		end
