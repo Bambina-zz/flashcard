@@ -41,15 +41,18 @@
               <div class="form-group">
                 <%= label_tag(:password, 'Create a password') %>
                 <div ng-show="new_user.user_password.$dirty && new_user.user_password.$invalid" class="ng-cloak has-error has-feedback" ng-cloak>
-                  <span class="control-label" ng-show='new_user.user_password.$error.required'>password is required</span>
+                  <span class="control-label" ng-show="new_user.user_password.$error.required">password is required</span>
                 </div>
                 <%= password_field :password, nil, type:'password', class:'form-control', placeholder:'Enter password', name: 'user_password', 'ng-model'=>'userCtrl.user.password', 'required'=>'', 'ng-model-options'=>"{ updateOn: 'blur' }" %>
               </div>
               <div class="form-group">
                 <%= label_tag(:password_confirmation, 'Password confirmation') %>
+
                 <div ng-show="new_user.user_password_confirmation.$dirty && new_user.user_password_confirmation.$invalid"  class="ng-cloak has-error has-feedback" ng-cloak>
-                  <span class="control-label" ng-show='new_user.user_password_confirmation.$error.compareTo'>Password confirmation is not equal to password</span>
+                  <span class="control-label" ng-show="new_user.user_password_confirmation.$error.required">password confirmation is required</span>
+                  <span class="control-label" ng-show="new_user.user_password_confirmation.$error.compareTo">it's not equal to password</span>
                 </div>
+
                 <%= password_field :password_confirmation, nil, type:'password', class:'form-control', placeholder:'Re-type Password', name: 'user_password_confirmation', 'ng-model'=>'userCtrl.user.password_confirmation', 'required'=>'', 'compare-to'=>'userCtrl.user.password', 'ng-model-options'=>"{ updateOn: 'blur' }" %>
               </div><!-- {{new_user.$valid}}{{new_user.user_email.$valid}} -->
               <%= submit_tag "I'm Ready!", id: 'create_user', class: 'btn btn-primary' %>

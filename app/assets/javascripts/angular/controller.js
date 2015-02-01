@@ -22,7 +22,13 @@
 
 			link: function(scope, element, attributes, ngModel) {
 				ngModel.$validators.compareTo = function(modelValue) {
-					return modelValue == scope.otherModelValue;
+					if(ngModel.$error.required){
+						return true;
+					} else {
+						if(scope.otherModelValue) {
+							return modelValue == scope.otherModelValue;
+						};
+					};
 				};
 				scope.$watch("otherModelValue", function() {
 					ngModel.$validate();
