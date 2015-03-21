@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 source 'https://rails-assets.org'
 ruby '2.1.0'
 
-gem 'rails', '4.1.6'
+gem 'rails', '4.2.1'
 gem 'pg', '0.17.1'
 gem 'sorcery', '~> 0.8.5'
 gem 'mandrill-api', '~> 1.0.53'
@@ -16,7 +16,7 @@ gem 'angularjs-rails', '~> 1.3.4'
 gem 'jquery-rails', '~> 3.1.2'
 gem 'protected_attributes'
 gem 'paperclip', '~> 4.2.0'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem 'kaminari', '~> 0.16.1'
 
 group :production do
