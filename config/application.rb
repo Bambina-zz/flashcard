@@ -28,6 +28,8 @@ module Flashcard
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
 
+    config.serve_static_assets = true
+
     # add app/assets/fonts to the asset path
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
