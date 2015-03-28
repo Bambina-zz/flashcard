@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
   layout 'session'
+  force_ssl unless Rails.env.development?
+
   def new
     verified_request?
     @user = User.new
