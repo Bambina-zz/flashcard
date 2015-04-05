@@ -40,7 +40,7 @@ class SentencesController < ApplicationController
   # POST /sentences
   # POST /sentences.json
   def create
-    @sentence = Sentence.new(params[:sentence])
+    @sentence = Sentence.new(sentence_params)
 
     respond_to do |format|
       if @sentence.save
@@ -59,7 +59,7 @@ class SentencesController < ApplicationController
     @sentence = Sentence.find(params[:id])
 
     respond_to do |format|
-      if @sentence.update_attributes(params[:sentence])
+      if @sentence.update(sentence_params)
         format.html { redirect_to @sentence, notice: 'Sentence was successfully updated.' }
         format.json { head :no_content }
       else
@@ -79,5 +79,12 @@ class SentencesController < ApplicationController
       format.html { redirect_to sentences_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def sentence_params
+    params.require(:sentence).permit(
+      :content
+      )
   end
 end

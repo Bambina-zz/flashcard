@@ -146,8 +146,7 @@ RSpec.describe UsersController, :type => :controller do
 				expect(@user1.email).to eq new_email
 			end
 			it 'redirects to top when it requires another user' do
-				put :update,
-				id: @user2
+				put :update, id: @user2, user: attributes_for(:user)
 				expect(response).to redirect_to '/'
 			end
 		end

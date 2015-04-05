@@ -84,7 +84,7 @@ before_filter :require_login
   # POST /words.json
   def create
     @user = current_user
-    @word = @user.words.create(params[:word])
+    @word = @user.words.create(word_params)
     @sub_title = 'Words'
     @sub_title2 = 'Create a New Word'
 
@@ -105,7 +105,7 @@ before_filter :require_login
     @word = Word.find(params[:id])
 
     respond_to do |format|
-      if @word.update_attributes(params[:word])
+      if @word.update(word_params)
         format.html { redirect_to @word, notice: 'Word was successfully updated.' }
         format.json { head :no_content }
       else
@@ -125,5 +125,15 @@ before_filter :require_login
       format.html { redirect_to words_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def word_params
+    params.require(:word).permit(
+      :name,
+      :user_id,
+      :word_type,
+      sentences_attributes:[:content]
+      )
   end
 end

@@ -68,14 +68,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(params[:user])
-
-    user_params = {
-      name:  params[:user_name],
-      email: params[:user_email],
-      password: params[:user_password],
-      password_confirmation: params[:user_password_confirmation]
-    }
+    @user = User.new(user_params)
 
     respond_to do |format|
       if @user.update(user_params)
@@ -93,9 +86,10 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
+
     if current_user == @user || current_user.admin == true
       respond_to do |format|
-        if @user.update_attributes(params[:user])
+        if @user.update(user_params)
           flash[:notice] = 'User was successfully updated.'
           @sub_title = 'Edit Profile'
           @sub_title2 = @user.name
@@ -142,5 +136,24 @@ class UsersController < ApplicationController
       end
     end
     render :json => result
+  end
+
+  private
+  def user_params
+    if params[:user_name]
+      params[:user] = {
+        name:  params[:user_name],
+        email: params[:user_email],
+        password: params[:user_password],
+        password_confirmation: params[:user_password_confirmation]
+      }
+    end
+    params.require(:user).permit(
+      :name,
+      :email,
+      :password,
+      :password_confirmation,
+      :avatar
+      )
   end
 end
