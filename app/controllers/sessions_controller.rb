@@ -13,14 +13,14 @@ class SessionsController < ApplicationController
       flash[:notice] = 'Logged in!'
       redirect_back_or_to root_url
     else
-      flash[:alert] = 'Email or password was invalid'
+      flash.now[:alert] = 'Email or password was invalid'
       render :new
     end
   end
 
   def destroy
     logout
-    flash[:notice] = 'Logged out!'
+    flash.now[:notice] = 'Logged out!'
     redirect_to root_url
   end
 end
