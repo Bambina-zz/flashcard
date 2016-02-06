@@ -8,41 +8,45 @@ RSpec.describe User, :type => :model do
 	it { should validate_attachment_size(:avatar).
                 less_than(2.megabytes) }
 
-	it 'is valid with a name, email, password and password confirmation' do
-		expect( build(:user) ).to be_valid
-	end
+  describe 'validation' do
+  	let(:user) { build(:user, params) }
+		context 'with valid params' do
+			let(:params) { nil }
+			it { expect(user.valid?).to be_truthy }
+		end
 
-	it 'is invalid without a name' do
-		user = build(:user, name: nil)
-		expect( user ).to validate_presence_of(:name)
-	end
+		context 'without name' do
+			let(:params) { {name: nil} }
+			it { expect(user.valid?).to be_falsy }
+		end
 
-	it 'is invalid without an email' do
-		user = build(:user, email: nil)
-		expect( user ).to validate_presence_of(:email)
-	end
+		context 'without email' do
+			let(:params) { {email: nil} }
+			it { expect(user.valid?).to be_falsy }
+		end
 
-	it 'is invalid without a password' do
-		user = build(:user, password: nil)
-		expect( user ).to validate_presence_of(:password)
-	end
+		context 'without password' do
+			let(:params) { {password: nil} }
+			it { expect(user.valid?).to be_falsy }
+		end
 
-	it 'is invalid with a duplicate email addres' do
-		user = create(:user)
-		other_user = build(:user, email: user.email)
-		expect( other_user ).to validate_uniqueness_of(:email)
-	end
+		context 'without password_confirmation' do
+			let(:params) { {password_confirmation: nil} }
+			it { expect(user.valid?).to be_falsy }
+		end
 
-	it 'is invalid with empty password_confirmation' do
-		user = build(:user, password_confirmation: nil)
-		expect( user ).to validate_presence_of(:password_confirmation)
-	end
+		context 'password_confirmation is not equal' do
+			let(:params) { { password: 'password',
+											 password_confirmation: 'confirmation' } }
+			it { expect(user.valid?).to be_falsy }
+		end
 
-	it 'is invalid when password and password_confirmation are not equal' do
-		user = build(
-			:user,
-			password:              '12345asdfg',
-			password_confirmation: 'asdfg12345')
-		expect( user ).to be_invalid
-	end
+		context 'with a duplicate email' do
+			let(:email) { 'dup@example.com' }
+			let!(:exist_user) { create(:user, email: email) }
+
+			let(:params) { {email: email} }
+			it { expect(user.valid?).to be_falsy }
+		end
+  end
 end
