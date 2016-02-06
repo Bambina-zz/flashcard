@@ -1,24 +1,33 @@
 require 'spec_helper'
 
 RSpec.describe Word, :type => :model do
-	it 'is valid with name, user_id, word_type' do
-		expect( build(:word) ).to be_valid
+  describe 'validation' do
+		let(:word) { build(:word, params) }
+
+		context 'with valid params' do
+			let(:params) { nil }
+			it { expect(word.valid?).to be_truthy }
+		end
+
+		context 'without name' do
+			let(:params) { {name: nil} }
+			it { expect(word.valid?).to be_falsy }
+		end
+
+		context 'without word_type' do
+			let(:params) { {word_type: nil} }
+			it { expect(word.valid?).to be_falsy }
+		end
+
+		context 'without user_id' do
+			let(:params) { {user_id: nil} }
+			it { expect(word.valid?).to be_falsy }
+		end
 	end
 
-	it 'is invalid without a name' do
-		word = build(:word, name: nil)
-		expect(word).to validate_presence_of(:name)
-	end
-
-	it 'is invalid without a word_type' do
-		word = build(:word, word_type: nil)
-		expect( word ).to validate_presence_of(:word_type)
-	end
-
-	it 'is invalid without a user_id' do
-		word = build(:word, user_id: nil)
-		expect( word ).to validate_presence_of(:user_id)
-	end
+  describe 'association with user model' do
+		# TODO
+  end
 
 	it 'does not allow duplicate word names per user' do
 		user = User.create(
@@ -32,7 +41,7 @@ RSpec.describe Word, :type => :model do
 		work_word = user.words.build(
 			name: 'work',
 			word_type: 'noun')
-		expect( work_word ).to validate_uniqueness_of(:name).scoped_to(:user_id)
+		expect( work_word.valid? ).to be_falsy
 	end
 
 	it 'allows two users to have a same word' do
@@ -53,6 +62,6 @@ RSpec.describe Word, :type => :model do
 			name: 'work',
 			word_type: 'noun')
 
-		expect( user2_word ).to be_valid
+		expect( user2_word.valid? ).to be_truthy
 	end
 end
