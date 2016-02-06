@@ -1,12 +1,17 @@
 require 'spec_helper'
 
 RSpec.describe Sentence, :type => :model do
-	it 'is valid with a content and word_id' do
-		expect( build(:sentence) ).to be_valid
-	end
+	describe 'validation' do
+		let(:sentence) { build(:sentence, params) }
 
-	it 'is invalid wituout a content' do
-		sentence = build(:sentence, content: nil)
-		expect( sentence ).to validate_presence_of(:content)
+		context 'with valid params' do
+			let(:params) { nil }
+			it { expect(sentence.valid?).to be_truthy }
+		end
+
+		context 'without content' do
+			let(:params) { {content: nil} }
+			it { expect(sentence.valid?).to be_falsy }
+		end
 	end
 end
