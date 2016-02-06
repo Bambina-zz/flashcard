@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
-ruby '2.2.1'
+ruby '2.2.3'
 
 gem 'rails', '4.2.1'
 gem 'pg', '0.17.1'
@@ -14,7 +13,6 @@ gem 'uglifier', '1.2.3'
 gem 'rails-assets-bootstrap'
 gem 'angularjs-rails', '~> 1.3.4'
 gem 'jquery-rails', '~> 3.1.2'
-#gem 'protected_attributes'
 gem 'paperclip', '~> 4.2.0'
 gem 'aws-sdk', '< 2.0'
 gem 'kaminari', '~> 0.16.1'
@@ -41,4 +39,3 @@ group :test do
   gem 'poltergeist', '~> 1.5.1'
   gem 'shoulda-matchers'
 end
-
