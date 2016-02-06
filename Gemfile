@@ -10,12 +10,15 @@ gem 'gon', '~> 5.2.3'
 gem 'sass-rails', '~> 4.0.2'
 gem 'coffee-rails', '4.0.0'
 gem 'uglifier', '1.2.3'
-gem 'rails-assets-bootstrap'
 gem 'angularjs-rails', '~> 1.3.4'
 gem 'jquery-rails', '~> 3.1.2'
 gem 'paperclip', '~> 4.2.0'
 gem 'aws-sdk', '< 2.0'
 gem 'kaminari', '~> 0.16.1'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+end
 
 group :production do
   gem 'rails_12factor'
